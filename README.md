@@ -12,11 +12,11 @@ npm run build    # → dist/
 
 | Choice | Why |
 | --- | --- |
-| Astro 7, static output | The site is a long document with a form. No client JS ships except the Plausible tag. |
+| Astro 7, static output | The site is a long document with a form. The only client JS is the ~2.8 kB inlined analytics module. |
 | Tailwind 4 (`@tailwindcss/vite`) | Tokens live in `src/styles/global.css` under `@theme`. |
 | System font stack | `-apple-system` renders as SF Pro on the Macs this is sold to. No webfont request, no layout shift. |
 | Buttondown | Two lists via tags. No dark patterns, exports cleanly if you outgrow it. |
-| Plausible | No cookies, so no consent banner — which matters on a site arguing it doesn't manipulate you. |
+| Vercel Web Analytics | Cookieless, so no consent banner — which matters on a site arguing it doesn't manipulate you. Wired in `src/layouts/Base.astro`; needs switching on per-project in the Vercel dashboard. |
 
 ## Domain
 
@@ -55,9 +55,12 @@ commitment the site makes on your behalf.
 
 ### Accounts to create
 
-- **Plausible** — add `getstick.website` as a site. The snippet is already on
-  every page; it records nothing until then.
-- **Buttondown** — set `buttondownUser`. Only the Windows waitlist form uses it.
+- **Vercel** — deploy the project, then turn on Web Analytics under its
+  Analytics tab. `<Analytics />` is already on every page and collects nothing
+  until that switch is flipped.
+- **Buttondown** — set `buttondownUser`. Until then the Windows waitlist form
+  has no action and silently drops signups; disable it or wire it before
+  deploying.
 
 ### Facts verified against the source, not assumed
 

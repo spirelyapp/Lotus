@@ -42,10 +42,10 @@ export const site = {
   buttondownUser: null as string | null,
 
   /**
-   * Enables the Plausible snippet. Records nothing until getstick.website is
-   * added as a site in the Plausible dashboard.
+   * Analytics is Vercel Web Analytics, wired in src/layouts/Base.astro rather
+   * than configured here — it takes no key, it just needs switching on for the
+   * project in the Vercel dashboard.
    */
-  plausibleDomain: 'getstick.website' as string | null,
 } as const;
 
 export const nav = [
