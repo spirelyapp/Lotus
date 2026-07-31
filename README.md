@@ -1,6 +1,6 @@
-# stick — site
+# Stick — site
 
-Marketing and pre-order site for stick. Static, five pages.
+Marketing and pre-order site for Stick. Static, five pages.
 
 ```bash
 npm install
@@ -35,7 +35,7 @@ src/data/faq.ts          FAQ questions, shared by / and /faq
 src/assets/stick-key.png Product shot — optimized at build into WebP
 src/pages/index.astro    Home
 src/pages/buy.astro      Price + pre-order terms, links out to Stripe
-src/pages/limits.astro   What stick can't do
+src/pages/limits.astro   What Stick can't do
 src/pages/refunds.astro  Refund policy
 src/pages/faq.astro      FAQ
 public/og.png            Social card
@@ -82,7 +82,7 @@ problem does not apply as written.
 
 ### Still open, lower stakes
 
-- **Legal entity.** The footer says `© stick`, which asserts nothing false.
+- **Legal entity.** The footer says `© Stick`, which asserts nothing false.
   Stripe's merchant of record is a personal name today; name the seller properly
   once it's registered.
 - The pre-order promises a September 2026 ship. No sticks are ordered yet
@@ -103,7 +103,7 @@ The Payment Link is live and takes money today. Three things to fix in the
 Stripe dashboard, all of which reduce disputes:
 
 - The product is named **"Stick"**, described as "Laptop hardware…". A buyer who
-  sees neither "stick" nor the price they expected at the moment of payment is a
+  sees neither "Stick" nor the price they expected at the moment of payment is a
   buyer who might file a chargeback. Rename it to match the site.
 - The merchant shows as **"Noah Johnson"** — a personal name. Card statements
   will show something similar. Set a statement descriptor a buyer will recognise.

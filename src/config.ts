@@ -7,10 +7,10 @@
  */
 
 export const site = {
-  name: 'stick',
+  name: 'Stick',
   tagline: 'Put the off switch in another room.',
   description:
-    'stick is a USB key that blocks the sites and apps you choose on your Mac. Ending a session means physically going to get it.',
+    'Stick is a USB key that blocks the sites and apps you choose on your Mac. Ending a session means physically going to get it.',
 
   price: '$39.99',
   shipWindow: 'September 2026',

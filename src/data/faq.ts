@@ -17,7 +17,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Can't I just get around it?",
-    a: `Yes, if you're determined and technical. We wrote a whole page on exactly how. stick is designed against impulse, not against you with a terminal open.`,
+    a: `Yes, if you're determined and technical. We wrote a whole page on exactly how. Stick is designed against impulse, not against you with a terminal open.`,
     home: true,
   },
   {
@@ -46,7 +46,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Do you see what I block?',
-    a: `No. Nothing in stick sends anything to us — no telemetry, no licence check, no analytics, no account. Your modes, your blocklists and your session history stay on your Mac. It does make two kinds of outbound request, both to GitHub and neither carrying anything about you: downloading a category blocklist when you switch one on, and refreshing the bypass-domain list weekly. Run Little Snitch on it — that's exactly what you'll see.`,
+    a: `No. Nothing in Stick sends anything to us — no telemetry, no licence check, no analytics, no account. Your modes, your blocklists and your session history stay on your Mac. It does make two kinds of outbound request, both to GitHub and neither carrying anything about you: downloading a category blocklist when you switch one on, and refreshing the bypass-domain list weekly. Run Little Snitch on it — that's exactly what you'll see.`,
     home: true,
   },
   {
@@ -55,11 +55,11 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Is there a free trial?',
-    a: `No. stick doesn't do anything without the key, and the key is the product.`,
+    a: `No. Stick doesn't do anything without the key, and the key is the product.`,
   },
   {
     q: 'Windows?',
-    a: `Not yet. stick is macOS only today, and we'd rather say that than take your money and a guess.`,
+    a: `Not yet. Stick is macOS only today, and we'd rather say that than take your money and a guess.`,
   },
   {
     q: 'Refunds?',
