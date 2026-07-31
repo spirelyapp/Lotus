@@ -27,11 +27,10 @@ export const site = {
   architectures: 'Apple Silicon (M1 and later)',
 
   /**
-   * TODO — the one genuinely blocking gap. The manual-unlock path on /limits
-   * promises a human at the end of an email; there is currently no address for
-   * that email to reach.
+   * Answers the manual-unlock path on /limits and refund requests on /refunds.
+   * Both pages promise a human here, so it has to stay monitored.
    */
-  supportEmail: null as string | null,
+  supportEmail: 'noahjbusiness1@gmail.com',
 
   /** Named once the entity is registered; Stripe's merchant of record today. */
   legalEntity: null as string | null,

@@ -45,12 +45,13 @@ Copy source of truth is `../copy-v1.md`.
 
 ## Before this goes live
 
-### One genuinely blocking item
+No unresolved facts render on the page any more — the visible-marker system is
+currently showing nothing, which is the intended steady state.
 
-**A support email address.** `/limits` and `/refunds` both promise a human at
-the end of one, and there isn't an address for that to reach. It renders as a
-pink marker on the page rather than disappearing quietly. Set `supportEmail` in
-`src/config.ts`.
+**`supportEmail` is monitored, or it should be.** `/limits` promises a human who
+performs manual unlocks and `/refunds` promises one who processes refunds. Both
+now point at a real inbox, and both state a one-business-day response. That is a
+commitment the site makes on your behalf.
 
 ### Accounts to create
 
