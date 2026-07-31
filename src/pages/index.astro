@@ -102,7 +102,7 @@ const homeFaq = faq.filter((f) => f.home);
 
         <p class="mt-4 text-[14px] text-muted">
           {site.price} + shipping, one time. No subscription, ever. Pre-order —
-          first batch ships {site.shipWindow}.
+          shipping {site.shipWindow}, with a limited first batch in {site.earlyShipWindow}.
         </p>
       </div>
 
@@ -272,7 +272,8 @@ const homeFaq = faq.filter((f) => f.home);
           <BuyButton size="lg" />
         </div>
         <p class="mt-4 text-[14px] text-muted">
-          Pre-order. Charged today, ships {site.shipWindow}.
+          Pre-order. Charged today, ships {site.shipWindow} — a limited first
+          batch goes out in {site.earlyShipWindow}.
         </p>
         <p class="mt-2 text-[14px] text-muted">
           Cancel before it ships, or 30 days from delivery —

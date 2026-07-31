@@ -13,7 +13,13 @@ export const site = {
     'Stick is a USB key that blocks the sites and apps you choose on your Mac. Ending a session means physically going to get it.',
 
   price: '$39.99',
-  shipWindow: 'September 2026',
+
+  /**
+   * General shipping is Q4; a limited first batch goes out earlier. Kept as two
+   * fields so no page can imply everyone gets a September unit.
+   */
+  shipWindow: 'Q4 2026',
+  earlyShipWindow: 'September 2026',
 
   /** Stripe Payment Link. Collects shipping worldwide. */
   stripeUrl: 'https://buy.stripe.com/fZu4gseRD8XF3mb1l9aAw06',
@@ -32,8 +38,18 @@ export const site = {
    */
   supportEmail: 'noahjbusiness1@gmail.com',
 
+  /**
+   * Trading name, used where a privacy policy has to name a data controller.
+   * TODO: append the legal suffix (LLC / Inc.) once Delaware formation
+   * completes, and set Stripe's statement descriptor to match.
+   */
+  company: 'Lotus Technologies',
+
   /** Named once the entity is registered; Stripe's merchant of record today. */
   legalEntity: null as string | null,
+
+  /** Bump only when the policy actually changes, not on every build. */
+  policyUpdated: '31 July 2026',
 
   /** How fast the manual unlock is answered. Deliberately not instant. */
   unlockResponseTime: 'within one business day',

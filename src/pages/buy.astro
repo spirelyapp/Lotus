@@ -15,7 +15,7 @@ const inTheBox = [
 
 <Base
   title="Get Stick"
-  description={`${site.price} plus shipping, one time. Pre-order — first batch ships ${site.shipWindow}.`}
+  description={`${site.price} plus shipping, one time. Pre-order — shipping ${site.shipWindow}, with a limited first batch in ${site.earlyShipWindow}.`}
 >
   <section class="mx-auto max-w-3xl px-5 pt-16 pb-20 md:pt-24">
     <h1 class="headline text-hero">Get Stick</h1>
@@ -67,9 +67,15 @@ const inTheBox = [
             This is a pre-order
           </h3>
           <p class="mt-3 text-[17px] leading-relaxed text-muted">
-            You’re charged today. The first batch ships {site.shipWindow}. If
-            that slips, we’ll email you and tell you so — we’d rather lose
-            the sale than quietly hold your money.
+            You’re charged today, and the product does not exist on your desk
+            yet. Most orders ship in {site.shipWindow}. A limited first batch
+            goes out in {site.earlyShipWindow} — if you order now you may be in
+            it, but we’re not promising you are.
+          </p>
+          <p class="mt-3 text-[17px] leading-relaxed text-muted">
+            If either date slips, we’ll email you and tell you so. You can take
+            a full refund at that point, or wait. We’d rather lose the sale than
+            quietly hold your money.
           </p>
         </div>
 

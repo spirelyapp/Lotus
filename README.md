@@ -1,6 +1,6 @@
 # Stick — site
 
-Marketing and pre-order site for Stick. Static, five pages.
+Marketing and pre-order site for Stick. Static, six pages.
 
 ```bash
 npm install
@@ -37,6 +37,7 @@ src/pages/index.astro    Home
 src/pages/buy.astro      Price + pre-order terms, links out to Stripe
 src/pages/limits.astro   What Stick can't do
 src/pages/refunds.astro  Refund policy
+src/pages/privacy.astro  Privacy policy
 src/pages/faq.astro      FAQ
 public/og.png            Social card
 ```
@@ -85,9 +86,13 @@ problem does not apply as written.
 
 ### Still open, lower stakes
 
-- **Legal entity.** The footer says `© Stick`, which asserts nothing false.
-  Stripe's merchant of record is a personal name today; name the seller properly
-  once it's registered.
+- **Legal entity.** `company` is set to the trading name Lotus Technologies,
+  which /privacy needs in order to name a data controller. Append the legal
+  suffix once Delaware formation completes, set `legalEntity`, and change
+  Stripe's statement descriptor to match — a customer should see the same name
+  on the site, at checkout, and on their card statement.
+- **Terms of sale.** Still missing. /refunds and /privacy exist; the terms a
+  buyer agrees to at checkout do not.
 - The pre-order promises a September 2026 ship. No sticks are ordered yet
   (2–4 week lead) and the installer has still never run on a second Mac.
 
