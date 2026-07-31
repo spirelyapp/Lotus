@@ -2,7 +2,7 @@
 import { site } from '../config';
 
 interface Props {
-  /** Buttondown tag, so the macOS list and the Windows list stay separate. */
+  /** Buttondown tag, so separate lists stay separate. */
   tag: string;
   label: string;
   cta?: string;
@@ -11,46 +11,57 @@ interface Props {
 
 const { tag, label, cta = 'Get notified', compact = false } = Astro.props;
 
-const action = site.buttondownUser
+/**
+ * A form with no action POSTs to the current page and drops the address on the
+ * floor. Rather than ship that, an unconfigured form renders nothing in
+ * production — no input, no button, nothing to type into. The warning below is
+ * dev-only so an internal TODO can never reach a visitor again.
+ */
+const wired = Boolean(site.buttondownUser);
+const action = wired
   ? `https://buttondown.email/api/emails/embed-subscribe/${site.buttondownUser}`
   : undefined;
 ---
 
-<form
-  action={action}
-  method="post"
-  target="_blank"
-  class:list={[
-    'flex w-full flex-col gap-2.5 sm:flex-row',
-    compact ? 'max-w-md' : 'max-w-lg',
-  ]}
-  data-tag={tag}
->
-  <label class="sr-only" for={`email-${tag}`}>{label}</label>
-  <input
-    id={`email-${tag}`}
-    type="email"
-    name="email"
-    required
-    autocomplete="email"
-    placeholder="you@example.com"
-    class="min-w-0 flex-1 rounded-full border border-line bg-paper px-5 py-3 text-[15px] placeholder:text-muted/60 focus:border-accent focus:outline-none"
-  />
-  <input type="hidden" name="tag" value={tag} />
-  <button
-    type="submit"
-    class="rounded-full bg-accent px-6 py-3 text-[15px] font-medium whitespace-nowrap text-white transition-colors hover:bg-accent-dark"
-  >
-    {cta}
-  </button>
-</form>
+{
+  wired && (
+    <form
+      action={action}
+      method="post"
+      target="_blank"
+      class:list={[
+        'flex w-full flex-col gap-2.5 sm:flex-row',
+        compact ? 'max-w-md' : 'max-w-lg',
+      ]}
+    >
+      <label class="sr-only" for={`email-${tag}`}>
+        {label}
+      </label>
+      <input
+        id={`email-${tag}`}
+        type="email"
+        name="email"
+        required
+        autocomplete="email"
+        placeholder="you@example.com"
+        class="min-w-0 flex-1 rounded-full border border-line bg-paper px-5 py-3 text-[15px] placeholder:text-muted/60 focus:border-accent focus:outline-none"
+      />
+      <input type="hidden" name="tag" value={tag} />
+      <button
+        type="submit"
+        class="rounded-full bg-accent px-6 py-3 text-[15px] font-medium whitespace-nowrap text-white transition-colors hover:bg-accent-dark"
+      >
+        {cta}
+      </button>
+    </form>
+  )
+}
 
 {
-  !site.buttondownUser && (
+  !wired && import.meta.env.DEV && (
     <p class="mt-2.5 text-[13px] text-key">
-      Not wired up yet — set <code class="font-mono">buttondownUser</code> in{' '}
-      <code class="font-mono">src/config.ts</code> and this form starts
-      collecting.
+      Dev only — no <code class="font-mono">buttondownUser</code> set, so this
+      form is hidden in production rather than dropping addresses.
     </p>
   )
 }

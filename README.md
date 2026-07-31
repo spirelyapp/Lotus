@@ -1,6 +1,6 @@
 # Stick — site
 
-Marketing and pre-order site for Stick. Static, six pages.
+Marketing and pre-order site for Stick. Static, seven pages. Live at https://www.getstick.website
 
 ```bash
 npm install
@@ -20,8 +20,12 @@ npm run build    # → dist/
 
 ## Domain
 
-`getstick.website`, set as `site` in `astro.config.mjs`. That one value drives
-canonical tags, `og:url`, and the sitemap — change it there, not per page.
+`www.getstick.website`, set as `site` in `astro.config.mjs`. That one value
+drives canonical tags, `og:url`, and the sitemap — change it there, not per page.
+
+**It must match the host that actually serves.** Vercel 308s the apex to `www`,
+so `www` is canonical. If you flip that in Vercel, flip this too, or every
+canonical tag points at a redirect.
 
 Deploy to Netlify or Vercel: build `npm run build`, publish `dist`. Point the
 apex at the host and let it issue the certificate; nothing in the site assumes
@@ -38,6 +42,7 @@ src/pages/buy.astro      Price + pre-order terms, links out to Stripe
 src/pages/limits.astro   What Stick can't do
 src/pages/refunds.astro  Refund policy
 src/pages/privacy.astro  Privacy policy
+src/pages/terms.astro    Terms of sale
 src/pages/faq.astro      FAQ
 public/og.png            Social card
 ```
@@ -59,9 +64,9 @@ commitment the site makes on your behalf.
 - **Vercel** — deploy the project, then turn on Web Analytics under its
   Analytics tab. `<Analytics />` is already on every page and collects nothing
   until that switch is flipped.
-- **Buttondown** — set `buttondownUser`. Until then the Windows waitlist form
-  has no action and silently drops signups; disable it or wire it before
-  deploying.
+- **Buttondown** — set `buttondownUser`. Until then `EmailForm` renders
+  **nothing** in production rather than shipping a form that drops addresses.
+  One value turns collection on everywhere it is used.
 
 ### Facts verified against the source, not assumed
 
@@ -91,8 +96,10 @@ problem does not apply as written.
   suffix once Delaware formation completes, set `legalEntity`, and change
   Stripe's statement descriptor to match — a customer should see the same name
   on the site, at checkout, and on their card statement.
-- **Terms of sale.** Still missing. /refunds and /privacy exist; the terms a
-  buyer agrees to at checkout do not.
+- **Sales tax and VAT.** Selling physical goods worldwide creates registration
+  obligations — US state nexus thresholds, EU/UK import VAT. Stripe Tax covers
+  most of it but is not automatic. The terms say duties are the buyer's; that
+  does not cover your own registration duties.
 - The pre-order promises a September 2026 ship. No sticks are ordered yet
   (2–4 week lead) and the installer has still never run on a second Mac.
 
