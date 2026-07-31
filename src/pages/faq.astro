@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import BuyButton from '../components/BuyButton.astro';
+import { faq } from '../data/faq';
+import { site } from '../config';
+---
+
+<Base
+  title="stick — FAQ"
+  description="Questions about stick: what it blocks, what happens if you lose the key, and what it does not do."
+>
+  <section class="mx-auto max-w-3xl px-5 pt-16 pb-10 md:pt-24">
+    <h1 class="headline text-hero">Questions</h1>
+    <p class="mt-7 text-[17px] leading-relaxed text-muted">
+      If the answer you want is “can I get around it,” that one has
+      <a href="/limits" class="text-accent underline underline-offset-4"
+        >its own page</a
+      >.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-5 pb-16">
+    <Faq items={faq} />
+  </section>
+
+  <section class="rule bg-mist">
+    <div class="mx-auto max-w-3xl px-5 py-20">
+      <h2 class="headline text-display">Still wondering something?</h2>
+      <p class="mt-6 text-[17px] leading-relaxed text-muted">
+        {
+          site.supportEmail ? (
+            <>
+              Write to{' '}
+              <a
+                href={`mailto:${site.supportEmail}`}
+                class="text-accent underline underline-offset-4"
+              >
+                {site.supportEmail}
+              </a>
+              .
+            </>
+          ) : (
+            <span class="text-key">
+              TODO — support email address. Needed before the buy button is
+              public: /limits and /refunds both promise a human here.
+            </span>
+          )
+        }
+      </p>
+      <div class="mt-9">
+        <BuyButton size="lg" />
+      </div>
+    </div>
+  </section>
+</Base>

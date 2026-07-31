@@ -1,0 +1,35 @@
+---
+import type { FaqItem } from '../data/faq';
+
+interface Props {
+  items: FaqItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="rule">
+  {
+    items.map((item) => (
+      <details class="group rule-b border-b border-line">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[17px] font-medium marker:hidden [&::-webkit-details-marker]:hidden">
+          <span>{item.q}</span>
+          <span
+            aria-hidden="true"
+            class="shrink-0 text-2xl leading-none font-light text-muted transition-transform duration-200 group-open:rotate-45"
+          >
+            +
+          </span>
+        </summary>
+        <p class="max-w-2xl pb-6 text-[16px] leading-relaxed text-muted">
+          {item.a}
+          {item.todo && (
+            <span class="mt-2 block text-[13px] text-key">
+              TODO — unconfirmed, see copy-v1.md
+            </span>
+          )}
+        </p>
+      </details>
+    ))
+  }
+</div>

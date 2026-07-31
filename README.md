@@ -1,0 +1,111 @@
+# stick — site
+
+Marketing and pre-order site for stick. Static, five pages.
+
+```bash
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # → dist/
+```
+
+## Stack
+
+| Choice | Why |
+| --- | --- |
+| Astro 7, static output | The site is a long document with a form. No client JS ships except the Plausible tag. |
+| Tailwind 4 (`@tailwindcss/vite`) | Tokens live in `src/styles/global.css` under `@theme`. |
+| System font stack | `-apple-system` renders as SF Pro on the Macs this is sold to. No webfont request, no layout shift. |
+| Buttondown | Two lists via tags. No dark patterns, exports cleanly if you outgrow it. |
+| Plausible | No cookies, so no consent banner — which matters on a site arguing it doesn't manipulate you. |
+
+## Domain
+
+`getstick.website`, set as `site` in `astro.config.mjs`. That one value drives
+canonical tags, `og:url`, and the sitemap — change it there, not per page.
+
+Deploy to Netlify or Vercel: build `npm run build`, publish `dist`. Point the
+apex at the host and let it issue the certificate; nothing in the site assumes
+`www`, so redirect `www → apex` at the host to avoid splitting canonicals.
+
+## Where things are
+
+```
+src/config.ts            Every changeable fact. Start here.
+src/data/faq.ts          FAQ questions, shared by / and /faq
+src/assets/stick-key.png Product shot — optimized at build into WebP
+src/pages/index.astro    Home
+src/pages/buy.astro      Price + pre-order terms, links out to Stripe
+src/pages/limits.astro   What stick can't do
+src/pages/refunds.astro  Refund policy
+src/pages/faq.astro      FAQ
+public/og.png            Social card
+```
+
+Copy source of truth is `../copy-v1.md`.
+
+## Before this goes live
+
+### One genuinely blocking item
+
+**A support email address.** `/limits` and `/refunds` both promise a human at
+the end of one, and there isn't an address for that to reach. It renders as a
+pink marker on the page rather than disappearing quietly. Set `supportEmail` in
+`src/config.ts`.
+
+### Accounts to create
+
+- **Plausible** — add `getstick.website` as a site. The snippet is already on
+  every page; it records nothing until then.
+- **Buttondown** — set `buttondownUser`. Only the Windows waitlist form uses it.
+
+### Facts verified against the source, not assumed
+
+These were open questions; the answers came out of the repo and are now on the
+site. Recorded here so nobody re-litigates them from memory.
+
+| Claim | Where it was verified |
+| --- | --- |
+| macOS 14 Sonoma minimum, Apple Silicon only | `app/build.sh` targets `arm64-apple-macosx14.0`; `app/Info.plist` declares `LSMinimumSystemVersion 14.0`. **This was previously stated as macOS 13 Ventura, which was wrong.** |
+| Two categories ship: Explicit content, Gambling | `internal/blocklist/blocklist.go` — social and fake-news were retired deliberately |
+| Disk images are rejected | `internal/dongle/media_darwin.go` requires both removable media *and* a physical transport from an allowlist. The root `README.md` threat-model section is stale on this point. |
+| Block survives reboot, logout, quit, kill | `internal/platform/service_darwin.go` sets `RunAtLoad` + `KeepAlive`; `internal/enforce/enforce.go` restores the hosts region on a 2s tick |
+| The app makes outbound requests | `internal/blocklist/blocklist.go` fetches category lists from StevenBlack on demand and the bypass feed from HaGeZi weekly. **Nothing goes to a server we control**, but "nothing phones home" was too strong and is now worded precisely. |
+
+### Blocklist licensing — lower risk than it looked
+
+The lists are **downloaded at runtime by the user's machine**, not vendored into
+the product. That is a materially different legal position from redistributing
+them: you aren't shipping the data. StevenBlack is MIT. HaGeZi's terms are still
+worth a read before launch, but the "we redistribute GPL data in a paid product"
+problem does not apply as written.
+
+### Still open, lower stakes
+
+- **Legal entity.** The footer says `© stick`, which asserts nothing false.
+  Stripe's merchant of record is a personal name today; name the seller properly
+  once it's registered.
+- The pre-order promises a September 2026 ship. No sticks are ordered yet
+  (2–4 week lead) and the installer has still never run on a second Mac.
+
+## Buying
+
+`BuyButton` handles every CTA. `target="page"` (default) goes to `/buy`;
+`target="stripe"` goes straight to the Payment Link in `src/config.ts`. Only
+`/buy` links out to Stripe — every other CTA routes through it, so the pre-order
+terms and the link to `/limits` are always seen before checkout.
+
+`EmailForm` now serves one purpose: the Windows waitlist on the home page.
+
+### Stripe housekeeping
+
+The Payment Link is live and takes money today. Three things to fix in the
+Stripe dashboard, all of which reduce disputes:
+
+- The product is named **"Stick"**, described as "Laptop hardware…". A buyer who
+  sees neither "stick" nor the price they expected at the moment of payment is a
+  buyer who might file a chargeback. Rename it to match the site.
+- The merchant shows as **"Noah Johnson"** — a personal name. Card statements
+  will show something similar. Set a statement descriptor a buyer will recognise.
+- The site says **"+ shipping"**. Confirm shipping rates are actually configured
+  on the link, or the site is promising a charge Stripe never adds and you eat
+  the postage.

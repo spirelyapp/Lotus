@@ -1,0 +1,112 @@
+---
+import { Image } from 'astro:assets';
+import stickKey from '../assets/stick-key.png';
+import Base from '../layouts/Base.astro';
+import BuyButton from '../components/BuyButton.astro';
+import { site } from '../config';
+
+const inTheBox = [
+  'The key — USB-C, hot pink, Stick. embossed',
+  'The macOS app and background service, with free updates',
+  'One key works on every Mac you own',
+  'No subscription, ever',
+];
+---
+
+<Base
+  title="Get stick"
+  description={`${site.price} plus shipping, one time. Pre-order — first batch ships ${site.shipWindow}.`}
+>
+  <section class="mx-auto max-w-3xl px-5 pt-16 pb-20 md:pt-24">
+    <h1 class="headline text-hero">Get stick</h1>
+
+    <div class="mt-12 grid gap-12 sm:grid-cols-[1fr_1.1fr] sm:items-start">
+      <Image
+        src={stickKey}
+        alt="The stick: a hot pink USB-C key with Stick. embossed on it"
+        widths={[420, 720]}
+        sizes="(min-width: 640px) 40vw, 90vw"
+        loading="eager"
+        class="w-full"
+      />
+
+      <div>
+        <p class="text-[40px] leading-none font-bold tracking-[-0.03em]">
+          {site.price}
+        </p>
+        <p class="mt-2 text-[15px] text-muted">
+          Plus shipping. One time — there’s no subscription.
+        </p>
+
+        <ul class="mt-8 space-y-3 text-[16px] text-muted">
+          {inTheBox.map((item) => <li class="rule pt-3">{item}</li>)}
+        </ul>
+
+        <div class="mt-9">
+          <BuyButton target="stripe" size="lg" label="Pre-order — $39.99" />
+        </div>
+        <p class="mt-4 text-[14px] text-muted">
+          Checkout is handled by Stripe. Ships worldwide.
+        </p>
+        <p class="mt-2 text-[14px] text-muted">
+          Cancel any time before it ships. 30 days from delivery after that —
+          <a href="/refunds" class="text-accent underline underline-offset-4">full terms</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The two things a buyer should know before paying, not after. -->
+  <section class="rule bg-mist">
+    <div class="mx-auto max-w-3xl px-5 py-20">
+      <h2 class="headline text-display">Before you buy</h2>
+
+      <div class="mt-10 space-y-10">
+        <div class="rule pt-6">
+          <h3 class="text-[20px] font-semibold tracking-[-0.02em]">
+            This is a pre-order
+          </h3>
+          <p class="mt-3 text-[17px] leading-relaxed text-muted">
+            You’re charged today. The first batch ships {site.shipWindow}. If
+            that slips, we’ll email you and tell you so — we’d rather lose
+            the sale than quietly hold your money.
+          </p>
+        </div>
+
+        <div class="rule pt-6">
+          <h3 class="text-[20px] font-semibold tracking-[-0.02em]">
+            stick is friction, not security
+          </h3>
+          <p class="mt-3 text-[17px] leading-relaxed text-muted">
+            If you know your way around a Mac, there are ways out — one command
+            stops the background service, and an SSH tunnel gets past the network
+            filtering. There are also five emergency unlocks in the app, and they’re
+            a button. We’ve written every one of these down.
+          </p>
+          <a
+            href="/limits"
+            class="mt-5 inline-flex items-center gap-2 text-[16px] text-accent underline underline-offset-4"
+          >
+            Read what stick can’t do first
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="rule pt-6">
+          <h3 class="text-[20px] font-semibold tracking-[-0.02em]">
+            It needs {site.minMacOS}, on {site.architectures}
+          </h3>
+          <p class="mt-3 text-[17px] leading-relaxed text-muted">
+            macOS only, and there’s no Intel build — if your Mac is pre-2020,
+            this won’t run on it. Windows isn’t shipping yet either, and we’d
+            rather say that than take your money and a guess.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <BuyButton target="stripe" size="lg" label="Pre-order — $39.99" />
+      </div>
+    </div>
+  </section>
+</Base>

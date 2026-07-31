@@ -1,0 +1,425 @@
+---
+import { Image } from 'astro:assets';
+import stickKey from '../assets/stick-key.png';
+import Base from '../layouts/Base.astro';
+import EmailForm from '../components/EmailForm.astro';
+import BuyButton from '../components/BuyButton.astro';
+import Faq from '../components/Faq.astro';
+import { faq } from '../data/faq';
+import { site } from '../config';
+
+const steps = [
+  {
+    n: '1',
+    h: 'Choose what to block.',
+    p: 'Sites, apps, and bundled category lists. Save them as modes — Deep Work, Sleep, whatever you need. Up to ten.',
+  },
+  {
+    n: '2',
+    h: 'Start a session.',
+    p: 'From the menu bar, or on a schedule. The block goes up immediately, and it holds through unplugging, quitting, and restarting.',
+  },
+  {
+    n: '3',
+    h: 'Put the key somewhere else.',
+    p: 'A drawer, another room, your bag. Your Mac stays blocked until that key is physically plugged back in.',
+  },
+];
+
+const rivals = [
+  {
+    h: 'Screen Time',
+    p: 'The passcode is one you chose, and you can reset it from the same Mac you’re trying to get away from.',
+  },
+  {
+    h: 'Freedom, Cold Turkey, and the rest',
+    p: 'Some of these are genuinely hard to cancel once a session starts — that part is real. But the key is still software, running on the machine you’re sitting in front of. The fight is between you and a screen, and the screen is very good at this.',
+  },
+  {
+    h: 'Deleting the app',
+    p: 'Under a minute to reinstall.',
+  },
+  {
+    h: 'stick',
+    p: 'The key is an object. It has a location. Right now, that location is not this room.',
+    ours: true,
+  },
+];
+
+const modes = [
+  'Deep Work',
+  'Sleep',
+  'Study',
+  'Evenings',
+  'Writing',
+  'Weekends off',
+];
+
+const details = [
+  {
+    h: 'A schedule can start a session. It can never end one.',
+    p: 'Sleep mode engages at 22:00 on weeknights without anyone deciding to engage it. There’s no end time, because an end time would be a second way out that doesn’t need the key.',
+  },
+  {
+    h: 'Strict mode.',
+    p: 'While a session is running, settings can’t be weakened.',
+  },
+  {
+    h: 'Three enforcement layers.',
+    p: 'The system hosts file on both address families, a pf firewall ruleset, and a process watcher for apps. Any one of them alone leaks.',
+  },
+  {
+    h: 'The obvious escapes are already closed.',
+    p: 'DNS-over-HTTPS, DNS-over-TLS, iCloud Private Relay, HTTP and SOCKS proxies, Tor, and around 17,500 known unblocker domains. Browser DoH is switched off by machine policy.',
+  },
+  {
+    h: 'Browser policy survives restarts.',
+    p: 'Browsers only read policy when they launch, so a session-scoped policy would be worthless five seconds after you quit Chrome.',
+  },
+  {
+    h: 'The app holds no authority of its own.',
+    p: 'It can ask the background service to unlock, and be told no. It can’t decide. There’s no prompt for it to trick you into approving.',
+  },
+];
+
+const homeFaq = faq.filter((f) => f.home);
+---
+
+<Base title="stick — put the off switch in another room" description={site.description}>
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-5 pt-16 pb-20 md:pt-24 md:pb-28">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
+      <div>
+        <h1 class="headline text-hero">Put the off switch<br />in another room.</h1>
+        <p class="text-lead mt-7 max-w-lg leading-relaxed text-muted">
+          A USB key that blocks the sites and apps you choose on your Mac.
+          Ending a session means physically going to get it.
+        </p>
+
+        <div class="mt-9">
+          <BuyButton size="lg" />
+        </div>
+
+        <p class="mt-4 text-[14px] text-muted">
+          {site.price} + shipping, one time. No subscription, ever. Pre-order —
+          first batch ships {site.shipWindow}.
+        </p>
+      </div>
+
+      <div>
+        <Image
+          src={stickKey}
+          alt="The stick: a hot pink USB-C key with Stick. embossed on it"
+          widths={[420, 720, 1200]}
+          sizes="(min-width: 1024px) 45vw, 90vw"
+          loading="eager"
+          class="mx-auto w-full max-w-sm lg:max-w-none"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="rule bg-mist">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <h2 class="headline text-display max-w-xl">How it works</h2>
+      <div class="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+        {
+          steps.map((s) => (
+            <div>
+              <p class="text-[15px] font-medium text-accent">{s.n}</p>
+              <h3 class="mt-3 text-[21px] font-semibold tracking-[-0.02em]">
+                {s.h}
+              </h3>
+              <p class="mt-3 text-[16px] leading-relaxed text-muted">{s.p}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Friction, not a prison -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <h2 class="headline text-display">It’s friction,<br />not a prison.</h2>
+      <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-muted">
+        <p>
+          stick isn’t unbreakable, and we’re not going to tell you it is.
+        </p>
+        <p>
+          If you know your way around a Mac, there are ways out. One command
+          stops the background service. Anyone who can open an SSH tunnel gets
+          past the network filtering. We know about all of them, and we’ve
+          written them down on one page instead of hoping you don’t find it.
+        </p>
+        <p class="text-ink">
+          What stick removes is the <em>easy</em> exit. There’s no “just five more
+          minutes.” No timer to wait out. No password you can talk yourself into
+          typing at 11pm. The way back in is to stand up and walk to wherever you
+          left a small pink object — and that walk is usually longer than the
+          impulse.
+        </p>
+      </div>
+      <a
+        href="/limits"
+        class="mt-8 inline-flex items-center gap-2 rounded-full border border-ink px-6 py-3 text-[15px] font-medium transition-colors hover:bg-ink hover:text-white"
+      >
+        Read exactly what stick can’t do
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Teardown -->
+  <section class="rule bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <h2 class="headline text-display max-w-2xl">
+        Every other blocker keeps the key on the same machine.
+      </h2>
+
+      <div class="mt-14 grid gap-px overflow-hidden rounded-2xl bg-white/15 md:grid-cols-2">
+        {
+          rivals.map((r) => (
+            <div class:list={['p-8', r.ours ? 'bg-accent' : 'bg-ink']}>
+              <h3 class="text-[19px] font-semibold tracking-[-0.02em]">
+                {r.h}
+              </h3>
+              <p
+                class:list={[
+                  'mt-3 text-[16px] leading-relaxed',
+                  r.ours ? 'text-white/90' : 'text-white/60',
+                ]}
+              >
+                {r.p}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="mt-10 text-[19px] text-white/70 italic">
+        The difference isn’t strength. It’s distance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Modes -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <h2 class="headline text-display">Modes</h2>
+    <p class="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+      Each mode is a named set of sites, apps and categories. Switch between
+      them, or let a schedule start one for you.
+    </p>
+    <ul class="mt-10 flex flex-wrap gap-3">
+      {
+        modes.map((m) => (
+          <li class="rounded-full border border-line px-5 py-2.5 text-[15px]">
+            {m}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- Details -->
+  <section class="rule bg-mist">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <h2 class="headline text-display max-w-2xl">
+        The details we think you’ll care about
+      </h2>
+      <div class="mt-14 grid gap-10 md:grid-cols-2 md:gap-x-14">
+        {
+          details.map((d) => (
+            <div class="rule pt-6">
+              <h3 class="text-[19px] font-semibold tracking-[-0.02em]">{d.h}</h3>
+              <p class="mt-3 text-[16px] leading-relaxed text-muted">{d.p}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+      <Image
+        src={stickKey}
+        alt=""
+        widths={[420, 720]}
+        sizes="(min-width: 1024px) 30vw, 90vw"
+        class="w-full max-w-md"
+      />
+      <div>
+        <h2 class="headline text-display">{site.price} + shipping. Once.</h2>
+        <ul class="mt-8 space-y-3 text-[17px] text-muted">
+          <li class="rule pt-3">
+            The key — USB-C, hot pink, <em>Stick.</em> embossed
+          </li>
+          <li class="rule pt-3">
+            The macOS app and background service, with free updates
+          </li>
+          <li class="rule pt-3">One key works on every Mac you own</li>
+          <li class="rule pt-3">No subscription, ever</li>
+          <li class="rule pt-3">
+            Ships worldwide — duties and import taxes, where your country
+            charges them, are yours
+          </li>
+        </ul>
+
+        <div class="mt-9">
+          <BuyButton size="lg" />
+        </div>
+        <p class="mt-4 text-[14px] text-muted">
+          Pre-order. Charged today, ships {site.shipWindow}.
+        </p>
+        <p class="mt-2 text-[14px] text-muted">
+          Cancel before it ships, or 30 days from delivery —
+          <a href="/refunds" class="text-accent underline underline-offset-4">refunds</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What it installs -->
+  <section class="rule bg-mist">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="max-w-3xl">
+        <h2 class="headline text-display">
+          What stick installs on your Mac
+        </h2>
+        <p class="mt-7 text-[17px] leading-relaxed text-muted">
+          stick runs a background service with root privileges. It has to — that
+          is what makes a block hold through a restart instead of evaporating
+          when you quit an app. Since we’re asking for that, here’s exactly
+          what it is:
+        </p>
+        <ul class="mt-9 space-y-4 text-[16px] leading-relaxed text-muted">
+          <li class="rule pt-4">
+            Signed with an Apple Developer ID certificate and notarized by Apple
+          </li>
+          <li class="rule pt-4">
+            A ~5.5 MB installer, shipped on the key itself
+          </li>
+          <li class="rule pt-4">
+            The app that draws the interface holds no authority of its own. It
+            can <em>ask</em> the service to unlock, and be told no.
+          </li>
+          <li class="rule pt-4">
+            Your modes and blocklists are evaluated on your Mac
+          </li>
+          <li class="rule pt-4 text-ink">
+            <strong class="font-semibold">Nothing is sent to us.</strong> No licence
+            check, no telemetry, no usage analytics, no account. We don’t know what
+            you block, when you lock, or how often — not as a policy we could quietly
+            change, but because there’s no server of ours for it to reach.
+          </li>
+          <li class="rule pt-4">
+            <strong class="font-semibold text-ink">It does talk to GitHub.</strong>
+            Switch on a category and its blocklist downloads from the public
+            StevenBlack lists; the bypass-domain list refreshes from HaGeZi about
+            once a week. Those are the only outbound connections stick makes, they
+            carry nothing about you, and they go to GitHub rather than to us. Point
+            Little Snitch at it — that’s exactly what you’ll see.
+          </li>
+          <li class="rule pt-4">{site.minMacOS} · {site.architectures}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lost key -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <h2 class="headline text-display">If you lose your key</h2>
+      <p class="mt-7 text-[17px] leading-relaxed text-muted">
+        Two answers, and we’d rather you know both before you buy than
+        after.
+      </p>
+
+      <div class="mt-10 grid gap-8 md:grid-cols-2">
+        <div class="rule pt-5">
+          <h3 class="text-[19px] font-semibold tracking-[-0.02em]">
+            Five emergency unlocks
+          </h3>
+          <p class="mt-3 text-[16px] leading-relaxed text-muted">
+            Every Mac gets five, for the times you genuinely need out and the key
+            is genuinely in another city. They end a session without it. They do
+            not refill — five is what you get, so spend them like it.
+          </p>
+        </div>
+        <div class="rule pt-5">
+          <h3 class="text-[19px] font-semibold tracking-[-0.02em]">
+            After that, contact us
+          </h3>
+          <p class="mt-3 text-[16px] leading-relaxed text-muted">
+            Email or phone, a real person on the other end, and we’ll unlock
+            your Mac manually — {site.unlockResponseTime}. Not instantly, on
+            purpose: an unlock we granted in five minutes would just be the
+            button this whole product exists to remove.
+          </p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-[16px] leading-relaxed text-muted">
+        Both of these are ways around the block. That’s why they’re also on
+        <a href="/limits" class="text-accent underline underline-offset-4"
+          >the limits page</a
+        >, rather than only here.
+      </p>
+    </div>
+  </section>
+
+  <!-- Windows -->
+  <section class="rule bg-mist">
+    <div class="mx-auto max-w-6xl px-5 py-20">
+      <div class="max-w-2xl">
+        <h2 class="headline text-[clamp(1.75rem,3vw,2.5rem)]">Windows</h2>
+        <p class="mt-5 text-[17px] leading-relaxed text-muted">
+          Not yet. stick is macOS only today, and we’d rather say that than
+          take your money and a guess.
+        </p>
+        <div class="mt-7">
+          <EmailForm
+            tag="windows"
+            label="Email address"
+            cta="Tell me when Windows ships"
+            compact
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <div class="max-w-3xl">
+      <h2 class="headline text-display">Questions</h2>
+      <div class="mt-10">
+        <Faq items={homeFaq} />
+      </div>
+      <a
+        href="/faq"
+        class="mt-8 inline-block text-[16px] text-accent underline underline-offset-4"
+      >
+        All questions →
+      </a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="rule bg-ink text-white">
+    <div class="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
+      <h2 class="headline text-display mx-auto max-w-2xl">
+        The only way out is a walk.
+      </h2>
+      <p class="mt-6 text-[17px] text-white/60">
+        {site.price} + shipping, one time. Ships {site.shipWindow}.
+      </p>
+      <div class="mt-9 flex justify-center">
+        <BuyButton size="lg" />
+      </div>
+    </div>
+  </section>
+</Base>

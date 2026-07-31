@@ -1,0 +1,57 @@
+---
+import { nav, site } from '../config';
+---
+
+<div
+  class="sticky top-0 z-40 border-b border-line/70 bg-paper/85 backdrop-blur-md"
+>
+  <div class="bg-ink text-center text-[13px] text-white/85">
+    <p class="mx-auto max-w-6xl px-5 py-2.5">
+      Pre-order — first batch ships {site.shipWindow}. <a
+        href="/buy"
+        class="underline underline-offset-4 hover:text-white">Get stick</a
+      >
+    </p>
+  </div>
+
+  <nav class="mx-auto max-w-6xl px-5 py-4" aria-label="Primary">
+    <div class="flex items-center gap-6">
+      <a
+        href="/"
+        class="text-xl font-bold tracking-[-0.05em] lowercase"
+        aria-label="stick — home">stick</a
+      >
+
+      <ul class="ml-2 hidden items-center gap-7 text-[15px] text-muted md:flex">
+        {
+          nav.map((item) => (
+            <li>
+              <a href={item.href} class="transition-colors hover:text-ink">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <a
+        href="/buy"
+        class="ml-auto rounded-full bg-accent px-5 py-2.5 text-[15px] font-medium text-white transition-colors hover:bg-accent-dark"
+      >
+        Get stick
+      </a>
+    </div>
+
+    {/* Small screens get the links on their own row rather than a hamburger —
+        three destinations do not justify a menu. */}
+    <ul class="mt-3 flex items-center gap-5 text-[14px] text-muted md:hidden">
+      {
+        nav.map((item) => (
+          <li>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>

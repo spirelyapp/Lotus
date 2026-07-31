@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import BuyButton from '../components/BuyButton.astro';
+import { site } from '../config';
+
+const limits = [
+  {
+    h: 'You can stop the background service',
+    p: [
+      'A single <code class="font-mono text-[0.9em]">sudo launchctl bootout</code> on the service ends any session. It works, and it’s not a bug — a service you couldn’t stop with root would be a much more alarming thing to install.',
+    ],
+  },
+  {
+    h: 'You can tunnel past the network layer',
+    p: [
+      'Ports 443 and 22 stay open. Blocking 443 would break the entire web, and anyone who can open an SSH tunnel to get around the filtering could just as easily stop the service instead. There’s no version of this where we win that fight, so we don’t pretend to.',
+    ],
+  },
+  {
+    h: 'VPN and tunnel blocking is off by default',
+    p: [
+      'Turning it on breaks Docker, OrbStack, Colima, Podman, Tailscale and corporate IPsec. It’s a toggle, and it starts off. If you leave it off, a VPN is a way out.',
+    ],
+  },
+  {
+    h: 'The key is a file, and files can be copied',
+    p: [
+      'A determined person can copy it onto another USB stick and keep that one on the desk. Making that impossible needs a hardware token doing challenge–response, which is a different and more expensive product.',
+      'A disk image will not do, for what it is worth. stick checks that the volume is real removable media on a real bus, so mounting a copy on demand is not the shortcut it looks like. But a second physical stick works, and we would rather tell you that than let you discover it.',
+    ],
+  },
+  {
+    h: 'There are five emergency unlocks',
+    p: [
+      'They’re in the app. They end a session without the key. We include them because the alternative — someone locked out of their own machine before a flight, with no recourse — is worse than the abuse case. But they are, unambiguously, a button, and we’re not going to describe them as anything else.',
+      'They don’t refill. Five is the lifetime allowance for that Mac. That’s deliberate: enough for real emergencies, few enough that spending one on a Tuesday afternoon costs you something.',
+    ],
+  },
+  {
+    h: 'And there’s a human at the end of an email',
+    p: [
+      `If you lose the key, we’ll unlock the machine for you — you email or call, a real person answers ${site.unlockResponseTime}, and we walk you through it.`,
+      'That wait is deliberate. An unlock we granted in five minutes would just be the button we spent this whole page telling you does not exist.',
+    ],
+  },
+  {
+    h: 'Safari and Firefox extensions',
+    p: [
+      'Chrome extensions that request proxy permissions get disabled during a session. Safari and Firefox don’t expose the same permission model, so we can’t do the equivalent there.',
+    ],
+  },
+  {
+    h: 'None of this stops a second computer',
+    p: ['stick blocks the Mac it’s installed on. Your phone is right there.'],
+  },
+];
+---
+
+<Base
+  title="What stick can’t do"
+  description="stick is friction, not security. Here is exactly how it can be defeated, written down by the people who built it."
+>
+  <section class="mx-auto max-w-3xl px-5 pt-16 pb-14 md:pt-24">
+    <h1 class="headline text-hero">What stick can’t do</h1>
+    <div class="mt-9 space-y-5 text-[17px] leading-relaxed text-muted">
+      <p>
+        Most products in this category imply they’re airtight. Some of them say
+        it outright. We’d rather you read this page first, decide stick is
+        still worth {site.price}, and never feel lied to later.
+      </p>
+      <p class="text-ink">
+        stick is friction, not security. On a machine where you hold admin
+        rights, you can always win eventually. Here’s how.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-5 pb-16">
+    <div class="space-y-12">
+      {
+        limits.map((l) => (
+          <article class="rule pt-7">
+            <h2 class="text-[22px] font-semibold tracking-[-0.02em]">{l.h}</h2>
+            {l.p.map((para) => (
+              <p
+                class="mt-4 text-[17px] leading-relaxed text-muted"
+                set:html={para}
+              />
+            ))}
+            {l.todo && (
+              <p class="mt-4 border-l-2 border-key pl-4 text-[14px] leading-relaxed text-key">
+                TODO — {l.todo}
+              </p>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="rule bg-mist">
+    <div class="mx-auto max-w-3xl px-5 py-20">
+      <h2 class="headline text-display">So what is it actually for?</h2>
+      <div class="mt-8 space-y-5 text-[17px] leading-relaxed text-muted">
+        <p>
+          Everything above requires you to <em>decide</em> to defeat it, look something
+          up, and type a command with intent. None of it happens by accident, and
+          none of it happens in the two seconds where you meant to check one thing.
+        </p>
+        <p class="text-ink">
+          That two seconds is the entire product. If what you need is a system
+          that survives an adversary, this isn’t it, and you shouldn’t buy it.
+          If what you need is for the easy exit to stop existing, that’s what we
+          built.
+        </p>
+      </div>
+
+      <div class="mt-10">
+        <BuyButton size="lg" />
+      </div>
+      <p class="mt-4 text-[14px] text-muted">
+        {site.price} + shipping, one time. Pre-order — ships {site.shipWindow}.
+      </p>
+    </div>
+  </section>
+</Base>

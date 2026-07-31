@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getstick.website/sitemap-index.xml

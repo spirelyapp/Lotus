@@ -1,0 +1,33 @@
+---
+import { site } from '../config';
+
+interface Props {
+  /** Link to the local /buy page, or straight out to Stripe. */
+  target?: 'page' | 'stripe';
+  label?: string;
+  variant?: 'solid' | 'outline';
+  size?: 'md' | 'lg';
+}
+
+const {
+  target = 'page',
+  label = 'Get stick',
+  variant = 'solid',
+  size = 'md',
+} = Astro.props;
+
+const href = target === 'stripe' ? site.stripeUrl : '/buy';
+---
+
+<a
+  href={href}
+  class:list={[
+    'inline-flex items-center justify-center rounded-full font-medium transition-colors',
+    size === 'lg' ? 'px-8 py-4 text-[17px]' : 'px-6 py-3 text-[15px]',
+    variant === 'solid'
+      ? 'bg-accent text-white hover:bg-accent-dark'
+      : 'border border-ink hover:bg-ink hover:text-white',
+  ]}
+>
+  {label}
+</a>
