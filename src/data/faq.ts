@@ -45,6 +45,11 @@ export const faq: FaqItem[] = [
     a: `Yes. Setting up a second machine adopts your existing key instead of replacing it.`,
   },
   {
+    q: 'What does Stick install on my Mac?',
+    a: `A small program that runs in the background, plus the app window you use. The background program needs the highest level of access on your Mac, because that is what keeps a block in place after a restart instead of letting it disappear the moment you quit the app. It is signed and checked by Apple, so your Mac can confirm it came from us and has not been tampered with, and the 5.5 MB installer comes on the key itself. The window you click on has no power to unlock anything by itself: it can only ask the background program, and be refused.`,
+    home: true,
+  },
+  {
     q: 'Do you see what I block?',
     a: `No. Nothing in Stick sends anything to us: no account, no check to see whether you paid, no record of how you use it. Your modes, your blocked lists and your session history stay on your Mac. It does download two lists from GitHub, and neither carries anything about you: the sites for a category when you switch one on, and a weekly refresh of the list of sites people use to get around blockers. If you would rather check than take our word for it, any network monitor will show you exactly that.`,
     home: true,
