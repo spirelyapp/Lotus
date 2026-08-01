@@ -1,6 +1,6 @@
 # Stick — site
 
-Marketing and pre-order site for Stick. Static, six pages. Live at https://www.getstick.website
+Marketing and pre-order site for Stick. Static, six pages plus a 404. Live at https://www.getstick.website
 
 ```bash
 npm install
@@ -42,8 +42,10 @@ src/pages/buy.astro      Price + pre-order terms, links out to Stripe
 src/pages/refunds.astro  Refund policy
 src/pages/privacy.astro  Privacy policy
 src/pages/terms.astro    Terms of sale
+src/pages/404.astro      Not found (noindex; Vercel serves it automatically)
 src/pages/faq.astro      FAQ
-public/og.png            Social card
+public/og.png            Social card — regenerate with `python3 scripts/og.py`
+scripts/og.py            Builds the social card from the product shot
 ```
 
 Copy source of truth is `../copy-v1.md`.

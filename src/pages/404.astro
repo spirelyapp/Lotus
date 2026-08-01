@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import BuyButton from '../components/BuyButton.astro';
+import { nav } from '../config';
+
+/**
+ * Astro builds this to dist/404.html and Vercel serves it for unmatched paths
+ * automatically — no config needed.
+ */
+---
+
+<Base
+  title="Not found — Stick"
+  description="That page doesn't exist."
+  noindex
+>
+  <section class="mx-auto max-w-3xl px-5 pt-20 pb-28 md:pt-32">
+    <p class="text-[15px] font-medium text-accent">404</p>
+    <h1 class="headline text-hero mt-4">Nothing here.</h1>
+    <p class="text-lead mt-7 max-w-lg leading-relaxed text-muted">
+      Not blocked — just missing. The link is probably out of date, or we moved
+      the page.
+    </p>
+
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      <BuyButton size="lg" />
+      <a
+        href="/"
+        class="rounded-full border border-ink px-6 py-3 text-[15px] font-medium transition-colors hover:bg-ink hover:text-white"
+      >
+        Back to the homepage
+      </a>
+    </div>
+
+    <ul class="rule mt-14 flex flex-wrap gap-x-8 gap-y-3 pt-6 text-[15px]">
+      {
+        nav.map((item) => (
+          <li>
+            <a href={item.href} class="text-muted hover:text-ink">
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a href="/refunds" class="text-muted hover:text-ink">Refunds</a>
+      </li>
+      <li>
+        <a href="/terms" class="text-muted hover:text-ink">Terms</a>
+      </li>
+      <li>
+        <a href="/privacy" class="text-muted hover:text-ink">Privacy</a>
+      </li>
+    </ul>
+  </section>
+</Base>
