@@ -21,8 +21,16 @@ export const site = {
   shipWindow: 'Q4 2026',
   earlyShipWindow: 'September 2026',
 
-  /** Stripe Payment Link. Collects shipping worldwide. */
-  stripeUrl: 'https://buy.stripe.com/fZu4gseRD8XF3mb1l9aAw06',
+  /**
+   * Stripe Payment Link. Merchant shows as Lotus Technologies, product "Stick",
+   * $39.99, description matching the site.
+   *
+   * NOTE: this link currently accepts shipping addresses in 23 countries only,
+   * while the site and the terms of sale both say "ships worldwide". Either
+   * widen the country list in Stripe or the copy is making a promise checkout
+   * cannot keep.
+   */
+  stripeUrl: 'https://buy.stripe.com/dRm00c1P4awY6dl2Uvc7u00',
 
   /**
    * Confirmed from the build, not from memory: app/build.sh targets
