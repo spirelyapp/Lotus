@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import stickKey from '../assets/stick-key.png';
 import Base from '../layouts/Base.astro';
 import BuyButton from '../components/BuyButton.astro';
 import { updates } from '../data/updates';
@@ -25,6 +27,15 @@ const first = updates[updates.length - 1];
       reach. Here is what came of that, in the words of the two of us who built
       it.
     </p>
+
+    <Image
+      src={stickKey}
+      alt="The Stick key: a hot pink USB-C stick with Stick. embossed on it"
+      widths={[520, 860, 1280]}
+      sizes="(min-width: 768px) 48rem, 90vw"
+      loading="eager"
+      class="mx-auto mt-12 w-full max-w-xl md:mt-16"
+    />
   </section>
 
   <section class="rule bg-mist">
