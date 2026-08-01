@@ -256,12 +256,13 @@ const homeFaq = faq.filter((f) => f.home);
                 i === 0 && 'rounded-t-2xl md:rounded-t-none md:rounded-tl-2xl',
                 i === 1 && 'md:rounded-tr-2xl',
                 i === 2 && 'md:rounded-bl-2xl',
-                // Our cell: an outer halo spilling into the black, lifted above
-                // its siblings so their backgrounds do not cover it. No
-                // text-shadow, which only softens letterforms and reads as
-                // being out of focus. The 6% wash keeps pink text at 5.40:1.
+                // Our cell: the inside stays the same black as its neighbours.
+                // All the pink is on the edge, an outer halo spilling into the
+                // section, lifted above the siblings so their backgrounds do
+                // not cover it. No text-shadow, which only softens letterforms
+                // and reads as being out of focus.
                 r.ours &&
-                  'relative z-10 border-2 border-key bg-key/[0.06] shadow-[0_0_60px_-4px_rgba(255,31,158,0.75)] rounded-b-2xl md:rounded-b-none md:rounded-br-2xl',
+                  'relative z-10 border-2 border-key shadow-[0_0_60px_-4px_rgba(255,31,158,0.75)] rounded-b-2xl md:rounded-b-none md:rounded-br-2xl',
               ]}
             >
               <h3
