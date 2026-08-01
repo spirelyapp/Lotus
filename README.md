@@ -18,6 +18,20 @@ npm run build    # → dist/
 | Buttondown | Two lists via tags. No dark patterns, exports cleanly if you outgrow it. |
 | Vercel Web Analytics | Cookieless, so no consent banner — which matters on a site arguing it doesn't manipulate you. Wired in `src/layouts/Base.astro`; needs switching on per-project in the Vercel dashboard. |
 
+## Accessibility
+
+Audited and passing WCAG 2.1 AA on the checks that can be verified statically:
+contrast, heading order, landmarks, alt text, focus visibility, keyboard reach.
+
+The one thing to know before changing colours: **`--color-brand` (#2191fb) is
+decorative only.** It is 3.23:1 on white, which fails AA for text and for white
+text sitting on it. `--color-accent` (#1a71c4) is the same hue darkened until it
+passes 5.0:1 both ways, and it is what every link, button and focus ring uses.
+Don't swap the brand colour back into interactive elements.
+
+Re-run the contrast and structure checks after any palette or markup change —
+the script used is in the git history for this commit.
+
 ## Domain
 
 `www.getstick.website`, set as `site` in `astro.config.mjs`. That one value

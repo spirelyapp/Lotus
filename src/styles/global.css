@@ -9,9 +9,15 @@
   --color-muted: #63636b;
   --color-line: #e5e5e9;
 
-  /* Brand accent. Interface only — buttons, links, focus rings. */
-  --color-accent: #2191fb;
-  --color-accent-dark: #0f78d8;
+  /* Brand accent. Decorative use only — it is 3.23:1 on white, so it fails
+     WCAG AA for text and for white text sitting on it. */
+  --color-brand: #2191fb;
+
+  /* The interactive blue: the brand colour darkened until it passes AA both
+     ways — 5.0:1 as link text on white, and 5.0:1 for white text on a button
+     filled with it. Used for every link, button and focus ring. */
+  --color-accent: #1a71c4;
+  --color-accent-dark: #145797;
 
   /* The key's pink. Reserved for the object itself and for the one place we
      point at it. Never a button. */
