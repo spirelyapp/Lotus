@@ -9,15 +9,19 @@
   --color-muted: #63636b;
   --color-line: #e5e5e9;
 
-  /* Brand accent. Decorative use only — it is 3.23:1 on white, so it fails
-     WCAG AA for text and for white text sitting on it. */
-  --color-brand: #2191fb;
+  /* Brand blue. Passes AA comfortably on light backgrounds (13.6:1 on white,
+     both as text and under white text), so it needs no separate text variant. */
+  --color-accent: #10069f;
 
-  /* The interactive blue: the brand colour darkened until it passes AA both
-     ways — 5.0:1 as link text on white, and 5.0:1 for white text on a button
-     filled with it. Used for every link, button and focus ring. */
-  --color-accent: #1a71c4;
-  --color-accent-dark: #145797;
+  /* Hover lightens rather than darkens. #10069f is already close to black, so
+     darkening it further would read as no change at all. */
+  --color-accent-hover: #1a10c4;
+
+  /* For dark sections. #10069f measures 1.46:1 on #0a0a0b, which is
+     effectively invisible, so the focus ring and the highlighted comparison
+     cell use this tint instead. It clears 3:1 against BOTH white and ink, and
+     4.5:1 under white text. Do not swap the base accent back in here. */
+  --color-accent-light: #5044f8;
 
   /* The key's pink. Reserved for the object itself and for the one place we
      point at it. Never a button. */
@@ -51,7 +55,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-accent-light);
     outline-offset: 3px;
     border-radius: 4px;
   }

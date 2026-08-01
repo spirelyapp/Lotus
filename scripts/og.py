@@ -14,7 +14,7 @@ import pathlib
 W, H = 1200, 630
 INK = (10, 10, 11)
 MUTED = (99, 99, 107)
-ACCENT = (33, 145, 251)
+ACCENT = (16, 6, 159)
 PAPER = (255, 255, 255)
 
 FONT = "/System/Library/Fonts/SFNS.ttf"
