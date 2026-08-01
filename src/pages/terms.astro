@@ -7,6 +7,11 @@ import { site } from '../config';
  * product is friction, not security, and a buyer who defeats it has not been
  * sold a defective good. It has to stand on its own now that the detailed
  * limitations page is gone — do not weaken it without replacing it.
+ *
+ * Outstanding, deliberately not rendered: governing law and jurisdiction, and
+ * the registered entity name and address, both of which need the Delaware
+ * formation to complete. A lawyer should read this page before it does much
+ * more work.
  */
 ---
 
@@ -106,7 +111,7 @@ import { site } from '../config';
         <p class="mt-4 text-[17px] leading-relaxed text-muted">
           Separately, you can cancel any time before your order ships, and you
           have 30 days from delivery to send it back for a refund of the price.
-          Full detail is on the
+          Full detail is on the{' '}
           <a href="/refunds" class="text-accent underline underline-offset-4"
             >refunds page</a
           >, which also forms part of these terms.
@@ -162,7 +167,7 @@ import { site } from '../config';
         </h2>
         <p class="mt-4 text-[17px] leading-relaxed text-muted">
           Payment is handled by Stripe. We never see your full card number. What
-          we hold and why is set out in the
+          we hold and why is set out in the{' '}
           <a href="/privacy" class="text-accent underline underline-offset-4"
             >privacy policy</a
           >.
@@ -200,16 +205,11 @@ import { site } from '../config';
           ordered. Changes are not retroactive.
         </p>
         <p class="mt-4 text-[17px] leading-relaxed text-muted">
-          Questions, cancellations, faults, anything — email
+          Questions, cancellations, faults, anything — email{' '}
           <a
             href={`mailto:${site.supportEmail}`}
             class="text-accent underline underline-offset-4">{site.supportEmail}</a
           >. We answer {site.unlockResponseTime}.
-        </p>
-        <p class="mt-4 text-[14px] leading-relaxed text-key">
-          TODO — governing law and jurisdiction, plus the registered entity name
-          and address, once Delaware formation completes. A lawyer should read
-          this page before it does much more work.
         </p>
       </article>
     </div>
