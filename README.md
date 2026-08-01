@@ -50,7 +50,8 @@ apex at the host and let it issue the certificate; nothing in the site assumes
 ```
 src/config.ts            Every changeable fact. Start here.
 src/data/faq.ts          FAQ questions, shared by / and /faq
-src/assets/stick-key.png Product shot — optimized at build into WebP
+src/assets/stick-key.png Product shot, optimized at build into WebP
+src/assets/app-*.png     App screenshots (idle, session, modes, activity)
 src/pages/index.astro    Home
 src/pages/buy.astro      Price + pre-order terms, links out to Stripe
 src/pages/refunds.astro  Refund policy
