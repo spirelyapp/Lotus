@@ -379,40 +379,46 @@ const homeFaq = faq.filter((f) => f.home);
           What Stick installs on your Mac
         </h2>
         <p class="mt-7 text-[17px] leading-relaxed text-muted">
-          Stick runs a background service with root privileges. It has to. That
-          is what makes a block hold through a restart instead of evaporating
-          when you quit an app. Since we’re asking for that, here’s exactly
-          what it is:
+          Stick runs a small program in the background, and it needs the highest
+          level of access on your Mac. That is what keeps a block in place after
+          a restart, instead of it disappearing the moment you quit the app.
+          Since we are asking for that, here is exactly what you are agreeing to:
         </p>
         <ul class="mt-9 space-y-4 text-[16px] leading-relaxed text-muted">
           <li class="rule pt-4">
-            Signed with an Apple Developer ID certificate and notarized by Apple
+            Signed and checked by Apple, so your Mac can confirm it came from us
+            and has not been tampered with
           </li>
           <li class="rule pt-4">
-            A ~5.5 MB installer, shipped on the key itself
+            A 5.5 MB installer, which comes on the key itself
           </li>
           <li class="rule pt-4">
-            The app that draws the interface holds no authority of its own. It
-            can <em>ask</em> the service to unlock, and be told no.
+            The window you click on cannot unlock anything by itself. It can only
+            ask the background program, and be told no.
           </li>
           <li class="rule pt-4">
-            Your modes and blocklists are evaluated on your Mac
+            Your modes and your blocked lists are worked out on your Mac
           </li>
           <li class="rule pt-4 text-ink">
-            <strong class="font-semibold">Nothing is sent to us.</strong> No licence
-            check, no telemetry, no usage analytics, no account. We don’t know what
-            you block, when you lock, or how often. Not as a policy we could quietly
-            change, but because there’s no server of ours for it to reach.
+            <strong class="font-semibold">Nothing is sent to us.</strong> No
+            account, no check to see whether you paid, no record of how you use it.
+            We do not know what you block, when you lock, or how often. Not because
+            we promise not to look, but because there is no server of ours for any
+            of it to reach.
           </li>
           <li class="rule pt-4">
-            <strong class="font-semibold text-ink">It does talk to GitHub.</strong>
-            Switch on a category and its blocklist downloads from the public
-            StevenBlack lists; the bypass-domain list refreshes from HaGeZi about
-            once a week. Those are the only outbound connections Stick makes, they
-            carry nothing about you, and they go to GitHub rather than to us. Point
-            Little Snitch at it and that’s exactly what you’ll see.
+            <strong class="font-semibold text-ink">It does download two lists.</strong>{' '}
+            Switch on a category and the sites it blocks are fetched from a public
+            collection on GitHub. A second list, of the sites people commonly use
+            to get around blockers, refreshes from GitHub about once a week. Those
+            are the only two times Stick reaches the internet, neither carries
+            anything about you, and both go to GitHub rather than to us. If you
+            would rather check than take our word for it, any network monitor will
+            show you exactly that.
           </li>
-          <li class="rule pt-4">{site.minMacOS} · {site.architectures}</li>
+          <li class="rule pt-4">
+            Runs on {site.minMacOS}, on {site.architectures}
+          </li>
         </ul>
       </div>
     </div>
