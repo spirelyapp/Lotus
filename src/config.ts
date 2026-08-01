@@ -44,7 +44,7 @@ export const site = {
    * Answers manual-unlock requests and refunds. Both are promised on the
    * site, so it has to stay monitored.
    */
-  supportEmail: 'noahjbusiness1@gmail.com',
+  supportEmail: 'noah@lotustech.me',
 
   /**
    * Trading name, for prose where the full legal name would read stiffly.

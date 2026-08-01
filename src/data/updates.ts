@@ -18,6 +18,15 @@ export interface Update {
 
 export const updates: Update[] = [
   {
+    iso: '2026-08-02',
+    date: '2 August 2026',
+    title: 'Pre-orders are open',
+    body: [
+      'getstick.website is live and taking pre-orders. You are charged when you order. Most orders ship in Q4 2026, with a limited first batch in September.',
+      'If either of those dates moves, you will hear it here and by email, and you can take a full refund at that point without having to ask twice.',
+    ],
+  },
+  {
     iso: '2026-08-01',
     date: '1 August 2026',
     title: 'Lotus Technologies LLC is registered',
@@ -26,12 +35,27 @@ export const updates: Update[] = [
     ],
   },
   {
-    iso: '2026-07-31',
-    date: '31 July 2026',
-    title: 'Pre-orders are open',
+    iso: '2026-07-29',
+    date: '29 July 2026',
+    title: 'A working prototype',
     body: [
-      'getstick.website went live and the first pre-orders came in. You are charged when you order. Most orders ship in Q4 2026, with a limited first batch in September.',
-      'If either of those dates moves, you will hear it here and by email, and you can take a full refund at that point without having to ask twice.',
+      'The whole loop, end to end on real hardware: start a session, unplug the key, watch the block hold through a restart, plug the key back in to end it. This was the day it stopped being an idea about a product and started being one.',
+    ],
+  },
+  {
+    iso: '2026-07-27',
+    date: '27 July 2026',
+    title: 'First prototype',
+    body: [
+      'The first build that actually blocked something. Rough, and nothing you would want to look at, but it proved the mechanic worked.',
+    ],
+  },
+  {
+    iso: '2026-07-21',
+    date: '21 July 2026',
+    title: 'The idea',
+    body: [
+      'Every blocker we had used kept its off switch on the same machine as the temptation, which is why none of them lasted. A key you had to physically walk to would not have that problem.',
     ],
   },
 ];
