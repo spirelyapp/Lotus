@@ -234,9 +234,10 @@ const homeFaq = faq.filter((f) => f.home);
     </div>
   </section>
 
-  <!-- Teardown. Our cell is marked by a pink heading rather than a filled
-       background: the brand pink is 5.60:1 on this near-black, but only 1.41:1
-       on the accent blue, so it can never sit on a blue fill. -->
+  <!-- Teardown. Our cell is marked by pink text and a pink border rather than
+       a filled background. The brand pink is 5.60:1 on this near-black but only
+       1.41:1 on the accent blue, so it can sit on this section but never on a
+       blue fill. -->
   <section class="rule bg-ink text-white">
     <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
       <h2 class="headline text-display max-w-2xl">
@@ -246,7 +247,17 @@ const homeFaq = faq.filter((f) => f.home);
       <div class="mt-14 grid gap-px overflow-hidden rounded-2xl bg-white/15 md:grid-cols-2">
         {
           rivals.map((r) => (
-            <div class="bg-ink p-8">
+            <div
+              class:list={[
+                'bg-ink p-8',
+                // The container is rounded with overflow-hidden, so a square
+                // border on the last cell would be clipped at the outer corner.
+                // Match the radius: bottom two corners when stacked, bottom
+                // right only in the two-column layout.
+                r.ours &&
+                  'border border-key rounded-b-2xl md:rounded-b-none md:rounded-br-2xl',
+              ]}
+            >
               <h3
                 class:list={[
                   'text-[19px] font-semibold tracking-[-0.02em]',
@@ -258,7 +269,7 @@ const homeFaq = faq.filter((f) => f.home);
               <p
                 class:list={[
                   'mt-3 text-[16px] leading-relaxed',
-                  r.ours ? 'text-white' : 'text-white/60',
+                  r.ours ? 'text-key' : 'text-white/60',
                 ]}
               >
                 {r.p}
