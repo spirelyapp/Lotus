@@ -64,6 +64,7 @@
     *::before,
     *::after {
       animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
       transition-duration: 0.001ms !important;
     }
   }
@@ -77,4 +78,24 @@
 
 @utility rule {
   border-top: 1px solid var(--color-line);
+}
+
+/* The wordmark's full stop blinks like a text caret. Visible for far longer
+   than it is hidden, which reads as a cursor rather than a strobe, and about
+   0.8Hz: nowhere near the 3Hz that matters for photosensitivity. It settles
+   visible when reduced motion is on, because the last keyframe is opacity 1. */
+@keyframes caret-blink {
+  0%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  50% {
+    opacity: 0;
+  }
+}
+
+@utility animate-caret-blink {
+  animation: caret-blink 1.25s ease-out infinite;
 }
