@@ -33,8 +33,8 @@ export const site = {
   architectures: 'Apple Silicon (M1 and later)',
 
   /**
-   * Answers the manual-unlock path on /limits and refund requests on /refunds.
-   * Both pages promise a human here, so it has to stay monitored.
+   * Answers manual-unlock requests and refunds. Both are promised on the
+   * site, so it has to stay monitored.
    */
   supportEmail: 'noahjbusiness1@gmail.com',
 
@@ -66,6 +66,5 @@ export const site = {
 
 export const nav = [
   { label: 'How it works', href: '/#how-it-works' },
-  { label: "What it can't do", href: '/limits' },
   { label: 'FAQ', href: '/faq' },
 ];

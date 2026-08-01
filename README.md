@@ -1,6 +1,6 @@
 # Stick — site
 
-Marketing and pre-order site for Stick. Static, seven pages. Live at https://www.getstick.website
+Marketing and pre-order site for Stick. Static, six pages. Live at https://www.getstick.website
 
 ```bash
 npm install
@@ -39,7 +39,6 @@ src/data/faq.ts          FAQ questions, shared by / and /faq
 src/assets/stick-key.png Product shot — optimized at build into WebP
 src/pages/index.astro    Home
 src/pages/buy.astro      Price + pre-order terms, links out to Stripe
-src/pages/limits.astro   What Stick can't do
 src/pages/refunds.astro  Refund policy
 src/pages/privacy.astro  Privacy policy
 src/pages/terms.astro    Terms of sale
@@ -77,7 +76,6 @@ site. Recorded here so nobody re-litigates them from memory.
 | --- | --- |
 | macOS 14 Sonoma minimum, Apple Silicon only | `app/build.sh` targets `arm64-apple-macosx14.0`; `app/Info.plist` declares `LSMinimumSystemVersion 14.0`. **This was previously stated as macOS 13 Ventura, which was wrong.** |
 | Two categories ship: Explicit content, Gambling | `internal/blocklist/blocklist.go` — social and fake-news were retired deliberately |
-| Disk images are rejected | `internal/dongle/media_darwin.go` requires both removable media *and* a physical transport from an allowlist. The root `README.md` threat-model section is stale on this point. |
 | Block survives reboot, logout, quit, kill | `internal/platform/service_darwin.go` sets `RunAtLoad` + `KeepAlive`; `internal/enforce/enforce.go` restores the hosts region on a 2s tick |
 | The app makes outbound requests | `internal/blocklist/blocklist.go` fetches category lists from StevenBlack on demand and the bypass feed from HaGeZi weekly. **Nothing goes to a server we control**, but "nothing phones home" was too strong and is now worded precisely. |
 

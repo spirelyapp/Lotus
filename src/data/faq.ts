@@ -17,7 +17,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Can't I just get around it?",
-    a: `Yes, if you're determined and technical. We wrote a whole page on exactly how. Stick is designed against impulse, not against you with a terminal open.`,
+    a: `Yes, if you're determined and technical — it's your computer and you have administrator rights on it. Stick is built to beat the impulse, not you with a terminal open and an afternoon free. What it removes is the easy exit: no timer to wait out, no button that ends a session early, and no password you can talk yourself into typing. The way back in is a walk to wherever you left the key.`,
     home: true,
   },
   {
