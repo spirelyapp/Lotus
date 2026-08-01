@@ -25,19 +25,18 @@ const steps = [
     alt: 'The Modes tab in the Stick app, showing a Work mode that blocks 6 apps and 1 site, with its app icons listed and Edit and add buttons.',
   },
   {
+    // Deliberately before starting a session, not after. The key is never
+    // needed to begin one, so it can already be out of reach.
     n: '2',
-    h: 'Start a session.',
-    p: 'From the menu bar, or on a schedule. No key required to begin. The block goes up immediately and holds through quitting and restarting, and the only way to end it is to go and get the key.',
-    img: howLock,
-    alt: 'The Stick app before a session: time locked today, a photo of the pink Stick key, the Work mode blocking 6 apps and 1 site, and one large Lock button.',
-  },
-  {
-    // Not an action you perform after starting a session. The key is never
-    // needed to start one, so telling people to go and put it away implies it
-    // was on the desk in the first place, which contradicts the FAQ.
-    n: '3',
     h: 'Keep the key somewhere else.',
     p: 'A drawer, another room, your bag. You never need it to start a session, only to end one, so it can live away from your desk permanently.',
+  },
+  {
+    n: '3',
+    h: 'Start a session.',
+    p: 'From the menu bar, or on a schedule. The block goes up immediately and holds through quitting and restarting. The only way to end it is to walk over and plug the key back in.',
+    img: howLock,
+    alt: 'The Stick app before a session: time locked today, a photo of the pink Stick key, the Work mode blocking 6 apps and 1 site, and one large Lock button.',
   },
 ];
 
@@ -141,7 +140,7 @@ const homeFaq = faq.filter((f) => f.home);
       <div class="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
         {
           steps.map((s) => (
-            <div>
+            <div class="flex flex-col">
               <p class="text-[15px] font-medium text-accent">{s.n}</p>
               <h3 class="mt-3 text-[21px] font-semibold tracking-[-0.02em]">
                 {s.h}
@@ -154,7 +153,7 @@ const homeFaq = faq.filter((f) => f.home);
                     alt={s.alt}
                     widths={[380, 640, 960]}
                     sizes="(min-width: 768px) 30vw, 90vw"
-                    class="mt-6 w-full rounded-xl border border-line"
+                    class="mt-6 w-full rounded-xl border border-line md:mt-auto md:pt-6"
                   />
                 )
               }
