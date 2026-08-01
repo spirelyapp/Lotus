@@ -12,7 +12,7 @@ export const site = {
   description:
     'Stick is a USB key that blocks the sites and apps you choose on your Mac. Ending a session means physically going to get it.',
 
-  price: '$47.99',
+  price: '$47.77',
 
   /**
    * General shipping is Q4; a limited first batch goes out earlier. Kept as two
@@ -22,16 +22,15 @@ export const site = {
   earlyShipWindow: 'September 2026',
 
   /**
-   * Stripe Payment Link. Merchant shows as Lotus Technologies, product "Stick",
-   * description matching the site. The amount in Stripe must be kept in step
-   * with `price` below by hand; nothing here can change it.
+   * Stripe Payment Link. Verified: merchant reads Lotus Technologies, product
+   * "Stick Pre-Order (Shipping included)", $47.77, collects a shipping address,
+   * and offers all 232 countries, so "ships worldwide" on the site is true.
    *
-   * NOTE: this link currently accepts shipping addresses in 23 countries only,
-   * while the site and the terms of sale both say "ships worldwide". Either
-   * widen the country list in Stripe or the copy is making a promise checkout
-   * cannot keep.
+   * The amount in Stripe must be kept in step with `price` below by hand.
+   * Nothing in this repo can change it, and a mismatch means the page and the
+   * checkout quote different numbers.
    */
-  stripeUrl: 'https://buy.stripe.com/dRm00c1P4awY6dl2Uvc7u00',
+  stripeUrl: 'https://buy.stripe.com/14A3co8ds6gIbxFbr1c7u01',
 
   /**
    * Confirmed from the build, not from memory: app/build.sh targets
