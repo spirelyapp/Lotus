@@ -12,7 +12,7 @@ export const site = {
   description:
     'Stick is a USB key that blocks the sites and apps you choose on your Mac. Ending a session means physically going to get it.',
 
-  price: '$39.99',
+  price: '$47.99',
 
   /**
    * General shipping is Q4; a limited first batch goes out earlier. Kept as two
@@ -23,7 +23,8 @@ export const site = {
 
   /**
    * Stripe Payment Link. Merchant shows as Lotus Technologies, product "Stick",
-   * $39.99, description matching the site.
+   * description matching the site. The amount in Stripe must be kept in step
+   * with `price` below by hand; nothing here can change it.
    *
    * NOTE: this link currently accepts shipping addresses in 23 countries only,
    * while the site and the terms of sale both say "ships worldwide". Either
