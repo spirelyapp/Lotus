@@ -5,6 +5,8 @@ import appIdle from '../assets/app-idle.png';
 import appSession from '../assets/app-session.png';
 import appModes from '../assets/app-modes.png';
 import appActivity from '../assets/app-activity.png';
+import howChoose from '../assets/how-choose.png';
+import howLock from '../assets/how-lock.png';
 import Base from '../layouts/Base.astro';
 import EmailForm from '../components/EmailForm.astro';
 import BuyButton from '../components/BuyButton.astro';
@@ -12,16 +14,22 @@ import Faq from '../components/Faq.astro';
 import { faq } from '../data/faq';
 import { site } from '../config';
 
+// The first two steps happen on screen, so each gets a screenshot. The third
+// happens in a drawer, and a photograph of a drawer would be filler.
 const steps = [
   {
     n: '1',
     h: 'Choose what to block.',
     p: 'Sites, apps, and bundled category lists. Save them as modes: Deep Work, Sleep, whatever you need. Up to ten.',
+    img: howChoose,
+    alt: 'The Modes tab in the Stick app, showing a Work mode that blocks 6 apps and 1 site, with its app icons listed and Edit and add buttons.',
   },
   {
     n: '2',
     h: 'Start a session.',
     p: 'From the menu bar, or on a schedule. The block goes up immediately, and it holds through unplugging, quitting, and restarting.',
+    img: howLock,
+    alt: 'The Stick app before a session: time locked today, a photo of the pink Stick key, the Work mode blocking 6 apps and 1 site, and one large Lock button.',
   },
   {
     n: '3',
