@@ -1,10 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import stickKey from '../assets/stick-key.png';
-import appIdle from '../assets/app-idle.png';
-import appSession from '../assets/app-session.png';
-import appModes from '../assets/app-modes.png';
-import appActivity from '../assets/app-activity.png';
 import howChoose from '../assets/how-choose.png';
 import howLock from '../assets/how-lock.png';
 import Base from '../layouts/Base.astro';
@@ -161,76 +157,6 @@ const homeFaq = faq.filter((f) => f.home);
           ))
         }
       </div>
-    </div>
-  </section>
-
-  <!-- The app. Leads with the idle/running pair because that contrast is the
-       product: one button to start, no button to stop. -->
-  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-    <h2 class="headline text-display max-w-2xl">This is the whole app.</h2>
-    <p class="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
-      Four tabs and one button. Starting a session takes a click. Ending one
-      takes the key.
-    </p>
-
-    <div class="mt-14 grid gap-10 md:grid-cols-2 md:gap-8">
-      <figure>
-        <Image
-          src={appIdle}
-          alt="The Stick app before a session: the Work mode selected, blocking 1 app and 1 site, with a large Lock button."
-          widths={[420, 720, 1100]}
-          sizes="(min-width: 768px) 45vw, 90vw"
-          class="w-full rounded-xl border border-line"
-        />
-        <figcaption class="mt-4 text-[16px] leading-relaxed text-muted">
-          <span class="font-medium text-ink">Pick a mode and lock.</span> One
-          button, and the block goes up immediately.
-        </figcaption>
-      </figure>
-
-      <figure>
-        <Image
-          src={appSession}
-          alt="The Stick app during a session: a running timer, the message Plug in your key to end it, and Emergency unlock with 5 left."
-          widths={[420, 720, 1100]}
-          sizes="(min-width: 768px) 45vw, 90vw"
-          class="w-full rounded-xl border border-line"
-        />
-        <figcaption class="mt-4 text-[16px] leading-relaxed text-muted">
-          <span class="font-medium text-ink">Then there's no stop button.</span>{' '}
-          Just a timer, and the key you left somewhere else. Your five emergency
-          unlocks are counted down in the corner, in plain sight.
-        </figcaption>
-      </figure>
-
-      <figure>
-        <Image
-          src={appModes}
-          alt="The Modes tab in the Stick app, listing a Work mode that blocks 1 app and 1 site, with Edit and add buttons."
-          widths={[420, 720, 1100]}
-          sizes="(min-width: 768px) 45vw, 90vw"
-          class="w-full rounded-xl border border-line"
-        />
-        <figcaption class="mt-4 text-[16px] leading-relaxed text-muted">
-          <span class="font-medium text-ink">Modes are yours to build.</span>{' '}
-          Named sets of sites and apps, up to ten of them.
-        </figcaption>
-      </figure>
-
-      <figure>
-        <Image
-          src={appActivity}
-          alt="The Activity tab in the Stick app, showing a weekly bar chart of average locked time with this week and last week toggles."
-          widths={[420, 720, 1100]}
-          sizes="(min-width: 768px) 45vw, 90vw"
-          class="w-full rounded-xl border border-line"
-        />
-        <figcaption class="mt-4 text-[16px] leading-relaxed text-muted">
-          <span class="font-medium text-ink">Activity, stored on your Mac.</span>{' '}
-          How long you actually locked, by day and by week. None of it reaches
-          us.
-        </figcaption>
-      </figure>
     </div>
   </section>
 
