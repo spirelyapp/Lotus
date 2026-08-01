@@ -76,5 +76,6 @@ export const site = {
 
 export const nav = [
   { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Updates', href: '/updates' },
   { label: 'FAQ', href: '/faq' },
 ];

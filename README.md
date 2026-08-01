@@ -1,6 +1,6 @@
 # Stick — site
 
-Marketing and pre-order site for Stick. Static, six pages plus a 404. Live at https://www.getstick.website
+Marketing and pre-order site for Stick. Static, seven pages plus a 404. Live at https://www.getstick.website
 
 ```bash
 npm install
