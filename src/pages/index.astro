@@ -234,12 +234,7 @@ const homeFaq = faq.filter((f) => f.home);
     </div>
   </section>
 
-  <!-- Teardown.
-       The highlighted cell is white on the brand pink, which measures 3.53:1.
-       That is below the 4.5:1 needed for body text but above the 3:1 allowed
-       for large text, so its type MUST stay at large-text size: 26px+ for the
-       body, 30px semibold for the heading. Shrink either and the cell stops
-       being accessible. -->
+  <!-- Teardown -->
   <section class="rule bg-ink text-white">
     <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
       <h2 class="headline text-display max-w-2xl">
@@ -249,21 +244,14 @@ const homeFaq = faq.filter((f) => f.home);
       <div class="mt-14 grid gap-px overflow-hidden rounded-2xl bg-white/15 md:grid-cols-2">
         {
           rivals.map((r) => (
-            <div class:list={['p-8', r.ours ? 'bg-key text-white' : 'bg-ink']}>
-              <h3
-                class:list={[
-                  'font-semibold tracking-[-0.02em]',
-                  r.ours ? 'text-[30px]' : 'text-[19px]',
-                ]}
-              >
+            <div class:list={['p-8', r.ours ? 'bg-accent' : 'bg-ink']}>
+              <h3 class="text-[19px] font-semibold tracking-[-0.02em]">
                 {r.h}
               </h3>
               <p
                 class:list={[
-                  'mt-3 leading-snug',
-                  r.ours
-                    ? 'text-[26px] text-white'
-                    : 'text-[16px] leading-relaxed text-white/60',
+                  'mt-3 text-[16px] leading-relaxed',
+                  r.ours ? 'text-white' : 'text-white/60',
                 ]}
               >
                 {r.p}

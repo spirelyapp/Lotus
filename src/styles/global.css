@@ -19,10 +19,8 @@
   --color-accent: #1a71c4;
   --color-accent-dark: #145797;
 
-  /* The key's pink, matching the physical object. Used for the product shot and
-     for the one highlighted cell in the comparison grid, which carries INK text
-     rather than white: white on this pink is 3.53:1 and fails AA, ink is
-     5.60:1. Never a button. */
+  /* The key's pink. Reserved for the object itself and for the one place we
+     point at it. Never a button. */
   --color-key: #ff1f9e;
 
   --font-sans:
