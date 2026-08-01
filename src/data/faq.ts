@@ -59,7 +59,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Windows?',
-    a: `Not yet. Stick is macOS only today, and we'd rather say that than take your money and a guess.`,
+    a: `Not yet, but it's actively in development. The key is the same physical object for both, so one Stick should unlock your Mac and your PC, and we're aiming to have the Windows app ready by the time orders ship in ${site.shipWindow}. That's an aim, not a promise — what you're buying today is the macOS product. If Windows is the reason you'd buy, wait until we say it's shipping.`,
   },
   {
     q: 'Refunds?',
