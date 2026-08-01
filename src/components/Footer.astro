@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import wordmark from '../assets/wordmark.png';
 import { site } from '../config';
 
 /**
@@ -10,6 +12,10 @@ import { site } from '../config';
  *
  * Text opacities are set for contrast, not taste: white/55 on #0a0a0b clears
  * 4.5:1, white/40 does not. Do not lighten these without re-measuring.
+ *
+ * The wordmark is white-on-transparent so the counters let the background
+ * through. It carries alt="" because it is decorative: the nav already names
+ * the brand in text, so announcing it twice would only add noise.
  */
 const groups = [
   {
@@ -69,12 +75,13 @@ const year = new Date().getFullYear();
     <div
       class="mt-20 flex flex-col gap-10 md:mt-28 md:flex-row md:items-end md:justify-between"
     >
-      <p
-        class="text-[clamp(4.5rem,17vw,11rem)] leading-[0.78] font-bold tracking-[-0.06em] select-none"
-        aria-hidden="true"
-      >
-        Stick
-      </p>
+      <Image
+        src={wordmark}
+        alt=""
+        widths={[480, 760, 1159]}
+        sizes="(min-width: 768px) 46vw, 88vw"
+        class="w-full max-w-[38rem] md:max-w-[30rem] lg:max-w-[36rem]"
+      />
 
       <div
         class="shrink-0 space-y-1 text-[13px] text-white/55 md:pb-3 md:text-right"
