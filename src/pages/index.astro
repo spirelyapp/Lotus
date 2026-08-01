@@ -254,12 +254,13 @@ const homeFaq = faq.filter((f) => f.home);
                 // border on the last cell would be clipped at the outer corner.
                 // Match the radius: bottom two corners when stacked, bottom
                 // right only in the two-column layout.
-                // Glow is inset and the text-shadow sits inside the cell,
-                // because the grid container is overflow-hidden and would clip
-                // an outer box-shadow. A 6% pink wash lifts the background
-                // without dropping the pink text below AA: 5.40:1 on the tint.
+                // No text-shadow: a glow the same colour as the text just
+                // softens the letterforms and reads as being out of focus. The
+                // light comes off the panel instead, inset because the grid
+                // container is overflow-hidden and would clip an outer halo.
+                // The 6% wash keeps pink text at 5.40:1, still above AA.
                 r.ours &&
-                  'border border-key bg-key/[0.06] shadow-[inset_0_0_70px_-18px_#ff1f9e] [text-shadow:0_0_18px_rgba(255,31,158,0.55)] rounded-b-2xl md:rounded-b-none md:rounded-br-2xl',
+                  'border-2 border-key bg-key/[0.06] shadow-[inset_0_0_90px_-20px_#ff1f9e] rounded-b-2xl md:rounded-b-none md:rounded-br-2xl',
               ]}
             >
               <h3
