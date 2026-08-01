@@ -218,45 +218,9 @@ const homeFaq = faq.filter((f) => f.home);
     </div>
   </section>
 
-  <!-- Modes -->
-  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-    <h2 class="headline text-display">Modes</h2>
-    <p class="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
-      Each mode is a named set of sites, apps and categories. Switch between
-      them, or let a schedule start one for you.
-    </p>
-    <ul class="mt-10 flex flex-wrap gap-3">
-      {
-        modes.map((m) => (
-          <li class="rounded-full border border-line px-5 py-2.5 text-[15px]">
-            {m}
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
-  <!-- Details -->
+  <!-- What you get -->
   <section class="rule bg-mist">
     <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
-      <h2 class="headline text-display max-w-2xl">
-        The details we think you’ll care about
-      </h2>
-      <div class="mt-14 grid gap-10 md:grid-cols-2 md:gap-x-14">
-        {
-          details.map((d) => (
-            <div class="rule pt-6">
-              <h3 class="text-[19px] font-semibold tracking-[-0.02em]">{d.h}</h3>
-              <p class="mt-3 text-[16px] leading-relaxed text-muted">{d.p}</p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- What you get -->
-  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
       <Image
         src={stickKey}
@@ -293,6 +257,44 @@ const homeFaq = faq.filter((f) => f.home);
           Cancel before it ships, or 30 days from delivery. See{' '}
           <a href="/refunds" class="text-accent underline underline-offset-4">refunds</a>.
         </p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Modes -->
+  <section class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+    <h2 class="headline text-display">Modes</h2>
+    <p class="mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+      Each mode is a named set of sites, apps and categories. Switch between
+      them, or let a schedule start one for you.
+    </p>
+    <ul class="mt-10 flex flex-wrap gap-3">
+      {
+        modes.map((m) => (
+          <li class="rounded-full border border-line px-5 py-2.5 text-[15px]">
+            {m}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- Details -->
+  <section class="rule bg-mist">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <h2 class="headline text-display max-w-2xl">
+        The details we think you’ll care about
+      </h2>
+      <div class="mt-14 grid gap-10 md:grid-cols-2 md:gap-x-14">
+        {
+          details.map((d) => (
+            <div class="rule pt-6">
+              <h3 class="text-[19px] font-semibold tracking-[-0.02em]">{d.h}</h3>
+              <p class="mt-3 text-[16px] leading-relaxed text-muted">{d.p}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
