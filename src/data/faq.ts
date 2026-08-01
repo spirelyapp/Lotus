@@ -46,7 +46,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Do you see what I block?',
-    a: `No. Nothing in Stick sends anything to us: no telemetry, no licence check, no analytics, no account. Your modes, your blocklists and your session history stay on your Mac. It does make two kinds of outbound request, both to GitHub and neither carrying anything about you: downloading a category blocklist when you switch one on, and refreshing the bypass-domain list weekly. Run Little Snitch on it and that's exactly what you'll see.`,
+    a: `No. Nothing in Stick sends anything to us: no account, no check to see whether you paid, no record of how you use it. Your modes, your blocked lists and your session history stay on your Mac. It does download two lists from GitHub, and neither carries anything about you: the sites for a category when you switch one on, and a weekly refresh of the list of sites people use to get around blockers. If you would rather check than take our word for it, any network monitor will show you exactly that.`,
     home: true,
   },
   {

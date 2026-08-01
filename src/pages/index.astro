@@ -67,28 +67,28 @@ const modes = [
 
 const details = [
   {
-    h: 'A schedule can start a session. It can never end one.',
-    p: 'Sleep mode engages at 22:00 on weeknights without anyone deciding to engage it. There’s no end time, because an end time would be a second way out that doesn’t need the key.',
+    h: 'A schedule can start a session, but never end one.',
+    p: 'Sleep mode can switch on at 22:00 on weeknights without you deciding to switch it on. There is no matching end time, because that would be a second way out that does not need the key.',
   },
   {
-    h: 'Strict mode.',
-    p: 'While a session is running, settings can’t be weakened.',
+    h: 'You cannot weaken it mid-session.',
+    p: 'Once a session is running, the settings are locked too. No quietly removing a site from the list to get around your own block.',
   },
   {
-    h: 'Three enforcement layers.',
-    p: 'The system hosts file on both address families, a pf firewall ruleset, and a process watcher for apps. Any one of them alone leaks.',
+    h: 'Blocking happens in three places at once.',
+    p: 'Sites are blocked at two different levels of your Mac, and blocked apps are closed if you open them. Any one of those on its own would leak.',
   },
   {
-    h: 'The obvious escapes are already closed.',
-    p: 'DNS-over-HTTPS, DNS-over-TLS, iCloud Private Relay, HTTP and SOCKS proxies, Tor, and around 17,500 known unblocker domains. Browser DoH is switched off by machine policy.',
+    h: 'The usual workarounds are already closed.',
+    p: 'The tricks people reach for first, private DNS, hidden browser settings, proxy and VPN services, are shut off while a session runs, along with about 17,500 sites that exist purely to get around blockers.',
   },
   {
-    h: 'Browser policy survives restarts.',
-    p: 'Browsers only read policy when they launch, so a session-scoped policy would be worthless five seconds after you quit Chrome.',
+    h: 'Browser settings stay changed after a restart.',
+    p: 'Browsers only read their settings when they open, so a change that lasted only as long as the session would be useless five seconds after you quit Chrome.',
   },
   {
-    h: 'The app holds no authority of its own.',
-    p: 'It can ask the background service to unlock, and be told no. It can’t decide. There’s no prompt for it to trick you into approving.',
+    h: 'The app cannot let itself out.',
+    p: 'The window you click on has no power to unlock anything. It can only ask, and be refused. There is no prompt you can talk yourself into approving.',
   },
 ];
 
@@ -431,45 +431,6 @@ const homeFaq = faq.filter((f) => f.home);
       >
         All questions →
       </a>
-    </div>
-  </section>
-
-  <!-- Founder note. Sits where social proof will eventually go; there are no
-       customers yet, and inventing testimonials on a site built on not
-       overclaiming would be the one unforgivable thing. -->
-  <section class="rule bg-mist">
-    <div class="mx-auto max-w-3xl px-5 py-20 md:py-24">
-      <h2 class="headline text-display">Why it works like this</h2>
-
-      <div class="mt-9 space-y-5 text-[17px] leading-relaxed text-muted">
-        <p>
-          Every blocker I’d used had a way out, and I always took it. Not by
-          defeating anything. By pressing the button the app handed me. Skip.
-          Just this once. End session early.
-        </p>
-        <p>
-          So the rule for Stick was: no button. A schedule can start a session
-          but never end one, because an end time would be a way out that doesn’t
-          need the key. Settings can’t be weakened while a session is running.
-          There are five emergency unlocks for the times you genuinely need one,
-          they don’t refill, and we tell you they exist before you buy rather
-          than letting you find them later.
-        </p>
-        <p>
-          It’s also why it’s {site.price} once, with no subscription and nothing
-          phoning home. A subscription would mean I had to keep finding reasons
-          to hold your attention, which is the opposite of the job. I’d rather
-          sell you an object and then leave you alone.
-        </p>
-        <p class="text-ink">
-          It isn’t unbreakable. It’s your computer. What it is, is far enough
-          away that the impulse usually doesn’t survive the walk.
-        </p>
-      </div>
-
-      <p class="mt-8 text-[16px] font-medium text-ink">
-        Noah, {site.company}
-      </p>
     </div>
   </section>
 
