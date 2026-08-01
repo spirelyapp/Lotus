@@ -12,12 +12,12 @@ export interface FaqItem {
 export const faq: FaqItem[] = [
   {
     q: 'How is this different from Screen Time or Freedom?',
-    a: `Their key lives on the machine you're trying to get away from. Ours is an object you can put in another room. Some of those apps are genuinely hard to cancel mid-session — we're not claiming otherwise. We're claiming distance beats difficulty.`,
+    a: `Their key lives on the machine you're trying to get away from. Ours is an object you can put in another room. Some of those apps are genuinely hard to cancel mid-session, and we're not claiming otherwise. We're claiming distance beats difficulty.`,
     home: true,
   },
   {
     q: "Can't I just get around it?",
-    a: `Yes, if you're determined and technical — it's your computer and you have administrator rights on it. Stick is built to beat the impulse, not you with a terminal open and an afternoon free. What it removes is the easy exit: no timer to wait out, no button that ends a session early, and no password you can talk yourself into typing. The way back in is a walk to wherever you left the key.`,
+    a: `Yes, if you're determined and technical. It's your computer and you have administrator rights on it. Stick is built to beat the impulse, not you with a terminal open and an afternoon free. What it removes is the easy exit: no timer to wait out, no button that ends a session early, and no password you can talk yourself into typing. The way back in is a walk to wherever you left the key.`,
     home: true,
   },
   {
@@ -27,17 +27,17 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'What can I block?',
-    a: `Any website and any app, individually. Plus two bundled category lists — Explicit content and Gambling — which are tens of thousands of domains each. There deliberately isn't a "social media" category: the site picker lets you choose the individual sites, which is finer-grained and more honest than one switch over a list you can't inspect.`,
+    a: `Any website and any app, individually. Plus two bundled category lists, Explicit content and Gambling, which are tens of thousands of domains each. There deliberately isn't a "social media" category: the site picker lets you choose the individual sites, which is finer-grained and more honest than one switch over a list you can't inspect.`,
     home: true,
   },
   {
     q: 'Does the block survive a restart?',
-    a: `Yes. The blocking service runs at boot and is set to restart if it stops, the blocked-hosts region is restored within two seconds of any hand edit, and browser policy is written persistently rather than per-session. Restarting, logging out, quitting the app or killing the process all leave the block in place. What ends it is the key — or one of the five emergency unlocks.`,
+    a: `Yes. The blocking service runs at boot and is set to restart if it stops, the blocked-hosts region is restored within two seconds of any hand edit, and browser policy is written persistently rather than per-session. Restarting, logging out, quitting the app or killing the process all leave the block in place. What ends it is the key, or one of the five emergency unlocks.`,
     home: true,
   },
   {
     q: 'What happens if I lose the key?',
-    a: `Five emergency unlocks per Mac — a lifetime allowance, they don't refill. After that, email or call us and we'll unlock it manually.`,
+    a: `Five emergency unlocks per Mac. It's a lifetime allowance and they don't refill. After that, email or call us and we'll unlock it manually.`,
     home: true,
   },
   {
@@ -46,7 +46,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Do you see what I block?',
-    a: `No. Nothing in Stick sends anything to us — no telemetry, no licence check, no analytics, no account. Your modes, your blocklists and your session history stay on your Mac. It does make two kinds of outbound request, both to GitHub and neither carrying anything about you: downloading a category blocklist when you switch one on, and refreshing the bypass-domain list weekly. Run Little Snitch on it — that's exactly what you'll see.`,
+    a: `No. Nothing in Stick sends anything to us: no telemetry, no licence check, no analytics, no account. Your modes, your blocklists and your session history stay on your Mac. It does make two kinds of outbound request, both to GitHub and neither carrying anything about you: downloading a category blocklist when you switch one on, and refreshing the bypass-domain list weekly. Run Little Snitch on it and that's exactly what you'll see.`,
     home: true,
   },
   {
@@ -59,10 +59,10 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Windows?',
-    a: `Not yet, but it's actively in development. The key is the same physical object for both, so one Stick should unlock your Mac and your PC, and we're aiming to have the Windows app ready by the time orders ship in ${site.shipWindow}. That's an aim, not a promise — what you're buying today is the macOS product. If Windows is the reason you'd buy, wait until we say it's shipping.`,
+    a: `Not yet, but it's actively in development. The key is the same physical object for both, so one Stick should unlock your Mac and your PC, and we're aiming to have the Windows app ready by the time orders ship in ${site.shipWindow}. That's an aim, not a promise. What you're buying today is the macOS product. If Windows is the reason you'd buy, wait until we say it's shipping.`,
   },
   {
     q: 'Refunds?',
-    a: `Cancel any time before your order ships and you get everything back. After it arrives, 30 days from delivery — send it back and we refund the price of the key. Full terms are on the refunds page.`,
+    a: `Cancel any time before your order ships and you get everything back. After it arrives, 30 days from delivery. Send it back and we refund the price of the key. Full terms are on the refunds page.`,
   },
 ];

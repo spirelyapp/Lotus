@@ -12,7 +12,7 @@ const steps = [
   {
     n: '1',
     h: 'Choose what to block.',
-    p: 'Sites, apps, and bundled category lists. Save them as modes — Deep Work, Sleep, whatever you need. Up to ten.',
+    p: 'Sites, apps, and bundled category lists. Save them as modes: Deep Work, Sleep, whatever you need. Up to ten.',
   },
   {
     n: '2',
@@ -33,7 +33,7 @@ const rivals = [
   },
   {
     h: 'Software alternatives',
-    p: 'Apps like Freedom and Cold Turkey. Some are genuinely hard to cancel once a session starts, and that part is real — but the key is still software, running on the machine you’re sitting in front of. The fight is between you and a screen, and the screen is very good at this.',
+    p: 'Apps like Freedom and Cold Turkey. Some are genuinely hard to cancel once a session starts, and that part is real. But the key is still software, running on the machine you’re sitting in front of. The fight is between you and a screen, and the screen is very good at this.',
   },
   {
     h: 'Deleting the app',
@@ -85,7 +85,7 @@ const details = [
 const homeFaq = faq.filter((f) => f.home);
 ---
 
-<Base title="Stick — put the off switch in another room" description={site.description}>
+<Base title="Stick | Put the off switch in another room" description={site.description}>
   <!-- Hero -->
   <section class="mx-auto max-w-6xl px-5 pt-16 pb-20 md:pt-24 md:pb-28">
     <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
@@ -101,8 +101,8 @@ const homeFaq = faq.filter((f) => f.home);
         </div>
 
         <p class="mt-4 text-[14px] text-muted">
-          {site.price} + shipping, one time. No subscription, ever. Pre-order —
-          shipping {site.shipWindow}, with a limited first batch in {site.earlyShipWindow}.
+          {site.price} + shipping, one time. No subscription, ever.
+          Pre-order. Shipping {site.shipWindow}, with a limited first batch in {site.earlyShipWindow}.
         </p>
       </div>
 
@@ -223,7 +223,7 @@ const homeFaq = faq.filter((f) => f.home);
         <h2 class="headline text-display">{site.price} + shipping. Once.</h2>
         <ul class="mt-8 space-y-3 text-[17px] text-muted">
           <li class="rule pt-3">
-            The key — USB-C, hot pink, <em>Stick.</em> embossed
+            The key: USB-C, hot pink, <em>Stick.</em> embossed
           </li>
           <li class="rule pt-3">
             The macOS app and background service, with free updates
@@ -231,7 +231,7 @@ const homeFaq = faq.filter((f) => f.home);
           <li class="rule pt-3">One key works on every Mac you own</li>
           <li class="rule pt-3">No subscription, ever</li>
           <li class="rule pt-3">
-            Ships worldwide — duties and import taxes, where your country
+            Ships worldwide. Duties and import taxes, where your country
             charges them, are yours
           </li>
         </ul>
@@ -240,11 +240,11 @@ const homeFaq = faq.filter((f) => f.home);
           <BuyButton size="lg" />
         </div>
         <p class="mt-4 text-[14px] text-muted">
-          Pre-order. Charged today, ships {site.shipWindow} — a limited first
+          Pre-order. Charged today, ships {site.shipWindow}. A limited first
           batch goes out in {site.earlyShipWindow}.
         </p>
         <p class="mt-2 text-[14px] text-muted">
-          Cancel before it ships, or 30 days from delivery —
+          Cancel before it ships, or 30 days from delivery. See
           <a href="/refunds" class="text-accent underline underline-offset-4">refunds</a>.
         </p>
       </div>
@@ -259,7 +259,7 @@ const homeFaq = faq.filter((f) => f.home);
           What Stick installs on your Mac
         </h2>
         <p class="mt-7 text-[17px] leading-relaxed text-muted">
-          Stick runs a background service with root privileges. It has to — that
+          Stick runs a background service with root privileges. It has to. That
           is what makes a block hold through a restart instead of evaporating
           when you quit an app. Since we’re asking for that, here’s exactly
           what it is:
@@ -281,7 +281,7 @@ const homeFaq = faq.filter((f) => f.home);
           <li class="rule pt-4 text-ink">
             <strong class="font-semibold">Nothing is sent to us.</strong> No licence
             check, no telemetry, no usage analytics, no account. We don’t know what
-            you block, when you lock, or how often — not as a policy we could quietly
+            you block, when you lock, or how often. Not as a policy we could quietly
             change, but because there’s no server of ours for it to reach.
           </li>
           <li class="rule pt-4">
@@ -290,7 +290,7 @@ const homeFaq = faq.filter((f) => f.home);
             StevenBlack lists; the bypass-domain list refreshes from HaGeZi about
             once a week. Those are the only outbound connections Stick makes, they
             carry nothing about you, and they go to GitHub rather than to us. Point
-            Little Snitch at it — that’s exactly what you’ll see.
+            Little Snitch at it and that’s exactly what you’ll see.
           </li>
           <li class="rule pt-4">{site.minMacOS} · {site.architectures}</li>
         </ul>
@@ -315,7 +315,7 @@ const homeFaq = faq.filter((f) => f.home);
           <p class="mt-3 text-[16px] leading-relaxed text-muted">
             Every Mac gets five, for the times you genuinely need out and the key
             is genuinely in another city. They end a session without it. They do
-            not refill — five is what you get, so spend them like it.
+            not refill. Five is what you get, so spend them like it.
           </p>
         </div>
         <div class="rule pt-5">
@@ -324,7 +324,7 @@ const homeFaq = faq.filter((f) => f.home);
           </h3>
           <p class="mt-3 text-[16px] leading-relaxed text-muted">
             Email or phone, a real person on the other end, and we’ll unlock
-            your Mac manually — {site.unlockResponseTime}. Not instantly, on
+            your Mac manually, {site.unlockResponseTime}. Not instantly, on
             purpose: an unlock we granted in five minutes would just be the
             button this whole product exists to remove.
           </p>
@@ -345,7 +345,7 @@ const homeFaq = faq.filter((f) => f.home);
         <h2 class="headline text-[clamp(1.75rem,3vw,2.5rem)]">Windows</h2>
         <p class="mt-5 text-[17px] leading-relaxed text-muted">
           We’re actively building it. The key itself is the same object either
-          way, so the plan is that one Stick unlocks your Mac and your PC — and
+          way, so the plan is that one Stick unlocks your Mac and your PC, and
           we’re aiming to have the Windows app ready by the time orders ship
           in {site.shipWindow}.
         </p>
@@ -392,7 +392,7 @@ const homeFaq = faq.filter((f) => f.home);
       <div class="mt-9 space-y-5 text-[17px] leading-relaxed text-muted">
         <p>
           Every blocker I’d used had a way out, and I always took it. Not by
-          defeating anything — by pressing the button the app handed me. Skip.
+          defeating anything. By pressing the button the app handed me. Skip.
           Just this once. End session early.
         </p>
         <p>
@@ -416,7 +416,7 @@ const homeFaq = faq.filter((f) => f.home);
       </div>
 
       <p class="mt-8 text-[16px] font-medium text-ink">
-        — Noah, {site.company}
+        Noah, {site.company}
       </p>
     </div>
   </section>

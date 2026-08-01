@@ -6,7 +6,7 @@ import BuyButton from '../components/BuyButton.astro';
 import { site } from '../config';
 
 const inTheBox = [
-  'The key — USB-C, hot pink, Stick. embossed',
+  'The key: USB-C, hot pink, Stick. embossed',
   'The macOS app and background service, with free updates',
   'One key works on every Mac you own',
   'No subscription, ever',
@@ -15,7 +15,7 @@ const inTheBox = [
 
 <Base
   title="Get Stick"
-  description={`${site.price} plus shipping, one time. Pre-order — shipping ${site.shipWindow}, with a limited first batch in ${site.earlyShipWindow}.`}
+  description={`${site.price} plus shipping, one time. Pre-order. Shipping ${site.shipWindow}, with a limited first batch in ${site.earlyShipWindow}.`}
 >
   <section class="mx-auto max-w-3xl px-5 pt-16 pb-20 md:pt-24">
     <h1 class="headline text-hero">Get Stick</h1>
@@ -35,7 +35,7 @@ const inTheBox = [
           {site.price}
         </p>
         <p class="mt-2 text-[15px] text-muted">
-          Plus shipping. One time — there’s no subscription.
+          Plus shipping. One time, and there’s no subscription.
         </p>
 
         <ul class="mt-8 space-y-3 text-[16px] text-muted">
@@ -43,13 +43,13 @@ const inTheBox = [
         </ul>
 
         <div class="mt-9">
-          <BuyButton target="stripe" size="lg" label="Pre-order — $39.99" />
+          <BuyButton target="stripe" size="lg" label="Pre-order for $39.99" />
         </div>
         <p class="mt-4 text-[14px] text-muted">
           Checkout is handled by Stripe. Ships worldwide.
         </p>
         <p class="mt-2 text-[14px] text-muted">
-          Cancel any time before it ships. 30 days from delivery after that —
+          Cancel any time before it ships, then 30 days from delivery. See
           <a href="/refunds" class="text-accent underline underline-offset-4">refunds</a>.
         </p>
         <p class="mt-2 text-[14px] text-muted">
@@ -73,7 +73,7 @@ const inTheBox = [
           <p class="mt-3 text-[17px] leading-relaxed text-muted">
             You’re charged today, and the product does not exist on your desk
             yet. Most orders ship in {site.shipWindow}. A limited first batch
-            goes out in {site.earlyShipWindow} — if you order now you may be in
+            goes out in {site.earlyShipWindow}. If you order now you may be in
             it, but we’re not promising you are.
           </p>
           <p class="mt-3 text-[17px] leading-relaxed text-muted">
@@ -90,7 +90,7 @@ const inTheBox = [
           <p class="mt-3 text-[17px] leading-relaxed text-muted">
             Stick is built to beat the impulse, not a determined person with
             administrator rights on their own machine. There is no timer to wait
-            out and no button that ends a session early — but on a computer you
+            out and no button that ends a session early. But on a computer you
             control, nothing is absolute, and we would rather say so plainly than
             imply otherwise.
           </p>
@@ -105,7 +105,7 @@ const inTheBox = [
             It needs {site.minMacOS}, on {site.architectures}
           </h3>
           <p class="mt-3 text-[17px] leading-relaxed text-muted">
-            macOS only, and there’s no Intel build — if your Mac is pre-2020,
+            macOS only, and there’s no Intel build. If your Mac is pre-2020,
             this won’t run on it. Windows isn’t shipping yet either, and we’d
             rather say that than take your money and a guess.
           </p>
@@ -113,7 +113,7 @@ const inTheBox = [
       </div>
 
       <div class="mt-12">
-        <BuyButton target="stripe" size="lg" label="Pre-order — $39.99" />
+        <BuyButton target="stripe" size="lg" label="Pre-order for $39.99" />
       </div>
     </div>
   </section>
