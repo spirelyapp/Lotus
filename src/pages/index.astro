@@ -244,14 +244,14 @@ const homeFaq = faq.filter((f) => f.home);
       <div class="mt-14 grid gap-px overflow-hidden rounded-2xl bg-white/15 md:grid-cols-2">
         {
           rivals.map((r) => (
-            <div class:list={['p-8', r.ours ? 'bg-accent' : 'bg-ink']}>
+            <div class:list={['p-8', r.ours ? 'bg-key text-ink' : 'bg-ink']}>
               <h3 class="text-[19px] font-semibold tracking-[-0.02em]">
                 {r.h}
               </h3>
               <p
                 class:list={[
                   'mt-3 text-[16px] leading-relaxed',
-                  r.ours ? 'text-white' : 'text-white/60',
+                  r.ours ? 'text-ink' : 'text-white/60',
                 ]}
               >
                 {r.p}
