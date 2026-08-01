@@ -11,7 +11,8 @@ import { site } from '../config';
  * Outstanding, deliberately not rendered: governing law and jurisdiction, and
  * the registered entity name and address, both of which need the Delaware
  * formation to complete. A lawyer should read this page before it does much
- * more work.
+ * more work. Still missing: the registered office address, which several
+ * jurisdictions expect a distance seller to publish.
  */
 ---
 
@@ -24,7 +25,7 @@ import { site } from '../config';
     <div class="mt-9 space-y-5 text-[17px] leading-relaxed text-muted">
       <p>
         These are the terms you agree to when you buy a Stick from
-        {' '}{site.company}. We've tried to write them in plain English, because
+        {' '}{site.legalEntity}. We've tried to write them in plain English, because
         terms nobody reads protect nobody.
       </p>
       <p class="text-[15px]">Last updated {site.policyUpdated}.</p>
@@ -193,6 +194,22 @@ import { site } from '../config';
           Nothing here limits liability for death or personal injury caused by
           negligence, for fraud, or for anything else that can't lawfully be
           limited.
+        </p>
+      </article>
+
+      <article class="rule pt-7">
+        <h2 class="text-[22px] font-semibold tracking-[-0.02em]">
+          Which law applies
+        </h2>
+        <p class="mt-4 text-[17px] leading-relaxed text-muted">
+          {site.legalEntity} is a Delaware limited liability company, and these
+          terms are governed by the laws of the State of Delaware.
+        </p>
+        <p class="mt-4 text-[17px] leading-relaxed text-muted">
+          If you are a consumer, this does not take away the protection of the
+          mandatory consumer law of the country you live in, and it does not
+          stop you bringing a claim in your local courts where that law gives
+          you the right to. Those rights come first.
         </p>
       </article>
 

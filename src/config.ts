@@ -47,17 +47,19 @@ export const site = {
   supportEmail: 'noahjbusiness1@gmail.com',
 
   /**
-   * Trading name, used where a privacy policy has to name a data controller.
-   * TODO: append the legal suffix (LLC / Inc.) once Delaware formation
-   * completes, and set Stripe's statement descriptor to match.
+   * Trading name, for prose where the full legal name would read stiffly.
    */
   company: 'Lotus Technologies',
 
-  /** Named once the entity is registered; Stripe's merchant of record today. */
-  legalEntity: null as string | null,
+  /**
+   * The registered entity. Used wherever legal identity matters: the seller on
+   * /terms, the data controller on /privacy, and the footer copyright. The
+   * trading name above is for prose.
+   */
+  legalEntity: 'Lotus Technologies LLC' as string | null,
 
   /** Bump only when the policy actually changes, not on every build. */
-  policyUpdated: '31 July 2026',
+  policyUpdated: '1 August 2026',
 
   /** How fast the manual unlock is answered. Deliberately not instant. */
   unlockResponseTime: 'within one business day',
