@@ -75,7 +75,6 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: 'How it works', href: '/#how-it-works' },
   { label: 'Our story', href: '/story' },
   { label: 'Updates', href: '/updates' },
   { label: 'FAQ', href: '/faq' },
