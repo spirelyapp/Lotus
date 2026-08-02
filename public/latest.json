@@ -1,6 +1,6 @@
 {
-  "build": "20260802190920-f5f3ea4",
+  "build": "20260802193106-78bbbaf",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": ""
+  "notes": "Faster app enforcement, and quieter logs."
 }
