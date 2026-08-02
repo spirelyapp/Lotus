@@ -7,9 +7,39 @@ interface Props {
   label: string;
   cta?: string;
   compact?: boolean;
+  /**
+   * 'dark' is for the footer, which is white-on-ink. The light input would sit
+   * on that as a bright slab, and its muted placeholder — tuned for contrast on
+   * white — is not readable there.
+   */
+  tone?: 'light' | 'dark';
 }
 
-const { tag, label, cta = 'Get notified', compact = false } = Astro.props;
+const {
+  tag,
+  label,
+  cta = 'Get notified',
+  compact = false,
+  tone = 'light',
+} = Astro.props;
+
+// Measured against the rendered footer, not chosen by eye. Placeholder at
+// white/55 gives 6.1:1 and typed text 18:1, both past the 4.5 AA needs. The
+// border is the part that has to be watched: it is the only thing marking where
+// the field is, so it is a UI boundary needing 3:1, and white/20 gave 1.77 —
+// an input you could not see the edge of. white/40 measures 3.8.
+const fieldClass =
+  tone === 'dark'
+    ? 'min-w-0 flex-1 rounded-full border border-white/40 bg-white/5 px-5 py-3 text-[15px] text-white placeholder:text-white/55 focus:border-brand focus:outline-none'
+    : 'min-w-0 flex-1 rounded-full border border-line bg-paper px-5 py-3 text-[15px] placeholder:text-muted/60 focus:border-accent focus:outline-none';
+
+// The button does not change with tone. It is a solid fill, so its label is
+// measured against the fill and not against the page — brand looks brighter on
+// ink but puts white at 3.23:1, under AA, where accent gives 5.0:1. Both clear
+// 3:1 against the footer background as a shape (6.1 and 4.0), so the only thing
+// switching would have bought is a failing label.
+const buttonClass =
+  'rounded-full bg-accent px-6 py-3 text-[15px] font-medium whitespace-nowrap text-white transition-colors hover:bg-accent-dark';
 
 /**
  * A form with no action POSTs to the current page and drops the address on the
@@ -44,12 +74,12 @@ const action = wired
         required
         autocomplete="email"
         placeholder="you@example.com"
-        class="min-w-0 flex-1 rounded-full border border-line bg-paper px-5 py-3 text-[15px] placeholder:text-muted/60 focus:border-accent focus:outline-none"
+        class={fieldClass}
       />
       <input type="hidden" name="tag" value={tag} />
       <button
         type="submit"
-        class="rounded-full bg-accent px-6 py-3 text-[15px] font-medium whitespace-nowrap text-white transition-colors hover:bg-accent-dark"
+        class={buttonClass}
       >
         {cta}
       </button>
