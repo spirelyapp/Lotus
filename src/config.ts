@@ -84,4 +84,5 @@ export const nav = [
   { label: 'Our story', href: '/story' },
   { label: 'Updates', href: '/updates' },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
 ];
