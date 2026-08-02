@@ -1,6 +1,6 @@
 {
-  "build": "20260802194143-15b77f5",
+  "build": "20260802201624-351df6b",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Corrected the support address in the lost-key panel."
+  "notes": "Setup will no longer overwrite a key it cannot read."
 }
