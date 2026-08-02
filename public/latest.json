@@ -1,6 +1,6 @@
 {
-  "build": "20260802201624-351df6b",
+  "build": "20260802202748-5f100dd",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Setup will no longer overwrite a key it cannot read."
+  "notes": "Setup and browser policy no longer assume a failed write succeeded."
 }
