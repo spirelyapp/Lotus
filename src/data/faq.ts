@@ -56,7 +56,8 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Which macOS versions?',
-    a: `${site.minMacOS}, on ${site.architectures}. There is no Intel build.`,
+    a: `${site.minMacOS}, on ${site.architectures}. Both are supported by the
+       same download — a universal build, so you do not have to pick.`,
   },
   {
     q: 'Is there a free trial?',

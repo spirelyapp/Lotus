@@ -33,12 +33,13 @@ export const site = {
   stripeUrl: 'https://buy.stripe.com/14A3co8ds6gIbxFbr1c7u01',
 
   /**
-   * Confirmed from the build, not from memory: app/build.sh targets
-   * `arm64-apple-macosx14.0` and Info.plist declares LSMinimumSystemVersion
-   * 14.0. Apple Silicon only — there is no universal binary.
+   * Confirmed from the build, not from memory: app/build.sh builds both slices
+   * and joins them with lipo, so `lipo -archs` on the shipped binaries reports
+   * `x86_64 arm64`. Info.plist declares LSMinimumSystemVersion 14.0, which is a
+   * real floor — several APIs the app uses require it.
    */
   minMacOS: 'macOS 14 Sonoma or later',
-  architectures: 'Apple Silicon (M1 and later)',
+  architectures: 'Apple Silicon or Intel',
 
   /**
    * Answers manual-unlock requests and refunds. Both are promised on the
