@@ -35,10 +35,15 @@ export const site = {
   /**
    * Confirmed from the build, not from memory: app/build.sh builds both slices
    * and joins them with lipo, so `lipo -archs` on the shipped binaries reports
-   * `x86_64 arm64`. Info.plist declares LSMinimumSystemVersion 14.0, which is a
-   * real floor — several APIs the app uses require it.
+   * `x86_64 arm64`. Info.plist declares LSMinimumSystemVersion 13.0, which is a
+   * real floor — MenuBarExtra, which the whole app hangs off, requires it.
+   *
+   * This said 14 until a Mac on an older system turned up and the floor was
+   * lowered to match. Change it here and the footer, FAQ, terms, and buy page
+   * all follow; stating a requirement the build does not have is how people
+   * decide not to buy.
    */
-  minMacOS: 'macOS 14 Sonoma or later',
+  minMacOS: 'macOS 13 Ventura or later',
   architectures: 'Apple Silicon or Intel',
 
   /**

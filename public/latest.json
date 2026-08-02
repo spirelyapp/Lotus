@@ -1,6 +1,6 @@
 {
-  "build": "20260802171730-3b59f8b",
+  "build": "20260802185021-1d8e359",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "First release."
+  "notes": "Now runs on macOS 13 Ventura and later."
 }
