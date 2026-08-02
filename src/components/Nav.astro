@@ -23,11 +23,14 @@ import { nav, site } from '../config';
         >Stick<span class="animate-caret-blink">.</span></a
       >
 
-      <ul class="ml-2 hidden items-center gap-7 text-[15px] text-muted md:flex">
+      <ul class="-my-2 ml-2 hidden items-center gap-7 text-[15px] text-muted md:flex">
         {
           nav.map((item) => (
             <li>
-              <a href={item.href} class="transition-colors hover:text-ink">
+              <a
+                href={item.href}
+                class="inline-block py-2 transition-colors hover:text-ink"
+              >
                 {item.label}
               </a>
             </li>
@@ -43,13 +46,20 @@ import { nav, site } from '../config';
       </a>
     </div>
 
-    {/* Small screens get the links on their own row rather than a hamburger —
-        three destinations do not justify a menu. */}
-    <ul class="mt-3 flex items-center gap-5 text-[14px] text-muted md:hidden">
+    {/* Small screens get the links on their own row rather than a hamburger:
+        four destinations do not justify a menu.
+
+        The links carry vertical padding so the tap target clears the 24px
+        WCAG minimum. Text alone is 17px tall, which is small enough to
+        mis-tap, and "FAQ" is only 27px wide. Do not remove the padding to
+        tighten the row. */}
+    <ul class="mt-1 flex items-center gap-5 text-[14px] text-muted md:hidden">
       {
         nav.map((item) => (
           <li>
-            <a href={item.href}>{item.label}</a>
+            <a href={item.href} class="inline-block py-2.5">
+              {item.label}
+            </a>
           </li>
         ))
       }
