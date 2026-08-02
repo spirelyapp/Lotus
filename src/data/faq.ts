@@ -37,7 +37,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'What happens if I lose the key?',
-    a: `Five emergency unlocks per Mac. It's a lifetime allowance and they don't refill. After that, email or call us and we'll unlock it manually.`,
+    a: `Five emergency unlocks per Mac. It's a lifetime allowance and they don't refill. After that, write to us and we'll unlock it manually.`,
     home: true,
   },
   {
