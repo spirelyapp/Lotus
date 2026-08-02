@@ -23,14 +23,18 @@ export const site = {
 
   /**
    * Stripe Payment Link. Verified: merchant reads Lotus Technologies, product
-   * "Stick Pre-Order", collects a shipping address,
-   * and offers all 232 countries, so "ships worldwide" on the site is true.
+   * "Stick (Pre-Order)", $39.99 plus a $7.99 shipping rate for $47.98 total,
+   * collects a shipping address, and offers all 232 countries.
+   *
+   * The $7.99 is one flat rate shown to everyone: Payment Links cannot vary
+   * shipping by destination. It over-recovers domestically and under-recovers
+   * on far international.
    *
    * The amount in Stripe must be kept in step with `price` below by hand.
    * Nothing in this repo can change it, and a mismatch means the page and the
    * checkout quote different numbers.
    */
-  stripeUrl: 'https://buy.stripe.com/14A3co8ds6gIbxFbr1c7u01',
+  stripeUrl: 'https://buy.stripe.com/aFa8wI8ds20s0T1fHhc7u02',
 
   /**
    * Confirmed from the build, not from memory: app/build.sh builds both slices
