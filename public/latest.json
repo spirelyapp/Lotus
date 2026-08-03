@@ -1,6 +1,6 @@
 {
-  "build": "20260802202748-5f100dd",
+  "build": "20260803214501-7078623",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Setup and browser policy no longer assume a failed write succeeded."
+  "notes": "Never overwrites a browser policy it could not back up."
 }
