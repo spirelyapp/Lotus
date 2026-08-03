@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import wordmark from '../assets/wordmark.png';
 import { nav, site } from '../config';
 ---
 
@@ -16,12 +18,24 @@ import { nav, site } from '../config';
 
   <nav class="mx-auto max-w-6xl px-5 py-4" aria-label="Primary">
     <div class="flex items-center gap-6">
-      <a
-        href="/"
-        class="text-xl font-bold tracking-[-0.05em]"
-        aria-label="Stick home"
-        >Stick<span class="animate-caret-blink">.</span></a
-      >
+      {/* The mark is artwork; the full stop stays live text so it can blink.
+          Margin lifts the glyph onto the baseline of the mark, in em so it
+          holds if the size changes. */}
+      <a href="/" class="flex items-end" aria-label="Stick home">
+        <Image
+          src={wordmark}
+          alt=""
+          widths={[90, 180, 260]}
+          sizes="86px"
+          loading="eager"
+          class="w-[78px] select-none md:w-[86px]"
+        />
+        <span
+          aria-hidden="true"
+          class="animate-caret-blink mb-[0.23em] ml-[0.05em] text-[26px] leading-none font-bold select-none md:text-[28px]"
+          >.</span
+        >
+      </a>
 
       <ul class="-my-2 ml-2 hidden items-center gap-7 text-[15px] text-muted md:flex">
         {

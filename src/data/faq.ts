@@ -12,7 +12,7 @@ export interface FaqItem {
 export const faq: FaqItem[] = [
   {
     q: 'How is this different from Screen Time or Freedom?',
-    a: `Their key lives on the machine you're trying to get away from. Ours is an object you can put in another room. Some of those apps are genuinely hard to cancel mid-session, and we're not claiming otherwise. We're claiming distance beats difficulty.`,
+    a: `Their key lives on the machine you're trying to get away from. Ours is an object you can put in another room. Some of those apps are legitimately hard to cancel mid-session, and we're not claiming otherwise. We're claiming distance beats difficulty.`,
     home: true,
   },
   {
