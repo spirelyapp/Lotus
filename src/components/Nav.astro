@@ -28,11 +28,15 @@ import { nav, site } from '../config';
           widths={[90, 180, 260]}
           sizes="86px"
           loading="eager"
-          class="w-[78px] select-none md:w-[86px]"
+          {/* The asset is white for the dark footer. The header is white,
+              so invert it here rather than ship a second file: the artwork
+              is pure white on transparent, so inverting gives exact ink and
+              leaves the alpha alone. */}
+          class="w-[78px] select-none invert md:w-[86px]"
         />
         <span
           aria-hidden="true"
-          class="animate-caret-blink mb-[0.23em] ml-[0.05em] text-[26px] leading-none font-bold select-none md:text-[28px]"
+          class="animate-caret-blink mb-[0.09em] ml-[0.05em] text-[26px] leading-none font-bold select-none md:text-[28px]"
           >.</span
         >
       </a>
