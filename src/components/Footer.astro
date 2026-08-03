@@ -45,21 +45,8 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-white/10 bg-ink text-white">
-  <div class="mx-auto max-w-6xl px-5 pt-16 pb-10 md:pt-20">
-    {/* White-on-transparent, so the counters let the footer through. Decorative:
-        the nav already names the brand in text, and the large mark below
-        repeats it, so announcing it a third time would be noise. */}
-    <a href="/" class="inline-block" aria-label="Stick home">
-      <Image
-        src={wordmark}
-        alt=""
-        widths={[180, 300, 420]}
-        sizes="150px"
-        class="w-[110px] md:w-[130px]"
-      />
-    </a>
-
-    <div class="mt-14 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
+  <div class="mx-auto max-w-6xl px-5 pt-20 pb-10 md:pt-24">
+    <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
       {
         groups.map((group) => (
           <div>
@@ -120,12 +107,16 @@ const year = new Date().getFullYear();
     <div
       class="mt-20 flex flex-col gap-10 md:mt-28 md:flex-row md:items-end md:justify-between"
     >
-      <p
-        class="text-[clamp(5.25rem,19.5vw,13rem)] leading-[0.78] font-bold tracking-[-0.06em] select-none"
-        aria-hidden="true"
-      >
-        Stick<span class="animate-caret-blink ml-[0.06em]">.</span>
-      </p>
+      {/* White-on-transparent, so the counters show the footer through rather
+          than a slab. Decorative: the nav names the brand in text a few
+          hundred pixels up. */}
+      <Image
+        src={wordmark}
+        alt=""
+        widths={[420, 700, 1100]}
+        sizes="(min-width: 768px) 34rem, 76vw"
+        class="w-[clamp(15rem,58vw,34rem)] select-none"
+      />
 
       <div
         class="shrink-0 space-y-1 text-[13px] text-white/55 md:pb-3 md:text-right"
