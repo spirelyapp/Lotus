@@ -1,6 +1,6 @@
 {
-  "build": "20260803214501-7078623",
+  "build": "20260803234130-ca325c3",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Never overwrites a browser policy it could not back up."
+  "notes": "Adds stick diagnose, for working out why a block did not hold."
 }
