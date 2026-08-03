@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import wordmark from '../assets/wordmark.png';
 import { site } from '../config';
 import EmailForm from './EmailForm.astro';
 
@@ -43,8 +45,21 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-white/10 bg-ink text-white">
-  <div class="mx-auto max-w-6xl px-5 pt-20 pb-10 md:pt-24">
-    <div class="grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
+  <div class="mx-auto max-w-6xl px-5 pt-16 pb-10 md:pt-20">
+    {/* White-on-transparent, so the counters let the footer through. Decorative:
+        the nav already names the brand in text, and the large mark below
+        repeats it, so announcing it a third time would be noise. */}
+    <a href="/" class="inline-block" aria-label="Stick home">
+      <Image
+        src={wordmark}
+        alt=""
+        widths={[180, 300, 420]}
+        sizes="150px"
+        class="w-[110px] md:w-[130px]"
+      />
+    </a>
+
+    <div class="mt-14 grid gap-10 sm:grid-cols-2 md:grid-cols-3 md:gap-8">
       {
         groups.map((group) => (
           <div>
