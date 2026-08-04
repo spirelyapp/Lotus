@@ -1,6 +1,6 @@
 {
-  "build": "20260803234130-ca325c3",
+  "build": "20260804000537-fbc4030",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Adds stick diagnose, for working out why a block did not hold."
+  "notes": "stick diagnose now covers blocked apps too."
 }
