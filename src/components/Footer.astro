@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import wordmark from '../assets/wordmark.png';
+import Wordmark from './Wordmark.astro';
 import { site } from '../config';
 import EmailForm from './EmailForm.astro';
 
@@ -107,28 +106,15 @@ const year = new Date().getFullYear();
     <div
       class="mt-20 flex flex-col gap-10 md:mt-28 md:flex-row md:items-end md:justify-between"
     >
-      {/* White-on-transparent, so the counters show the footer through rather
-          than a slab. Decorative: the nav names the brand in text a few
-          hundred pixels up.
+      {/* Decorative: the nav names the brand in text a few hundred pixels up,
+          so the mark is aria-hidden and carries no alt text.
 
-          The full stop is live text rather than part of the artwork, so it can
-          keep blinking. leading is tuned to drop its baseline onto the bottom
-          of the mark; re-measure if the logo is ever swapped. */}
-      <div class="flex items-end">
-        <Image
-          src={wordmark}
-          alt=""
-          widths={[420, 700, 1100]}
-          {/* Mirrors the clamp below, including its 15rem floor. Saying 76vw
-              here made small phones fetch the 700w file for a 240px slot. */}
-          sizes="(min-width: 938px) 544px, (min-width: 414px) 58vw, 240px"
-          class="w-[clamp(15rem,58vw,34rem)] select-none"
-        />
-        <span
-          aria-hidden="true"
-          class="animate-caret-blink mb-[-0.11em] ml-[0.05em] text-[clamp(5rem,19vw,11rem)] leading-none font-bold select-none"
-          >.</span
-        >
+          The clamp is the old one divided through by 0.92, the share of the
+          artwork the letters occupy now that the full stop is part of it. That
+          keeps "stick" the size it was and lets the stop extend past it,
+          rather than shrinking the word to make room. */}
+      <div class="text-white">
+        <Wordmark class="w-[clamp(16.25rem,63vw,37rem)] select-none" />
       </div>
 
       <div

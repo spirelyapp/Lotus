@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import wordmark from '../assets/wordmark.png';
+import Wordmark from './Wordmark.astro';
 import { nav, site } from '../config';
 ---
 
@@ -18,36 +17,21 @@ import { nav, site } from '../config';
 
   <nav class="mx-auto max-w-6xl px-5 py-4" aria-label="Primary">
     <div class="flex items-center gap-6">
-      {/* The mark is artwork; the full stop stays live text so it can blink.
-          Margin lifts the glyph onto the baseline of the mark, in em so it
-          holds if the size changes.
+      {/* Widths are set so the letters land where they did before the mark
+          gained its full stop: the stop and its sidebearing are the last 8%
+          of the artwork, so 72px here draws the same 66px of "stick".
 
-          -my-1.5 py-1.5 grows the tap target without moving anything: the
-          mark is 66px wide and the artwork's 3.05 aspect makes that only 22px
-          tall, under the 24px WCAG minimum. The negative margin cancels the
-          padding in layout, so the hit area is 34px while the row is not. */}
+          -my-1.5 py-1.5 grows the tap target without moving anything. The
+          artwork's 2.87 aspect makes 72px only 25px tall, close enough to the
+          24px WCAG minimum that a later trim would quietly break it. The
+          negative margin cancels the padding in layout, so the hit area is
+          37px while the row is not. */}
       <a
         href="/"
-        class="-my-1.5 flex items-end py-1.5"
+        class="-my-1.5 flex py-1.5 text-ink"
         aria-label="Stick home"
       >
-        <Image
-          src={wordmark}
-          alt=""
-          widths={[90, 180, 260]}
-          sizes="(min-width: 768px) 74px, 66px"
-          loading="eager"
-          {/* The asset is white for the dark footer. The header is white,
-              so invert it here rather than ship a second file: the artwork
-              is pure white on transparent, so inverting gives exact ink and
-              leaves the alpha alone. */}
-          class="w-[66px] select-none invert md:w-[74px]"
-        />
-        <span
-          aria-hidden="true"
-          class="animate-caret-blink mb-[-0.11em] ml-[0.05em] text-[22px] leading-none font-bold select-none md:text-[24px]"
-          >.</span
-        >
+        <Wordmark class="w-[72px] select-none md:w-[80px]" />
       </a>
 
       <ul class="-my-2 ml-2 hidden items-center gap-7 text-[15px] text-muted md:flex">
