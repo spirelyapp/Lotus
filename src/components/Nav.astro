@@ -20,13 +20,22 @@ import { nav, site } from '../config';
     <div class="flex items-center gap-6">
       {/* The mark is artwork; the full stop stays live text so it can blink.
           Margin lifts the glyph onto the baseline of the mark, in em so it
-          holds if the size changes. */}
-      <a href="/" class="flex items-end" aria-label="Stick home">
+          holds if the size changes.
+
+          -my-1.5 py-1.5 grows the tap target without moving anything: the
+          mark is 66px wide and the artwork's 3.05 aspect makes that only 22px
+          tall, under the 24px WCAG minimum. The negative margin cancels the
+          padding in layout, so the hit area is 34px while the row is not. */}
+      <a
+        href="/"
+        class="-my-1.5 flex items-end py-1.5"
+        aria-label="Stick home"
+      >
         <Image
           src={wordmark}
           alt=""
           widths={[90, 180, 260]}
-          sizes="86px"
+          sizes="(min-width: 768px) 74px, 66px"
           loading="eager"
           {/* The asset is white for the dark footer. The header is white,
               so invert it here rather than ship a second file: the artwork

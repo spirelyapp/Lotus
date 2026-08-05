@@ -119,7 +119,9 @@ const year = new Date().getFullYear();
           src={wordmark}
           alt=""
           widths={[420, 700, 1100]}
-          sizes="(min-width: 768px) 34rem, 76vw"
+          {/* Mirrors the clamp below, including its 15rem floor. Saying 76vw
+              here made small phones fetch the 700w file for a 240px slot. */}
+          sizes="(min-width: 938px) 544px, (min-width: 414px) 58vw, 240px"
           class="w-[clamp(15rem,58vw,34rem)] select-none"
         />
         <span
