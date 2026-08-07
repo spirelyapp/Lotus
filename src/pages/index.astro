@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import stickKey from '../assets/stick-key.png';
 import howChoose from '../assets/how-choose.png';
+import howAway from '../assets/how-away.png';
 import howLock from '../assets/how-lock.png';
 import Base from '../layouts/Base.astro';
 import EmailForm from '../components/EmailForm.astro';
@@ -10,8 +11,8 @@ import Faq from '../components/Faq.astro';
 import { faq } from '../data/faq';
 import { site } from '../config';
 
-// The first two steps happen on screen, so each gets a screenshot. The third
-// happens in a drawer, and a photograph of a drawer would be filler.
+// Steps 1 and 3 happen on screen and get a screenshot each. Step 2 happens
+// across the room, so it gets a photograph instead.
 const steps = [
   {
     n: '1',
@@ -26,6 +27,8 @@ const steps = [
     n: '2',
     h: 'Keep the key somewhere else.',
     p: 'A drawer, another room, your bag. You never need it to start a session, only to end one, so it can live away from your desk permanently.',
+    img: howAway,
+    alt: 'The pink Stick key on a stainless steel fridge door, beside a handwritten shopping list and a photograph, with a kitchen out of focus behind it.',
   },
   {
     n: '3',
