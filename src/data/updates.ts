@@ -18,6 +18,16 @@ export interface Update {
 
 export const updates: Update[] = [
   {
+    iso: '2026-08-07',
+    date: '7 August 2026',
+    title: 'Windows works',
+    body: [
+      'The Windows app enforces. Every check passes on a real Windows machine: the hosts file blocks and is restored byte for byte with your own entries intact, four firewall rules go up and come down, browser policy and proxy settings each return exactly to a value a user had set deliberately, a blocked app is terminated, and the background service installs and reaches running in about a second.',
+      'That means one Stick now covers both. The key is the same physical object either way, setting up a second machine adopts it rather than replacing it, and the Windows app comes with your order at no extra cost. The site said "aiming, not promising" until today; it does not have to any more.',
+      'Windows 10 or 11, on Intel, AMD or ARM. Two installers, and the setup picks the right one.',
+    ],
+  },
+  {
     iso: '2026-08-02',
     date: '2 August 2026',
     title: 'Pre-orders are open',
@@ -65,5 +75,4 @@ export const inProgress = [
   'Manufacturing the first batch of keys.',
   'Apple Developer ID signing and notarization, so the installer runs cleanly on a Mac that is not ours.',
   'Installing on machines other than the development one, which is the only real proof that any of this works for anybody else.',
-  'The Windows app, which we are aiming to have ready by the time orders ship.',
 ];

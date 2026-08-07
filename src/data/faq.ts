@@ -37,27 +37,26 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'What happens if I lose the key?',
-    a: `Five emergency unlocks per Mac. It's a lifetime allowance and they don't refill. After that, write to us and we'll unlock it manually.`,
+    a: `Five emergency unlocks per machine. It's a lifetime allowance and they don't refill. After that, write to us and we'll unlock it manually.`,
     home: true,
   },
   {
-    q: 'Does one key work on more than one Mac?',
-    a: `Yes. Setting up a second machine adopts your existing key instead of replacing it.`,
+    q: 'Does one key work on more than one machine?',
+    a: `Yes, and it does not matter whether they are Macs or PCs. Setting up a second machine adopts your existing key instead of replacing it.`,
   },
   {
-    q: 'What does Stick install on my Mac?',
-    a: `A small program that runs in the background, plus the app window you use. The background program needs the highest level of access on your Mac, because that is what keeps a block in place after a restart instead of letting it disappear the moment you quit the app. It is signed and checked by Apple, so your Mac can confirm it came from us and has not been tampered with, and the 5.5 MB installer comes on the key itself. The window you click on has no power to unlock anything by itself: it can only ask the background program, and be refused.`,
+    q: 'What does Stick install?',
+    a: `A small program that runs in the background, plus the app window you use. The background program needs the highest level of access on your machine, because that is what keeps a block in place after a restart instead of letting it disappear the moment you quit the app. It is signed either way — checked by Apple on a Mac, and code-signed on Windows — so your computer can confirm it came from us and has not been tampered with, and the installer comes on the key itself. The window you click on has no power to unlock anything by itself: it can only ask the background program, and be refused.`,
     home: true,
   },
   {
     q: 'Do you see what I block?',
-    a: `No. Nothing in Stick sends anything to us: no account, no check to see whether you paid, no record of how you use it. Your modes, your blocked lists and your session history stay on your Mac. It does download two lists from GitHub, and neither carries anything about you: the sites for a category when you switch one on, and a weekly refresh of the list of sites people use to get around blockers. If you would rather check than take our word for it, any network monitor will show you exactly that.`,
+    a: `No. Nothing in Stick sends anything to us: no account, no check to see whether you paid, no record of how you use it. Your modes, your blocked lists and your session history stay on your machine. It does download two lists from GitHub, and neither carries anything about you: the sites for a category when you switch one on, and a weekly refresh of the list of sites people use to get around blockers. If you would rather check than take our word for it, any network monitor will show you exactly that.`,
     home: true,
   },
   {
-    q: 'Which macOS versions?',
-    a: `${site.minMacOS}, on ${site.architectures}. Both are supported by the
-       same download — a universal build, so you do not have to pick.`,
+    q: 'Which systems does it run on?',
+    a: `${site.minMacOS}, on ${site.architectures} — one universal download covers both chips, so you do not have to pick. Or ${site.minWindows}, on ${site.windowsArchitectures}, where there are two installers and the setup picks the right one. Older than either and it will not run.`,
   },
   {
     q: 'Is there a free trial?',
@@ -65,7 +64,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: 'Windows?',
-    a: `Not yet, but it's actively in development. The key is the same physical object for both, so one Stick should unlock your Mac and your PC, and we're aiming to have the Windows app ready by the time orders ship in ${site.shipWindow}. That's an aim, not a promise. What you're buying today is the macOS product. If Windows is the reason you'd buy, wait until we say it's shipping.`,
+    a: `Yes. The Windows app is built and working, and it comes with your order at no extra cost. The key is the same physical object on both, so one Stick unlocks your Mac and your PC, and setting up a second machine adopts your existing key instead of replacing it. Blocking works the same way on each: sites stopped at two levels of the system, blocked apps closed when you open them, and settings that cannot be weakened mid-session.`,
   },
   {
     q: 'Refunds?',

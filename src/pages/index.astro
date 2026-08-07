@@ -5,7 +5,6 @@ import howChoose from '../assets/how-choose.png';
 import howAway from '../assets/how-away.png';
 import howLock from '../assets/how-lock.png';
 import Base from '../layouts/Base.astro';
-import EmailForm from '../components/EmailForm.astro';
 import BuyButton from '../components/BuyButton.astro';
 import Faq from '../components/Faq.astro';
 import { faq } from '../data/faq';
@@ -54,7 +53,7 @@ const rivals = [
   },
   {
     h: 'Stick',
-    p: 'Unlocking your Mac means getting up and fetching a physical object. That is friction you cannot click past.',
+    p: 'Unlocking your computer means getting up and fetching a physical object. That is friction you cannot click past.',
     ours: true,
   },
 ];
@@ -79,7 +78,7 @@ const details = [
   },
   {
     h: 'Blocking happens in three places at once.',
-    p: 'Sites are blocked at two different levels of your Mac, and blocked apps are closed if you open them. Any one of those on its own would leak.',
+    p: 'Sites are blocked at two different levels of your system, and blocked apps are closed if you open them. Any one of those on its own would leak.',
   },
   {
     h: 'The usual workarounds are already closed.',
@@ -105,8 +104,8 @@ const homeFaq = faq.filter((f) => f.home);
       <div>
         <h1 class="headline text-hero">Put the off switch<br />in another room.</h1>
         <p class="text-lead mt-7 max-w-lg leading-relaxed text-muted">
-          A USB key that blocks the sites and apps you choose on your Mac.
-          Ending a session means physically going to get it.
+          A USB key that blocks the sites and apps you choose, on Mac and
+          Windows. Ending a session means physically going to get it.
         </p>
 
         <div class="mt-9">
@@ -239,9 +238,9 @@ const homeFaq = faq.filter((f) => f.home);
             The key: USB-C, hot pink, <em>Stick.</em> embossed
           </li>
           <li class="rule pt-3">
-            The macOS app and background service, with free updates
+            The Mac and Windows apps, with free updates
           </li>
-          <li class="rule pt-3">One key works on every Mac you own</li>
+          <li class="rule pt-3">One key works on every Mac and PC you own</li>
           <li class="rule pt-3">No subscription</li>
           <li class="rule pt-3">
             Ships worldwide. Shipping is charged at checkout and depends on
@@ -330,7 +329,7 @@ const homeFaq = faq.filter((f) => f.home);
           </h3>
           <p class="mt-3 text-[16px] leading-relaxed text-muted">
             Write to us, a real person on the other end, and we’ll unlock
-            your Mac manually, {site.unlockResponseTime}. Not instantly, on
+            your machine manually, {site.unlockResponseTime}. Not instantly, on
             purpose: an unlock we granted in five minutes would just be the
             button this whole product exists to remove.
           </p>
@@ -344,30 +343,31 @@ const homeFaq = faq.filter((f) => f.home);
     </div>
   </section>
 
-  <!-- Windows -->
+  <!-- Platforms. This was a Windows section that existed to say Windows did not
+       exist. Now that it does, it is one section about both, and there is no
+       waitlist form on it: there is nothing left to wait for. -->
   <section class="rule bg-mist">
     <div class="mx-auto max-w-6xl px-5 py-20">
       <div class="max-w-2xl">
-        <h2 class="headline text-[clamp(1.75rem,3vw,2.5rem)]">Windows</h2>
+        <h2 class="headline text-[clamp(1.75rem,3vw,2.5rem)]">
+          Mac and Windows, one key
+        </h2>
         <p class="mt-5 text-[17px] leading-relaxed text-muted">
-          We’re actively building it. The key itself is the same object either
-          way, so the plan is that one Stick unlocks your Mac and your PC, and
-          we’re aiming to have the Windows app ready by the time orders ship
-          in {site.shipWindow}.
+          The key is the same physical object on both, so the Stick that locks
+          your Mac unlocks your PC. Set up each machine once and the key is
+          adopted rather than replaced — a laptop for work and a desktop at
+          home can share one.
         </p>
         <p class="mt-4 text-[17px] leading-relaxed text-muted">
-          Aiming, not promising. Today Stick is macOS only, and that’s what
-          you’re buying if you order now. If Windows matters to you, we’d rather
-          you waited for us to say it’s done than take your money on a guess.
+          Blocking works the same way on each: sites stopped at two levels of
+          the system, blocked apps closed when you open them, and settings that
+          cannot be weakened while a session is running. Both apps come with
+          your order at no extra cost, and there is nothing to buy twice.
         </p>
-        <div class="mt-7">
-          <EmailForm
-            tag="windows"
-            label="Email address"
-            cta="Tell me when Windows ships"
-            compact
-          />
-        </div>
+        <p class="mt-4 text-[17px] leading-relaxed text-muted">
+          {site.minMacOS}, on {site.architectures}. {site.minWindows}, on{' '}
+          {site.windowsArchitectures}. Nothing older, on either side.
+        </p>
       </div>
     </div>
   </section>

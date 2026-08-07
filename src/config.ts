@@ -10,7 +10,7 @@ export const site = {
   name: 'Stick',
   tagline: 'Put the off switch in another room.',
   description:
-    'Stick is a USB key that blocks the sites and apps you choose on your Mac. Ending a session means physically going to get it.',
+    'Stick is a USB key that blocks the sites and apps you choose, on Mac and Windows. Ending a session means physically going to get it.',
 
   price: '$39.99',
 
@@ -49,6 +49,21 @@ export const site = {
    */
   minMacOS: 'macOS 13 Ventura or later',
   architectures: 'Apple Silicon or Intel',
+
+  /**
+   * Windows. The build ships two installers, amd64 and arm64, so both Intel or
+   * AMD and ARM machines are covered — see .github/workflows/windows-release.yml.
+   *
+   * No version floor is enforced anywhere in the Windows code, and the console
+   * handling explicitly accommodates Windows 10, so 10 is the honest floor
+   * rather than 11. The port was exercised on Windows 11 ARM64; if a Windows 10
+   * machine ever turns up and fails, lower this claim rather than leaving it.
+   */
+  minWindows: 'Windows 10 or 11',
+  windowsArchitectures: 'Intel, AMD or ARM',
+
+  /** Both platforms in one line, for the places that name every requirement. */
+  platforms: 'macOS 13 Ventura or later, or Windows 10 or 11',
 
   /**
    * Answers manual-unlock requests and refunds. Both are promised on the

@@ -8,8 +8,8 @@ import { site } from '../config';
 
 const inTheBox = [
   'The key: USB-C, hot pink, Stick. embossed',
-  'The macOS app and background service, with free updates',
-  'One key works on every Mac you own',
+  'The Mac and Windows apps, with free updates',
+  'One key works on every Mac and PC you own',
   'No subscription',
 ];
 ---
@@ -105,13 +105,17 @@ const inTheBox = [
 
         <div class="rule pt-6">
           <h3 class="text-[20px] font-semibold tracking-[-0.02em]">
-            It needs {site.minMacOS}, on {site.architectures}
+            It needs {site.minMacOS}, or {site.minWindows}
           </h3>
           <p class="mt-3 text-[17px] leading-relaxed text-muted">
-            One download covers both chips, so the question isn’t which Mac you
-            have — it’s which system it’s on. If yours can run Ventura, it can
-            run Stick. Older than that and it can’t, and Windows isn’t shipping
-            yet either. We’d rather say so than take your money and a guess.
+            On a Mac, one download covers {site.architectures}, so the question
+            isn’t which Mac you have — it’s which system it’s on. If yours can
+            run Ventura, it can run Stick. On Windows there are two installers,
+            one for {site.windowsArchitectures}, and the setup picks for you.
+          </p>
+          <p class="mt-3 text-[17px] leading-relaxed text-muted">
+            Anything older than that on either side can’t run it, and we’d
+            rather say so than take your money and a guess.
           </p>
         </div>
       </div>
@@ -122,13 +126,14 @@ const inTheBox = [
 
       {/*
         Directly under the button, because this is where someone decides not to
-        press it. Everything above is honest about what Stick isn't — no Windows,
-        a floor on the macOS version, shipping months out — and each of those is a
-        reason to leave rather than to buy today. Without this the page has one
-        exit, and it is the door.
+        press it. Everything above is honest about what Stick isn't — friction
+        rather than a vault, a floor on both systems, shipping months out — and
+        each of those is a reason to leave rather than to buy today. Without
+        this the page has one exit, and it is the door.
 
-        Tagged apart from the Windows list: this is "wants the Mac product, not
-        now", which is the group an actual ship date converts.
+        This is the "wants it, not now" group, which is the one an actual ship
+        date converts. It used to be tagged apart from a Windows waitlist; that
+        list is gone, because Windows ships with the order.
       */}
       {
         site.buttondownUser && (
