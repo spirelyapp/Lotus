@@ -73,6 +73,5 @@ export const updates: Update[] = [
 /** Honest statement of what stands between now and shipping. */
 export const inProgress = [
   'Manufacturing the first batch of keys.',
-  'Apple Developer ID signing and notarization, so the installer runs cleanly on a Mac that is not ours.',
   'Installing on machines other than the development one, which is the only real proof that any of this works for anybody else.',
 ];
