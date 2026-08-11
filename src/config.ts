@@ -113,6 +113,13 @@ export const site = {
    * later removes it going forward but not from anything that already copied
    * it. Swap it here and /terms follows.
    */
+  /**
+   * Minnesota file number, from the Articles of Organization. Published
+   * because a distance seller is expected to give the register and the number
+   * it is registered under, not only a name.
+   */
+  fileNumber: '1659464000023',
+
   businessAddress: [
     '2508 17th Avenue Northwest',
     'Rochester, Minnesota 55901',
@@ -125,8 +132,13 @@ export const site = {
   /** How fast the manual unlock is answered. Deliberately not instant. */
   unlockResponseTime: 'within one business day',
 
-  /** TODO: create the Buttondown account, then set the username. */
-  buttondownUser: null as string | null,
+  /**
+   * Buttondown newsletter, verified live at buttondown.com/noahjohnsoncopy.
+   * Setting this un-hides the email forms in the footer and on /buy; they
+   * render nothing at all while it is null, so an unwired form can never
+   * collect an address it would then drop.
+   */
+  buttondownUser: 'noahjohnsoncopy' as string | null,
 
   /**
    * Analytics is Vercel Web Analytics, wired in src/layouts/Base.astro rather

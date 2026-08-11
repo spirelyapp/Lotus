@@ -48,8 +48,12 @@ const buttonClass =
  * dev-only so an internal TODO can never reach a visitor again.
  */
 const wired = Boolean(site.buttondownUser);
+// buttondown.com, not buttondown.email. The old domain still resolves but
+// answers with a 302, and browsers turn a 302 on a POST into a GET — the body
+// is dropped and the address is lost without an error anywhere. Verified
+// against the live newsletter page, whose own form posts to this path.
 const action = wired
-  ? `https://buttondown.email/api/emails/embed-subscribe/${site.buttondownUser}`
+  ? `https://buttondown.com/api/emails/embed-subscribe/${site.buttondownUser}`
   : undefined;
 ---
 
