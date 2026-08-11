@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import stickKey from '../assets/stick-key.png';
 import Base from '../layouts/Base.astro';
-import BuyButton from '../components/BuyButton.astro';
+import ColourChoice from '../components/ColourChoice.astro';
 import EmailForm from '../components/EmailForm.astro';
 import { site } from '../config';
 
@@ -36,8 +36,8 @@ const inTheBox = [
           {site.price}
         </p>
         <p class="mt-2 text-[15px] text-muted">
-          Plus shipping, charged at checkout. One time, and there’s no
-          subscription.
+          Plus shipping, calculated from your address at checkout. One time,
+          and there’s no subscription.
         </p>
 
         <ul class="mt-8 space-y-3 text-[16px] text-muted">
@@ -45,10 +45,12 @@ const inTheBox = [
         </ul>
 
         <div class="mt-9">
-          <BuyButton target="stripe" size="lg" label={`Pre-order for ${site.price}`} />
+          {/* The price and shipping line sits above the swatches here, so the
+              component's own copy of it would be the second in six lines. */}
+          <ColourChoice showPrice={false} />
         </div>
         <p class="mt-4 text-[14px] text-muted">
-          Checkout is handled by Stripe. Ships worldwide.
+          Checkout is handled by Shopify. Ships worldwide.
         </p>
         <p class="mt-2 text-[14px] text-muted">
           Cancel any time before it ships, then 30 days from delivery. See{' '}
@@ -121,7 +123,7 @@ const inTheBox = [
       </div>
 
       <div class="mt-12">
-        <BuyButton target="stripe" size="lg" label={`Pre-order for ${site.price}`} />
+        <ColourChoice />
       </div>
 
       {/*

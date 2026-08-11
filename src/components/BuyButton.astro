@@ -1,22 +1,23 @@
 ---
-import { site } from '../config';
-
 interface Props {
-  /** Link to the local /buy page, or straight out to Stripe. */
-  target?: 'page' | 'stripe';
+  /**
+   * Always the local /buy page. There used to be a 'stripe' target that
+   * skipped it, which cannot exist now that checkout is per-colour: a cart
+   * permalink names one variant, so a direct link would choose for the buyer.
+   * ColourChoice does that job on /buy.
+   */
   label?: string;
   variant?: 'solid' | 'outline';
   size?: 'md' | 'lg';
 }
 
 const {
-  target = 'page',
   label = 'Get Stick',
   variant = 'solid',
   size = 'md',
 } = Astro.props;
 
-const href = target === 'stripe' ? site.stripeUrl : '/buy';
+const href = '/buy';
 ---
 
 <a

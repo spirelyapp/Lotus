@@ -22,19 +22,27 @@ export const site = {
   earlyShipWindow: 'September 2026',
 
   /**
-   * Stripe Payment Link. Verified: merchant reads Lotus Technologies, product
-   * "Stick (Pre-Order)", $39.99 plus a $7.99 shipping rate for $47.98 total,
-   * collects a shipping address, and offers all 232 countries.
+   * Shopify cart permalinks, one per colour. Each drops that variant in the
+   * cart and redirects straight into checkout, so it behaves like the Stripe
+   * Payment Link it replaced — one click from button to payment.
    *
-   * The $7.99 is one flat rate shown to everyone: Payment Links cannot vary
-   * shipping by destination. It over-recovers domestically and under-recovers
-   * on far international.
+   * Shopify replaced Stripe because Payment Links cannot vary shipping by
+   * destination: one flat $7.99 went to all 232 countries, over-recovering in
+   * the US and losing money on everything far away. Rates are now zoned, and
+   * verified quoting: US $8, Canada $14.99, UK & Europe $19.99, AU/NZ/Japan
+   * $24.99, and a rest-of-world catch-all at $39.99 priced at the worst case
+   * rather than the average, so an expensive destination cannot cost money.
    *
-   * The amount in Stripe must be kept in step with `price` below by hand.
-   * Nothing in this repo can change it, and a mismatch means the page and the
-   * checkout quote different numbers.
+   * The variant IDs are stable unless the product's options are restructured.
+   * Deleting or adding a variant option mints new IDs and silently breaks
+   * these links — re-read them from /products.json if the product changes.
+   *
+   * The price in Shopify must be kept in step with `price` below by hand.
    */
-  stripeUrl: 'https://buy.stripe.com/aFa8wI8ds20s0T1fHhc7u02',
+  checkout: {
+    pink: 'https://shop.getstick.website/cart/52143838298252:1',
+    black: 'https://shop.getstick.website/cart/52143838265484:1',
+  },
 
   /**
    * Confirmed from the build, not from memory: app/build.sh builds both slices
