@@ -8,11 +8,11 @@ import { site } from '../config';
  * sold a defective good. It has to stand on its own now that the detailed
  * limitations page is gone — do not weaken it without replacing it.
  *
- * Outstanding, deliberately not rendered: governing law and jurisdiction, and
- * the registered entity name and address, both of which need the Delaware
- * formation to complete. A lawyer should read this page before it does much
- * more work. Still missing: the registered office address, which several
- * jurisdictions expect a distance seller to publish.
+ * The entity, the governing law and the business address are all in now. A
+ * lawyer should still read this page before it does much more work.
+ *
+ * The address is Noah's own, published knowingly as the interim answer until
+ * there is an office — see the note on `businessAddress` in src/config.ts.
  */
 ---
 
@@ -199,7 +199,8 @@ import { site } from '../config';
         </h2>
         <p class="mt-4 text-[17px] leading-relaxed text-muted">
           {site.legalEntity} is a Delaware limited liability company, and these
-          terms are governed by the laws of the State of Delaware.
+          terms are governed by the laws of the State of Delaware. Our business
+          address is {site.businessAddress.join(', ')}.
         </p>
         <p class="mt-4 text-[17px] leading-relaxed text-muted">
           If you are a consumer, this does not take away the protection of the

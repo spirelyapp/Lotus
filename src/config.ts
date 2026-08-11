@@ -91,6 +91,23 @@ export const site = {
    */
   legalEntity: 'Lotus Technologies LLC' as string | null,
 
+  /**
+   * The address published as the seller's. Several jurisdictions expect a
+   * distance seller to give one — Germany in particular, and Europe is a
+   * shipping zone now — and it also fills Shopify's legal notice and contact
+   * fields.
+   *
+   * This is Noah's own address, chosen knowingly as the interim answer until
+   * there is an office. It is on a public page and indexed, so changing it
+   * later removes it going forward but not from anything that already copied
+   * it. Swap it here and /terms follows.
+   */
+  businessAddress: [
+    '2508 17th Avenue Northwest',
+    'Rochester, Minnesota 55901',
+    'United States',
+  ] as readonly string[],
+
   /** Bump only when the policy actually changes, not on every build. */
   policyUpdated: '1 August 2026',
 
