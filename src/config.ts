@@ -92,6 +92,17 @@ export const site = {
   legalEntity: 'Lotus Technologies LLC' as string | null,
 
   /**
+   * The state Lotus Technologies LLC is actually formed in, and the law its
+   * terms are governed by.
+   *
+   * This said Delaware for a week because the earlier conversation was about
+   * forming there and nobody checked the claim against the filing. It is
+   * Minnesota. Both facts live here so /terms cannot state one and mean the
+   * other.
+   */
+  jurisdiction: 'Minnesota',
+
+  /**
    * The address published as the seller's. Several jurisdictions expect a
    * distance seller to give one — Germany in particular, and Europe is a
    * shipping zone now — and it also fills Shopify's legal notice and contact
