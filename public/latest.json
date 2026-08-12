@@ -1,6 +1,6 @@
 {
-  "build": "20260804003628-8bf50c9",
+  "build": "20260812195040-bfe4479",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Stick now tells you when it closes a blocked app."
+  "notes": "Ending a session now always puts your proxy and browser settings back. Blocking recovers from an unexpected error instead of stopping."
 }
