@@ -1,6 +1,6 @@
 {
-  "build": "20260812195040-bfe4479",
+  "build": "20260813194244-65279c3",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Ending a session now always puts your proxy and browser settings back. Blocking recovers from an unexpected error instead of stopping."
+  "notes": "Blocked sites can no longer send you browser notifications. Firefox's policy file is now restored exactly as it was."
 }
