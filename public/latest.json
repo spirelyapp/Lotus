@@ -1,6 +1,6 @@
 {
-  "build": "20260813194244-65279c3",
+  "build": "20260814194449-77ba956",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Blocked sites can no longer send you browser notifications. Firefox's policy file is now restored exactly as it was."
+  "notes": "Fixes notification blocking, which did not work in the previous build. Blocked sites can no longer send you browser notifications."
 }
