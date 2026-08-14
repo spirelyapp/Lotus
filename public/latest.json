@@ -1,6 +1,6 @@
 {
-  "build": "20260814205336-29ccf23-dirty",
+  "build": "20260814205653-0acdd5e",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "Fixes two race conditions that could corrupt the blocklist when a setting was changed at the same moment the daemon was checking it."
+  "notes": ""
 }
