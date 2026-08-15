@@ -1,6 +1,6 @@
 {
-  "build": "20260815030320-f0e7701",
+  "build": "20260815200236-07e44de",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": "The app window now opens properly. It was being created one pixel wide, so opening Stick appeared to do nothing at all."
+  "notes": "Fixes a case where one part of enforcement failing would silently stop the rest, including closing blocked apps."
 }
