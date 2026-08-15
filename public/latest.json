@@ -1,6 +1,6 @@
 {
-  "build": "20260814205653-0acdd5e",
+  "build": "20260815030320-f0e7701",
   "version": "0.1",
   "url": "https://getstick.website/Stick-0.1.pkg",
-  "notes": ""
+  "notes": "The app window now opens properly. It was being created one pixel wide, so opening Stick appeared to do nothing at all."
 }
