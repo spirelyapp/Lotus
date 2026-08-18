@@ -103,6 +103,13 @@ export const site = {
   jurisdiction: 'Minnesota',
 
   /**
+   * Minnesota file number, from the Articles of Organization. Published
+   * because a distance seller is expected to give the register and the number
+   * it is registered under, not only a name.
+   */
+  fileNumber: '1659464000023',
+
+  /**
    * The address published as the seller's. Several jurisdictions expect a
    * distance seller to give one — Germany in particular, and Europe is a
    * shipping zone now — and it also fills Shopify's legal notice and contact
@@ -113,21 +120,19 @@ export const site = {
    * later removes it going forward but not from anything that already copied
    * it. Swap it here and /terms follows.
    */
-  /**
-   * Minnesota file number, from the Articles of Organization. Published
-   * because a distance seller is expected to give the register and the number
-   * it is registered under, not only a name.
-   */
-  fileNumber: '1659464000023',
-
   businessAddress: [
     '2508 17th Avenue Northwest',
     'Rochester, Minnesota 55901',
     'United States',
   ] as readonly string[],
 
-  /** Bump only when the policy actually changes, not on every build. */
-  policyUpdated: '1 August 2026',
+  /**
+   * Bump only when the policy actually changes, not on every build. Last moved
+   * for 11 August: the payment processor became Shopify on /privacy, and
+   * /terms gained Windows, the business address, the file number, and
+   * Minnesota in place of Delaware. All five change what a buyer agreed to.
+   */
+  policyUpdated: '11 August 2026',
 
   /** How fast the manual unlock is answered. Deliberately not instant. */
   unlockResponseTime: 'within one business day',

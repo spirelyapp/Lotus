@@ -18,6 +18,16 @@ export interface Update {
 
 export const updates: Update[] = [
   {
+    iso: '2026-08-17',
+    date: '17 August 2026',
+    title: 'The Windows key works end to end',
+    body: [
+      'On a Windows 11 machine that is not ours: install, the app opens itself, the key is registered from the drive, a mode is created, the machine locks. That is the whole path you will walk, and it now works on hardware we do not own.',
+      'Blocking itself had been passing since 7 August. The three things that made it look broken were never the enforcement: a setup window that closed before you could read it, nothing launching the app afterwards, and a web interface that could not finish first-run setup. All three are fixed.',
+      'Still to check: Windows 10, and how SmartScreen treats a signed build. We say Windows 10 or 11 because nothing in the software requires 11 and the code goes out of its way to handle 10 — but 10 has not been run yet, and we would rather write that here than let you find it out.',
+    ],
+  },
+  {
     iso: '2026-08-07',
     date: '7 August 2026',
     title: 'Windows works',
@@ -73,5 +83,4 @@ export const updates: Update[] = [
 /** Honest statement of what stands between now and shipping. */
 export const inProgress = [
   'Manufacturing the first batch of keys.',
-  'Installing on machines other than the development one, which is the only real proof that any of this works for anybody else.',
 ];
