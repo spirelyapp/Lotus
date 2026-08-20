@@ -42,22 +42,29 @@ const steps = [
   },
 ];
 
+// The argument here is repetition, not decoration: three answers that are the
+// same sentence, and a fourth that is not. A glowing pink cell used to do that
+// job by shouting, which read as a template rather than as a point.
 const rivals = [
   {
     h: 'Screen Time',
-    p: 'The passcode is one you chose, and you can reset it from the same Mac you’re trying to get away from.',
+    where: 'On the machine you are trying to leave.',
+    p: 'The passcode is one you chose, and you can reset it from that same Mac.',
   },
   {
-    h: 'Software alternatives',
-    p: 'Apps like Freedom and Cold Turkey. Some are hard to cancel once a session starts, and that part is real. But the key is still software, running on the machine you’re sitting in front of. The fight is between you and a screen, and the screen is very good at this.',
+    h: 'Freedom, Cold Turkey',
+    where: 'On the machine you are trying to leave.',
+    p: 'Some are genuinely hard to cancel once a session has started, and that part is real. But the key is still software, running in front of you, and the screen is very good at this.',
   },
   {
     h: 'Deleting the app',
+    where: 'On the machine you are trying to leave.',
     p: 'Under a minute to reinstall.',
   },
   {
     h: 'Stick',
-    p: 'Unlocking your computer means getting up and fetching a physical object. That is friction you cannot click past.',
+    where: 'Wherever you left it.',
+    p: 'A drawer, another room, your bag. Getting back in means getting up.',
     ours: true,
   },
 ];
@@ -172,59 +179,49 @@ const homeFaq = faq.filter((f) => f.home);
     </div>
   </section>
 
-  <!-- Teardown. Our cell is marked by pink text and a pink border rather than
-       a filled background. The brand pink is 5.60:1 on this near-black but only
-       1.41:1 on the accent blue, so it can sit on this section but never on a
-       blue fill. -->
+  <!-- Where the off switch lives. Every row answers the same question, and the
+       first three answer it identically — which is the whole argument, made by
+       the copy rather than by a border and a glow. Emphasis on our row is
+       weight and full white, no accent colour: the pink is carried by the
+       logo, the favicon and the product itself, and a fourth use here was what
+       made the section look generated. -->
   <section class="rule bg-ink text-white">
     <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
       <h2 class="headline text-display max-w-2xl">
         Every other blocker keeps the key on the same machine.
       </h2>
 
-      {/* No overflow-hidden: it would clip the glow flat against the cell edge.
-          Each corner cell rounds itself instead, so the block keeps its shape. */}
-      <div class="mt-14 grid gap-px rounded-2xl bg-white/15 md:grid-cols-2">
+      <dl class="mt-14 max-w-4xl">
         {
-          rivals.map((r, i) => (
-            <div
-              class:list={[
-                'bg-ink p-8',
-                // Corner radii, now that the container cannot clip them.
-                i === 0 && 'rounded-t-2xl md:rounded-t-none md:rounded-tl-2xl',
-                i === 1 && 'md:rounded-tr-2xl',
-                i === 2 && 'md:rounded-bl-2xl',
-                // Our cell: the inside stays the same black as its neighbours.
-                // All the pink is on the edge, an outer halo spilling into the
-                // section, lifted above the siblings so their backgrounds do
-                // not cover it. No text-shadow, which only softens letterforms
-                // and reads as being out of focus.
-                r.ours &&
-                  'relative z-10 border-2 border-key shadow-[0_0_60px_-4px_rgba(255,31,158,0.75)] rounded-b-2xl md:rounded-b-none md:rounded-br-2xl',
-              ]}
-            >
-              <h3
+          rivals.map((r) => (
+            <div class="grid gap-x-10 gap-y-1.5 border-t border-white/15 py-7 md:grid-cols-[13rem_1fr]">
+              <dt
                 class:list={[
-                  'text-[19px] tracking-[-0.02em]',
-                  r.ours ? 'font-bold text-key' : 'font-semibold',
+                  'text-[17px] tracking-[-0.02em]',
+                  r.ours ? 'font-bold' : 'font-semibold text-white/90',
                 ]}
               >
                 {r.h}
-              </h3>
-              <p
-                class:list={[
-                  'mt-3 text-[16px] leading-relaxed',
-                  r.ours ? 'font-bold text-key' : 'text-white/60',
-                ]}
-              >
-                {r.p}
-              </p>
+              </dt>
+              <dd>
+                <p
+                  class:list={[
+                    'text-[17px] leading-relaxed',
+                    r.ours ? 'font-medium' : 'text-white/75',
+                  ]}
+                >
+                  {r.where}
+                </p>
+                <p class="mt-2 text-[16px] leading-relaxed text-white/55">
+                  {r.p}
+                </p>
+              </dd>
             </div>
           ))
         }
-      </div>
+      </dl>
 
-      <p class="mt-10 text-[19px] text-white/70 italic">
+      <p class="mt-12 text-[19px] text-white/70 italic">
         The difference isn’t strength. It’s distance.
       </p>
     </div>
