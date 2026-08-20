@@ -8,6 +8,7 @@ import howLock from '../assets/how-lock.png';
 import Base from '../layouts/Base.astro';
 import BuyButton from '../components/BuyButton.astro';
 import Faq from '../components/Faq.astro';
+import Wordmark from '../components/Wordmark.astro';
 import { faq } from '../data/faq';
 import { site } from '../config';
 
@@ -201,7 +202,24 @@ const homeFaq = faq.filter((f) => f.home);
                   r.ours ? 'font-bold' : 'font-semibold text-white/90',
                 ]}
               >
-                {r.h}
+                {
+                  r.ours ? (
+                    <>
+                      {/* The mark replaces the word, so the row still needs the
+                          name in text: Wordmark is aria-hidden and would leave
+                          this term empty to a screen reader. mt is optical, to
+                          sit the letters on the same line as the terms above
+                          rather than at the top of the grid cell. */}
+                      <span class="sr-only">Stick</span>
+                      <Wordmark
+                        blink={false}
+                        class="mt-[3px] block w-[66px] select-none"
+                      />
+                    </>
+                  ) : (
+                    r.h
+                  )
+                }
               </dt>
               <dd>
                 <p

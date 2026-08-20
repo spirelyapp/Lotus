@@ -2,9 +2,16 @@
 interface Props {
   /** Sizing and colour come from the caller; the letters are currentColor. */
   class?: string;
+  /**
+   * The full stop blinks like a caret. True for the mark in the header and
+   * footer, where it is the brand signing the page. False anywhere it sits
+   * inside body copy — a blinking glyph mid-paragraph pulls the eye back on
+   * every cycle and makes the surrounding text harder to read.
+   */
+  blink?: boolean;
 }
 
-const { class: className = '' } = Astro.props;
+const { class: className = '', blink = true } = Astro.props;
 
 /**
  * The Stick wordmark, inline so it takes the colour of whatever it sits on.
@@ -50,7 +57,7 @@ const { class: className = '' } = Astro.props;
     <path transform="matrix(1,0,0,-1,0,1080)" d="M554.255 622.568H489.952V668.619H554.255Z" />
     <path transform="matrix(1,0,0,-1,842.7997,467.0741)" d="M0 0H-64.303C-69.38 34.971-93.634 54.714-130.861 54.714-180.499 54.714-210.958 19.178-210.958-51.33-210.958-107.736-183.883-151.168-133.681-151.168-97.018-151.168-71.071-128.606-64.303-84.608H0C-12.409-161.321-59.79-201.935-133.681-201.935-218.854-201.935-275.261-144.399-275.261-51.33-275.261 41.74-223.368 105.478-131.426 105.478-55.842 105.478-6.204 66.56 0 0" />
     <path transform="matrix(1,0,0,-1,916.1396,259.1499)" d="M0 -27.6367V-229.008L108.521-111.118H182.272L77.967-218.291 192.283-402.738H119.057L35.823-261.16 0-298.386V-402.738H-60.056V-27.6367Z" />
-    <path transform="matrix(1,0,0,-1,0,1080)" d="M1198.862 471.948H1141.854V414.94H1198.862Z" class="animate-caret-blink" />
+    <path transform="matrix(1,0,0,-1,0,1080)" d="M1198.862 471.948H1141.854V414.94H1198.862Z" class:list={[blink && 'animate-caret-blink']} />
     {/* The tittle, upright and square rather than the tilted rectangle the
         artwork first carried. Its numbers are read off the i rather than
         chosen: x and width are the stem's own, height is set equal to the
