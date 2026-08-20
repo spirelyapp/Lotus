@@ -12,7 +12,9 @@ import { faq } from '../data/faq';
 import { site } from '../config';
 
 // Steps 1 and 3 happen on screen and get a screenshot each. Step 2 happens
-// across the room, so it gets a photograph instead.
+// across the room, so it gets a photograph instead — flagged `photo`, because
+// webp's default quality is fine for flat UI and visibly mushes the fine
+// texture in a photograph.
 const steps = [
   {
     n: '1',
@@ -28,6 +30,7 @@ const steps = [
     h: 'Keep the key somewhere else.',
     p: 'A drawer, another room, your bag. You never need it to start a session, only to end one, so it can live away from your desk permanently.',
     img: howAway,
+    photo: true,
     alt: 'The pink Stick key on a stainless steel fridge door, beside a handwritten shopping list and a photograph, with a kitchen out of focus behind it.',
   },
   {
@@ -127,8 +130,9 @@ const homeFaq = faq.filter((f) => f.home);
         <Image
           src={stickInHand}
           alt="A hand holding the pink Stick key, with stick. embossed on it, on a lawn in front of a brick building"
-          widths={[640, 1024, 1600]}
+          widths={[640, 1024, 1600, 2048]}
           sizes="(min-width: 1024px) 45vw, 92vw"
+          quality={90}
           loading="eager"
           class="w-full rounded-2xl"
         />
@@ -154,8 +158,9 @@ const homeFaq = faq.filter((f) => f.home);
                   <Image
                     src={s.img}
                     alt={s.alt}
-                    widths={[380, 640, 960]}
+                    widths={[380, 640, 960, 1280]}
                     sizes="(min-width: 768px) 30vw, 90vw"
+                    quality={s.photo ? 90 : undefined}
                     class="mt-6 w-full rounded-xl border border-line md:mt-auto md:pt-6"
                   />
                 )
