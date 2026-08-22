@@ -1,6 +1,6 @@
 {
-  "build": "20260817215858-ab41783",
-  "version": "0.2",
-  "url": "https://getstick.website/Stick-0.2.pkg",
-  "notes": "Fixes the update notice offering the version you are already running, and clearer wording in stick diagnose."
+  "build": "20260822023616-27b342f",
+  "version": "0.3",
+  "url": "https://getstick.website/Stick-0.3.pkg",
+  "notes": "A new picture of the key in the app, and clearer output from stick diagnose."
 }
