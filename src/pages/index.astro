@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
+import stickCutout from '../assets/stick-cutout.png';
 import stickInHand from '../assets/stick-in-hand.jpg';
 import stickKey from '../assets/stick-key.png';
 import howChoose from '../assets/how-choose.png';
-import howAway from '../assets/how-away.png';
 import howLock from '../assets/how-lock.png';
 import Base from '../layouts/Base.astro';
 import BuyButton from '../components/BuyButton.astro';
@@ -30,9 +30,9 @@ const steps = [
     n: '2',
     h: 'Keep the key somewhere else.',
     p: 'A drawer, another room, your bag. You never need it to start a session, only to end one, so it can live away from your desk permanently.',
-    img: howAway,
+    img: stickInHand,
     photo: true,
-    alt: 'The pink Stick key on a stainless steel fridge door, beside a handwritten shopping list and a photograph, with a kitchen out of focus behind it.',
+    alt: 'A hand holding the pink Stick key on a lawn, with a brick building out of focus behind it.',
   },
   {
     n: '3',
@@ -132,18 +132,19 @@ const homeFaq = faq.filter((f) => f.home);
       </div>
 
       <div>
-        {/* A photograph of the actual key, not the render this used to be.
-            No mix-blend-multiply: that existed to drop a white plate out of a
-            render, and on a photograph it multiplies the whole frame against
-            the page and muddies it. */}
+        {/* The real key, cut out with a real alpha channel. No
+            mix-blend-multiply and no rounded corners: multiply existed to drop
+            a white plate out of a render, and this has no plate to drop —
+            transparency composites correctly on paper and on mist alike.
+            Rounding would put a corner radius on empty space. */}
         <Image
-          src={stickInHand}
-          alt="A hand holding the pink Stick key, with stick. embossed on it, on a lawn in front of a brick building"
-          widths={[640, 1024, 1600, 2048]}
+          src={stickCutout}
+          alt="The Stick key: a hot pink USB-C key with stick. embossed on it"
+          widths={[640, 1024, 1600]}
           sizes="(min-width: 1024px) 45vw, 92vw"
           quality={90}
           loading="eager"
-          class="w-full rounded-2xl"
+          class="w-full"
         />
       </div>
     </div>
