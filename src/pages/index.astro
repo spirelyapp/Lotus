@@ -2,7 +2,6 @@
 import { Image } from 'astro:assets';
 import stickCutout from '../assets/stick-cutout.png';
 import stickInHand from '../assets/stick-in-hand.jpg';
-import stickKey from '../assets/stick-key.png';
 import howChoose from '../assets/how-choose.png';
 import Base from '../layouts/Base.astro';
 import BuyButton from '../components/BuyButton.astro';
@@ -279,12 +278,16 @@ const homeFaq = faq.filter((f) => f.home);
   <section class="rule bg-mist">
     <div class="mx-auto max-w-6xl px-5 py-20 md:py-28">
     <div class="grid gap-14 lg:grid-cols-2 lg:items-center">
+      {/* No mix-blend-multiply. That existed to drop the old render's white
+          plate out against this mist section; the cutout has a real alpha
+          channel, so multiply would only darken the key against the panel. */}
       <Image
-        src={stickKey}
+        src={stickCutout}
         alt=""
-        widths={[420, 720]}
+        widths={[420, 720, 1000]}
         sizes="(min-width: 1024px) 30vw, 90vw"
-        class="w-full max-w-md mix-blend-multiply"
+        quality={90}
+        class="w-full max-w-md"
       />
       <div>
         <h2 class="headline text-display">{site.price} plus shipping.</h2>

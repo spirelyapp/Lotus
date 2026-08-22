@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import stickKey from '../assets/stick-key.png';
+import stickCutout from '../assets/stick-cutout.png';
 import Base from '../layouts/Base.astro';
 import ColourChoice from '../components/ColourChoice.astro';
 import EmailForm from '../components/EmailForm.astro';
@@ -22,13 +22,16 @@ const inTheBox = [
     <h1 class="headline text-hero">Get Stick</h1>
 
     <div class="mt-12 grid gap-12 sm:grid-cols-[1fr_1.1fr] sm:items-start">
+      {/* The cutout carries its own alpha, so no mix-blend-multiply and no
+          rounding — there is no plate to hide and no edge to round. */}
       <Image
-        src={stickKey}
-        alt="The Stick: a hot pink USB-C key with Stick. embossed on it"
-        widths={[420, 720]}
+        src={stickCutout}
+        alt="The Stick: a hot pink USB-C key with stick. embossed on it"
+        widths={[420, 720, 1000]}
         sizes="(min-width: 640px) 40vw, 90vw"
+        quality={90}
         loading="eager"
-        class="w-full mix-blend-multiply"
+        class="w-full"
       />
 
       <div>
