@@ -1,6 +1,6 @@
 {
-  "build": "20260822025509-3c8083b",
-  "version": "0.5",
-  "url": "https://getstick.website/Stick-0.5.pkg",
-  "notes": "The key on the app screens is a little smaller."
+  "build": "20260822030434-7f7d261",
+  "version": "0.6",
+  "url": "https://getstick.website/Stick-0.6.pkg",
+  "notes": "Updating no longer leaves you on the previous version of the app, and the version warning now tells you the fix that works."
 }
