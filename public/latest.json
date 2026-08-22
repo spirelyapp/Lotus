@@ -1,6 +1,6 @@
 {
-  "build": "20260822030434-7f7d261",
-  "version": "0.6",
-  "url": "https://getstick.website/Stick-0.6.pkg",
-  "notes": "Updating no longer leaves you on the previous version of the app, and the version warning now tells you the fix that works."
+  "build": "20260822051859-5c515b9",
+  "version": "0.7",
+  "url": "https://getstick.website/Stick-0.7.pkg",
+  "notes": "The app window now shows the Stick wordmark."
 }
