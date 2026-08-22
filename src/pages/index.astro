@@ -4,7 +4,6 @@ import stickCutout from '../assets/stick-cutout.png';
 import stickInHand from '../assets/stick-in-hand.jpg';
 import stickKey from '../assets/stick-key.png';
 import howChoose from '../assets/how-choose.png';
-import howLock from '../assets/how-lock.png';
 import Base from '../layouts/Base.astro';
 import BuyButton from '../components/BuyButton.astro';
 import Faq from '../components/Faq.astro';
@@ -12,10 +11,10 @@ import Wordmark from '../components/Wordmark.astro';
 import { faq } from '../data/faq';
 import { site } from '../config';
 
-// Steps 1 and 3 happen on screen and get a screenshot each. Step 2 happens
-// across the room, so it gets a photograph instead — flagged `photo`, because
-// webp's default quality is fine for flat UI and visibly mushes the fine
-// texture in a photograph.
+// Step 1 is a screenshot, step 2 a photograph — flagged `photo`, because webp's
+// default quality is fine for flat UI and visibly mushes fine texture. Step 3 is
+// a screen recording, cropped to the same 1.09 aspect as the other two so the
+// row does not go ragged, and silent so it can autoplay at all.
 const steps = [
   {
     n: '1',
@@ -38,8 +37,9 @@ const steps = [
     n: '3',
     h: 'Start a session.',
     p: 'From the menu bar, or on a schedule. The block goes up immediately and holds through quitting and restarting. The only way to end it is to walk over and plug the key back in.',
-    img: howLock,
-    alt: 'The Stick app before a session: time locked today, a photo of the pink Stick key, the Work mode blocking 6 apps and 1 site, and one large Lock button.',
+    video: '/step3.mp4',
+    poster: '/step3-poster.jpg',
+    alt: 'A screen recording: the Stick app showing a Work mode and a Lock button, then Chrome failing to load instagram.com with ERR_CONNECTION_REFUSED.',
   },
 ];
 
@@ -171,6 +171,25 @@ const homeFaq = faq.filter((f) => f.home);
                     widths={[380, 640, 960, 1280]}
                     sizes="(min-width: 768px) 30vw, 90vw"
                     quality={s.photo ? 90 : undefined}
+                    class="mt-6 w-full rounded-xl border border-line md:mt-auto md:pt-6"
+                  />
+                )
+              }
+              {
+                s.video && (
+                  /* No autoplay attribute. The script below starts it only when
+                     the visitor has not asked for reduced motion, so anyone who
+                     has — and anyone without JS — gets the poster frame, which
+                     is the payoff of the clip rather than a blank box. */
+                  <video
+                    data-autoplay
+                    src={s.video}
+                    poster={s.poster}
+                    loop
+                    muted
+                    playsinline
+                    preload="metadata"
+                    aria-label={s.alt}
                     class="mt-6 w-full rounded-xl border border-line md:mt-auto md:pt-6"
                   />
                 )
@@ -430,3 +449,23 @@ const homeFaq = faq.filter((f) => f.home);
     </div>
   </section>
 </Base>
+<script>
+  // Autoplay is opt-in here rather than an attribute, so a visitor who has asked
+  // their system for reduced motion never sees the loop start. Re-evaluated on
+  // change, because the setting can be toggled while the page is open.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const videos = document.querySelectorAll('video[data-autoplay]');
+  const sync = () => {
+    videos.forEach((v) => {
+      if (reduce.matches) {
+        v.pause();
+        v.currentTime = 0;
+      } else {
+        v.play().catch(() => {});
+      }
+    });
+  };
+  sync();
+  reduce.addEventListener('change', sync);
+</script>
+
