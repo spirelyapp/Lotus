@@ -185,6 +185,15 @@ const homeFaq = faq.filter((f) => f.home);
                     data-autoplay
                     src={s.video}
                     poster={s.poster}
+                    {/* Intrinsic size as attributes, not as an aspect-ratio class.
+                        The class sizes the border box, and md:pt-6 then eats 24px
+                        out of the content box, so the video no longer matched its
+                        own frame. height:auto derives the content box from these
+                        instead, with padding outside it, which is how the two
+                        images beside it already work. They also stop the box
+                        being 300x150 before metadata arrives. */}
+                    width="1000"
+                    height="918"
                     loop
                     muted
                     playsinline
