@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import stickKey from '../assets/stick-key.png';
+import founders from '../assets/founders.jpg';
 import Base from '../layouts/Base.astro';
 import BuyButton from '../components/BuyButton.astro';
 import { updates } from '../data/updates';
@@ -28,13 +28,21 @@ const first = updates[updates.length - 1];
       it.
     </p>
 
+    {/* The founders rather than the product. This page is signed in their
+        names, so a photograph of them is the thing that backs it up.
+
+        No mix-blend-multiply: it was there to drop a render's white plate out
+        of the page, and on a photograph it multiplies the whole frame against
+        the background and muddies it. Rounded and at quality 90, like the
+        other photographs on the site — the default flattens foliage badly. */}
     <Image
-      src={stickKey}
-      alt="The Stick key: a hot pink USB-C stick with Stick. embossed on it"
-      widths={[520, 860, 1280]}
-      sizes="(min-width: 768px) 48rem, 90vw"
+      src={founders}
+      alt="Ben and Noah on a hike, with pine trees and rock behind them"
+      widths={[520, 860, 1240]}
+      sizes="(min-width: 768px) 36rem, 90vw"
+      quality={90}
       loading="eager"
-      class="mx-auto mt-12 w-full max-w-xl mix-blend-multiply md:mt-16"
+      class="mx-auto mt-12 w-full max-w-xl rounded-2xl md:mt-16"
     />
   </section>
 
