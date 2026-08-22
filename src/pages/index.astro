@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import stickInHand from '../assets/stick-in-hand.jpg';
+import stickHero from '../assets/stick-hero.jpg';
 import stickKey from '../assets/stick-key.png';
 import howChoose from '../assets/how-choose.png';
 import howAway from '../assets/how-away.png';
@@ -132,18 +132,18 @@ const homeFaq = faq.filter((f) => f.home);
       </div>
 
       <div>
-        {/* A photograph of the actual key, not the render this used to be.
-            No mix-blend-multiply: that existed to drop a white plate out of a
-            render, and on a photograph it multiplies the whole frame against
-            the page and muddies it. */}
+        {/* A photograph of the actual key on a white sweep, cropped in so the
+            key fills the frame. mix-blend-multiply drops the white plate out
+            against the page — the same treatment /buy uses — so no rounded
+            corners, because there is no visible plate left to round. */}
         <Image
-          src={stickInHand}
-          alt="A hand holding the pink Stick key, with stick. embossed on it, on a lawn in front of a brick building"
-          widths={[640, 1024, 1600, 2048]}
+          src={stickHero}
+          alt="The Stick: a hot pink USB-C key with stick. embossed on it"
+          widths={[640, 1024, 1500]}
           sizes="(min-width: 1024px) 45vw, 92vw"
           quality={90}
           loading="eager"
-          class="w-full rounded-2xl"
+          class="w-full mix-blend-multiply"
         />
       </div>
     </div>
