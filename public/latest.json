@@ -1,6 +1,6 @@
 {
-  "build": "20260822024734-32bf7c5",
-  "version": "0.4",
-  "url": "https://getstick.website/Stick-0.4.pkg",
-  "notes": "Fixes a version warning that could appear while an update was still finishing, and an install error that reported a cancellation you did not make."
+  "build": "20260822025509-3c8083b",
+  "version": "0.5",
+  "url": "https://getstick.website/Stick-0.5.pkg",
+  "notes": "The key on the app screens is a little smaller."
 }
