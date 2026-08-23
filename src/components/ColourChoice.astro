@@ -25,7 +25,7 @@ const { showPrice = true } = Astro.props;
  */
 const colours = [
   { name: 'Hot pink', href: site.checkout.pink, swatch: 'bg-key' },
-  { name: 'Black', href: site.checkout.black, swatch: 'bg-ink' },
+  { name: 'Gray', href: site.checkout.gray, swatch: 'bg-shell' },
 ];
 ---
 
@@ -38,8 +38,10 @@ const colours = [
           href={c.href}
           class="inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-[17px] font-medium text-white transition-colors hover:bg-accent-dark"
         >
-          {/* ring-inset so the black swatch has an edge against the blue fill,
-              which it otherwise reads as a hole in. */}
+          {/* ring-inset so a swatch always has an edge against the blue fill
+              rather than reading as a hole punched in the button. It mattered
+              most when this was black; it still keeps the pale gray from
+              floating. */}
           <span
             aria-hidden="true"
             class:list={[

@@ -23,6 +23,16 @@
      point at it. Never a button. */
   --color-key: #ff1f9e;
 
+  /* The key's other colour, sampled from the product image on Shopify so the
+     swatch and the thing in the photograph agree. It is a token rather than
+     `muted` or `ink` because those describe type on a page — a product colour
+     that borrows a text colour drifts the moment either one is retuned.
+
+     Read off a lit render, not a drive anyone is holding. Worth re-sampling
+     from a real photograph once the hardware lands. Nothing breaks if it is
+     slightly off: every swatch is decorative and names its colour in text. */
+  --color-shell: #aab9bf;
+
   --font-sans:
     -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
     'Helvetica Neue', Inter, system-ui, sans-serif;

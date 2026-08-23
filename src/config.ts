@@ -41,7 +41,13 @@ export const site = {
    */
   checkout: {
     pink: 'https://shop.getstick.website/cart/52143838298252:1',
-    black: 'https://shop.getstick.website/cart/52143838265484:1',
+    // Gray replaced black on 2026-08-23. This is exactly the breakage the note
+    // above warns about: renaming the option value in Shopify retired the old
+    // variant, and the previous id here now answers 410 Gone rather than
+    // erroring in any visible way. Both ids below were checked by fetching
+    // /cart.js afterwards and confirming "Stick - Gray" and "Stick - Pink"
+    // land in the cart at $39.99. Do that again if either is ever edited.
+    gray: 'https://shop.getstick.website/cart/53670640615564:1',
   },
 
   /**
