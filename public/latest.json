@@ -1,6 +1,6 @@
 {
-  "build": "20260823051358-a27429c",
-  "version": "0.11",
-  "url": "https://getstick.website/Stick-0.11.pkg",
-  "notes": "Updates now download in about a second instead of a minute."
+  "build": "20260823052340-a27429c",
+  "version": "0.12",
+  "url": "https://getstick.website/Stick-0.12.pkg",
+  "notes": "Same as 0.11. Cut so the faster update download could be tested end to end."
 }
