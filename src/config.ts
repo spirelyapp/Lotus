@@ -152,9 +152,19 @@ export const site = {
    */
 } as const;
 
+/**
+ * Four items, which is the most this bar carries before it wants a hamburger
+ * on small screens.
+ *
+ * `/updates` used to sit here and now does not. It is still published, still
+ * linked from the footer, from /faq, from /buy and from /story, and /terms
+ * still promises it as the place a slipped date gets posted — so it must keep
+ * existing. What it stopped being is one of the four things a first-time
+ * visitor is offered, ahead of seeing the product work at all.
+ */
 export const nav = [
+  { label: 'Demo', href: '/demo' },
   { label: 'Our story', href: '/story' },
-  { label: 'Updates', href: '/updates' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ];
