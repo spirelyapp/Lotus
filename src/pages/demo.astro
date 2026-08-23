@@ -61,8 +61,20 @@ const chapters = [
     </p>
   </section>
 
-  <section class="mx-auto max-w-4xl px-5 pb-16">
-    {/* preload="metadata" rather than "auto": the file is 5.5 MB and most
+  {/* Wider than the rest of the site on purpose, and the only section here
+      that is.
+
+      The video is 1920 wide but the Stick window inside it is only about 680
+      of that — a screen recording of a whole desktop. In a 4xl column the
+      video draws at 856px and that window lands at roughly 300, well under
+      half the size its text was drawn for, which reads as "bad quality" and
+      is really just a downscale. Every pixel of container width goes almost
+      entirely into that window. Capped at 1280 because past there a 2x screen
+      is upscaling past the source and trading sharpness back for size.
+
+      The prose stays at 4xl. Only the picture wants the room. */}
+  <section class="mx-auto max-w-[1280px] px-5 pb-16">
+    {/* preload="metadata" rather than "auto": the file is 9 MB and most
         people who land here have not decided to watch it yet. The poster is a
         still from the video, so the frame is filled before a byte of it
         loads.
@@ -81,7 +93,7 @@ const chapters = [
       preload="metadata"
       class="w-full rounded-xl border border-line bg-ink"
     ></video>
-    <p class="mt-4 text-[14px] text-muted">
+    <p class="mt-4 max-w-4xl text-[14px] text-muted">
       Has sound. About a minute.
     </p>
   </section>

@@ -163,8 +163,8 @@ export const site = {
  * visitor is offered, ahead of seeing the product work at all.
  */
 export const nav = [
-  { label: 'Demo', href: '/demo' },
   { label: 'Our story', href: '/story' },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Demo', href: '/demo' },
   { label: 'Contact', href: '/contact' },
 ];
