@@ -1,6 +1,6 @@
 {
-  "build": "20260823043101-a24030e",
-  "version": "0.10",
-  "url": "https://getstick.website/Stick-0.10.pkg",
-  "notes": "Uninstalling now closes the app instead of leaving it running."
+  "build": "20260823051358-a27429c",
+  "version": "0.11",
+  "url": "https://getstick.website/Stick-0.11.pkg",
+  "notes": "Updates now download in about a second instead of a minute."
 }
