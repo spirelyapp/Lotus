@@ -1,6 +1,6 @@
 {
-  "build": "20260822052928-85b8fb1",
-  "version": "0.8",
-  "url": "https://getstick.website/Stick-0.8.pkg",
-  "notes": "The Download button now fetches the update and opens the installer for you."
+  "build": "20260823012010-bd71c68",
+  "version": "0.9",
+  "url": "https://getstick.website/Stick-0.9.pkg",
+  "notes": "Fixes an install that could fail if another copy of Stick existed on the computer."
 }
