@@ -1,6 +1,6 @@
 {
-  "build": "20260823012010-bd71c68",
-  "version": "0.9",
-  "url": "https://getstick.website/Stick-0.9.pkg",
-  "notes": "Fixes an install that could fail if another copy of Stick existed on the computer."
+  "build": "20260823043101-a24030e",
+  "version": "0.10",
+  "url": "https://getstick.website/Stick-0.10.pkg",
+  "notes": "Uninstalling now closes the app instead of leaving it running."
 }
