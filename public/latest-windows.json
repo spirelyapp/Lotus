@@ -1,0 +1,17 @@
+{
+  "build": "20260824213946-778b094",
+  "version": "0.13",
+  "notes": "A rebuilt Windows window, and updates that arrive by themselves.",
+  "installers": {
+    "amd64": {
+      "url": "https://getstick.website/Stick-Setup-0.13-amd64.exe",
+      "sha256": "3988dfde83f66d18bbe6bfbb780bf5eb009773f2ee5bbbcb7c75e6845b781546",
+      "size": 33366280
+    },
+    "arm64": {
+      "url": "https://getstick.website/Stick-Setup-0.13-arm64.exe",
+      "sha256": "af4282bc8bb5d869aade2eec2dafb965d46f57d66f62f47ba509c52409168b6c",
+      "size": 30927616
+    }
+  }
+}
