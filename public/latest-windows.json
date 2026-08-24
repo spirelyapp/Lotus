@@ -1,17 +1,17 @@
 {
-  "build": "20260824213946-778b094",
-  "version": "0.13",
-  "notes": "A rebuilt Windows window, and updates that arrive by themselves.",
+  "build": "20260824224710-79afb0f",
+  "version": "0.14",
+  "notes": "The updater now names itself to our CDN, so a bot rule cannot silently refuse every update.",
   "installers": {
     "amd64": {
-      "url": "https://getstick.website/Stick-Setup-0.13-amd64.exe",
-      "sha256": "3988dfde83f66d18bbe6bfbb780bf5eb009773f2ee5bbbcb7c75e6845b781546",
-      "size": 33366280
+      "url": "https://getstick.website/Stick-Setup-0.14-amd64.exe",
+      "sha256": "0199f71eba260314defab918c5d1d0297e4c0bae81afe71c907b5e77ad87ac9e",
+      "size": 33370880
     },
     "arm64": {
-      "url": "https://getstick.website/Stick-Setup-0.13-arm64.exe",
-      "sha256": "af4282bc8bb5d869aade2eec2dafb965d46f57d66f62f47ba509c52409168b6c",
-      "size": 30927616
+      "url": "https://getstick.website/Stick-Setup-0.14-arm64.exe",
+      "sha256": "3f9d38236665ab9d92a099f7772de0d4596c2e799bf00bde6074e048de9a14f8",
+      "size": 30933248
     }
   }
 }
