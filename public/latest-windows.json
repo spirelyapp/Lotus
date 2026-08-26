@@ -1,17 +1,17 @@
 {
-  "build": "20260826184511-95b6cc0",
-  "version": "0.17",
-  "notes": "Check for updates now answers straight away instead of spinning for a minute and then saying nothing.",
+  "build": "20260826201950-d4af3bb",
+  "version": "0.20",
+  "notes": "Opening Stick again now brings back the window you already have, instead of adding a second one beside it.",
   "installers": {
     "amd64": {
-      "url": "https://getstick.website/Stick-Setup-0.17-amd64.exe",
-      "sha256": "b451a8102938db8e5c43e45bc8cdc9fe18b2313873e9482aba9efa483e877d23",
-      "size": 34472712
+      "url": "https://getstick.website/Stick-Setup-0.20-amd64.exe",
+      "sha256": "796daf5c9971411e462ab4b0075e06fe0c12f2d789e62d6720786bb43b04c485",
+      "size": 34492672
     },
     "arm64": {
-      "url": "https://getstick.website/Stick-Setup-0.17-arm64.exe",
-      "sha256": "fb1a1d10aacd95b2143e298c2b63a17d50e379c9ab786bfb83b2119ec3cef169",
-      "size": 31963392
+      "url": "https://getstick.website/Stick-Setup-0.20-arm64.exe",
+      "sha256": "84f35241f4bfa3d173e8702d0661d41417c382cba52db6e13e1eb16b29bcb729",
+      "size": 31984896
     }
   }
 }
