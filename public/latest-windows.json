@@ -1,17 +1,17 @@
 {
-  "build": "20260826181515-7b4a92e",
-  "version": "0.16",
-  "notes": "Settings now has a Check for updates button, so you no longer have to quit Stick and open it again to look for one.",
+  "build": "20260826184511-95b6cc0",
+  "version": "0.17",
+  "notes": "Check for updates now answers straight away instead of spinning for a minute and then saying nothing.",
   "installers": {
     "amd64": {
-      "url": "https://getstick.website/Stick-Setup-0.16-amd64.exe",
-      "sha256": "9c0a657d2fb1aac2e72c76e6c96bda53dd21eb195929f81a27e452dca2738b81",
-      "size": 34469640
+      "url": "https://getstick.website/Stick-Setup-0.17-amd64.exe",
+      "sha256": "b451a8102938db8e5c43e45bc8cdc9fe18b2313873e9482aba9efa483e877d23",
+      "size": 34472712
     },
     "arm64": {
-      "url": "https://getstick.website/Stick-Setup-0.16-arm64.exe",
-      "sha256": "154d734c4cdcf0163cc1e00786d6b4a869c7c0eb784ad86bcc1d771c053e5291",
-      "size": 31960328
+      "url": "https://getstick.website/Stick-Setup-0.17-arm64.exe",
+      "sha256": "fb1a1d10aacd95b2143e298c2b63a17d50e379c9ab786bfb83b2119ec3cef169",
+      "size": 31963392
     }
   }
 }
