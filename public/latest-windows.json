@@ -1,17 +1,17 @@
 {
-  "build": "20260824224710-79afb0f",
-  "version": "0.14",
-  "notes": "The updater now names itself to our CDN, so a bot rule cannot silently refuse every update.",
+  "build": "20260826175927-c1b0206",
+  "version": "0.15",
+  "notes": "Same as the build already on your machine. Cut so the Windows update path could be tested end to end \u2014 it should install without a console window and without leaving the old window behind.",
   "installers": {
     "amd64": {
-      "url": "https://getstick.website/Stick-Setup-0.14-amd64.exe",
-      "sha256": "0199f71eba260314defab918c5d1d0297e4c0bae81afe71c907b5e77ad87ac9e",
-      "size": 33370880
+      "url": "https://getstick.website/Stick-Setup-0.15-amd64.exe",
+      "sha256": "0c2c142767249a36f3d753f6c54f4e076c0b93762ab6eac75bf7985bc340e041",
+      "size": 34460424
     },
     "arm64": {
-      "url": "https://getstick.website/Stick-Setup-0.14-arm64.exe",
-      "sha256": "3f9d38236665ab9d92a099f7772de0d4596c2e799bf00bde6074e048de9a14f8",
-      "size": 30933248
+      "url": "https://getstick.website/Stick-Setup-0.15-arm64.exe",
+      "sha256": "a18359eb5329a7a0425f8b87b0745940736bb6bf9dbe1874bdf1c3ee537a6bca",
+      "size": 31951624
     }
   }
 }
