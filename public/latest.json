@@ -1,6 +1,6 @@
 {
-  "build": "20260823052340-a27429c",
-  "version": "0.12",
-  "url": "https://getstick.website/Stick-0.12.pkg",
-  "notes": "Same as 0.11. Cut so the faster update download could be tested end to end."
+  "build": "20260826192249-c9e4814",
+  "version": "0.18",
+  "url": "https://getstick.website/Stick-0.18.pkg",
+  "notes": "Settings now has a Check for updates button, so you no longer have to wait for the daily check."
 }
